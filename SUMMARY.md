@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-* [An Abstracted Method Call](README.md)
+* [An Abstracted Method Call](getting-started/AbstractedMethod.md)
 
 
 ## Guides
