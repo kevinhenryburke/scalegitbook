@@ -2,6 +2,11 @@
 
 * [What is MyProduct I ask again?](README.md)
 
+## Getting Started
+
+* [An Abstracted Method Call](README.md)
+
+
 ## Guides
 
 * [Creating your first project](guides/creating-your-first-project.md)
