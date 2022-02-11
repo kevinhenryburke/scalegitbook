@@ -9,12 +9,17 @@ Use the text ADDLINK["Name of future page"] where linked document is not yet wri
 
 Syntax:
 
-embed a link: 
+embed a video: 
 {% embed url="https://www.loom.com/share/3bfa83acc9fd41b7b98b803ba9197d90" %}
 
 
 create a link with link text:
 From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)
+
+link to another page via a separate full width section
+{% content-ref url="fundamentals/projects.md" %}
+[projects.md](fundamentals/projects.md)
+{% endcontent-ref %}
 
 
 hint boxes: styles are: info,tip,danger,working

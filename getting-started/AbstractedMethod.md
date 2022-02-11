@@ -1,4 +1,4 @@
-# What is MyProduct I ask?
+# Quick Start
 
 {% hint style="info" %}
 **The Simplest Case:** We abstract a method
