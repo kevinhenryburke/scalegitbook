@@ -1,5 +1,30 @@
 
 TODO Items
 
-Adding Links:
+Adding Links not already written:
 Use the text ADDLINK["Name of future page"] where linked document is not yet written
+
+
+
+
+Syntax:
+
+embed a link: 
+{% embed url="https://www.loom.com/share/3bfa83acc9fd41b7b98b803ba9197d90" %}
+
+
+create a link with link text:
+From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)
+
+
+hint boxes: styles are: info,tip,danger,working
+{% hint style="info" %}
+**Good to know:** here's how to add an info
+{% endhint %}
+
+A bit if subtext with a line done the left hand side:
+> add a greater than
+> to each line
+> and they will appear in a block
+
+
