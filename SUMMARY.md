@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is MyProduct I ask again?](README.md)
+* [Welcome to Microscope](README.md)
 
 ## Getting Started
 
