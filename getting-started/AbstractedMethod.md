@@ -4,6 +4,8 @@
 **The Simplest Case:** Abstracting a method call
 {% endhint %}
 
+## 1. Firstly define the types of Input and Output
+
 
 1. Firstly define the types of Input and Output. In our example lets keep it very simple and choose *String* for both input and output so there is no work required in this case as these types already exist. Generally input and output definitions might be Apex literals, classes, intefaces or SObjects. We discuss the pros and cons at (ADDLINK(Parameter Choices)). Also if the method you wish to abstract has more than one input parameter we suggest creating a class with each parameter as a named member variable and passing an instance of this class to the method as the single input parameter. This is clearer and more maintainable.
 
