@@ -22,6 +22,7 @@ public inherited sharing class ExampleAbstractedMethod implements IService_Imple
 
 ```
 
+WHY???
 
 
 3. Create some configuration to hold the details of our choices above, namely the IO and the implementing class.
