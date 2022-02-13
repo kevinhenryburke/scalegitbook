@@ -7,10 +7,9 @@
 
 ## User Guide
 
-* [An Abstracted Method Call](getting-started/AbstractedMethod.md)
-* [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
-  * [This is how we do a subsection](getting-started/InvocationDetails.md)
-
+* Getting Started
+  * [An Abstracted Method Call](getting-started/AbstractedMethod.md)
+  * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
 
 ## Framework Details
 
