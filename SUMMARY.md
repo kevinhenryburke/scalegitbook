@@ -3,15 +3,15 @@
 * [Welcome to Microscope](README.md)
 * [How to use this guide](guides/HowToUseGuides.md)
 
-# User Guide
+# Guides for Different Users
 
-## Getting Started
+## User Guide
 
 * [An Abstracted Method Call](getting-started/AbstractedMethod.md)
 * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
-  * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
+  * [This is how we do a subsection](getting-started/InvocationDetails.md)
 
 
-# Framework Details
+## Framework Details
 
 
