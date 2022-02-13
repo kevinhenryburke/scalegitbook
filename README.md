@@ -1,4 +1,3 @@
-# What is MyProduct I ask?
 
 {% hint style="info" %}
 **Why is this app called Microscope?:** 
