@@ -7,9 +7,8 @@
 
 ## User Guide
 
-* Installation
-  * [Managed Package Installation](getting-started/Installation.md)
 * Getting Started - Fundamentals
+  * [Managed Package Installation](getting-started/Installation.md)
   * [An Abstracted Method Call](getting-started/AbstractedMethod.md)
   * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
 
