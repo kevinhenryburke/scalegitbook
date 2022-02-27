@@ -19,9 +19,9 @@ We next define a class and implement our abstracted method within it.
 This class, and indeed any of our Apex method implementations of abstracted methods, will need to implement an interface *IService_Implementation* which has a single method *dispatch* and this will be our abstracted method
 
 ```
-public inherited sharing class ExampleAbstractedMethod implements IService_Implementation {
+global inherited sharing class ExampleAbstractedMethod implements mscope.IService_Implementation {
  
-    public Object dispatch(InvocationPropertiesF1 invocationDetails, Object inputData) {
+    public Object dispatch(mscope.InvocationPropertiesF1 invocationDetails, Object inputData) {
         String inputDataCast = (String) inputData;
         return 'Returning back: ' + inputDataCast;
     }
@@ -58,7 +58,7 @@ You'll see many other configuration options on the Invocation Custom Metadata Ty
 
 ```
 
-ServiceInvocation sinv = ServiceInvocation.initialize('ExampleAbstractedMethod');
+mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleAbstractedMethod');
 String returnedValue = (String) sinv.invokeService('My Input');
 System.debug(returnedValue);
 
