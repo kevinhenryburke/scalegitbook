@@ -33,6 +33,6 @@ And finally, Microscope can be read as providing small scope for changes and for
 
 Ready to start? The quickest route starts here 
 
-{% content-ref url="getting-started/AbstractedMethod.md" %}
-[Simplest Use Case](getting-started/AbstractedMethod.md)
+{% content-ref url="getting-started/DecoupledMethod.md" %}
+[Simplest Use Case](getting-started/DecoupledMethod.md)
 {% endcontent-ref %}

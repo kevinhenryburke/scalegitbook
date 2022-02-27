@@ -9,7 +9,7 @@
 
 * Getting Started - Fundamentals
   * [Managed Package Installation](getting-started/Installation.md)
-  * [An Abstracted Method Call](getting-started/AbstractedMethod.md)
+  * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
   * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
 
 ## Framework Details
