@@ -1,9 +1,11 @@
 
-Let's start by creating a simple decoupled method call. In fact the simplest possible example and ask ourselves what are building blocks of any method call? We need input and output parameters declared, we need a method implemented inside of a class and we need some code to call the method. 
+Let's start by creating a simple decoupled method call. In fact the simplest possible example and ask ourselves what are absolutely essential building blocks of any method call? 
 
-And do we mean by an decoupled method? We mean one where the precise implementation of the method is unknown to the calling mechanism, allowing the method to be renamed, versioned or repackaged without the calling code needing to change. If we want to take this additional step we will also need some configuration to connect the method-calling mechanism to the implementation.
+We need input and output parameters declared, we need a method implemented inside of a class and we need some code to call the method. These are all required. 
 
-So we have identified four separate tasks. Let's now try to implement this in a Microsope example. 
+But we have also added an adjective: what do we mean by a **decoupled method**? We mean one where the precise implementation of the method is unknown to the calling mechanism, allowing the method to be renamed, versioned or repackaged without the calling code needing to change. 
+
+If we want to take this additional step we will also need some configuration to connect the method-calling mechanism to the implementation. So we have identified four separate items to implement a decoupled method. Let's try to do this with Microscope.
 
 
 ### 1. Firstly define the types of Input and Output
@@ -13,14 +15,14 @@ Every method needs input parameters and to return a value of a pre-defined type.
 In our example let's keep it very simple and choose *String* for both input and output so there is no work required in this case as these types already exist. 
 
 {% hint style="info" %}
-Generally input and output definitions might be Apex literals, classes, intefaces or SObjects. We discuss the pros and cons at (ADDLINK(Parameter Choices)). Also if the method you wish to decouple has more than one input parameter we suggest creating a class with each parameter as a named member variable and passing an instance of this class to the method as the single input parameter. This is clearer and more maintainable.
+Generally input and output definitions might be Apex literals, classes, intefaces or SObjects or collections of these. We discuss the pros and cons at (ADDLINK(Parameter Choices)). Also if the method you wish to decouple has more than one input parameter we suggest creating a class with each parameter as a named member variable and passing an instance of this class to the method as the single input parameter. This is clearer and more maintainable.
 {% endhint %}
 
 ### 2. Create a class with a method to implement the functionality. 
 
 We next define a class and implement our decoupled method within it. 
 
-This class, and indeed any of our Apex method implementations of decoupled methods, will need to implement an interface *IService_Implementation* which has a single method *dispatch* and this will be our decoupled method
+This class, and indeed any of our Apex method implementations of decoupled methods, will need to implement an interface *mscope.IService_Implementation* which has a single method *dispatch* and this will be our decoupled method
 
 ```
 global inherited sharing class ExampleDecoupledMethod implements mscope.IService_Implementation {
@@ -35,16 +37,16 @@ global inherited sharing class ExampleDecoupledMethod implements mscope.IService
 ```
 
 {% hint style="info" %}
-In effect we are replacing a method in a class, with potentially other methods in that class, with a class that has just one public method within it, and always with the same name. So in defining our method we just reference a class name that satisfies an interface rather than the name of a method itself.
+In effect we are replacing a method in a class (with potentially other methods in that class) with a class that has just one public method within it, and always with the same name. So in defining our method we just reference a class name that satisfies an interface rather than the name of a method itself.
 
-Also notice that *dispatch* has 2 parameters, we'll discuss the first parameter shortly. And also that the inputData to the method is encapsulated in one parameter as mentioned above.
+Also notice that *dispatch* has 2 parameters, we'll discuss the first parameter shortly. 
 {% endhint %}
 
 
 
-### 3. Create some configuration to hold the details of our choices above, 
+### 3. Create some configuration to hold the details of our choices above
 
-Namely config to hold the Input and Output Definitions and the implementing class.
+Namely config to hold the Input and Output Definitions and the implementing class to decouple the calling code from the method implementation.
 
 Go to Custom Metadata Types from the Setup menu and create a new custom metadata record for the type *Invocation*. 
 
@@ -68,7 +70,7 @@ System.debug(returnedValue);
 
 ```
 
-Run this in an execute anonymous session and hopefully you should see a debug line containing the text "Returning back: My Input". If so, you have successfully invoked an decoupled method.
+Run this in an execute anonymous session and hopefully you should see a debug line containing the text "Returning back: My Input". If so, you have successfully invoked a decoupled method.
 
 
 ### Summary - Is this useful?

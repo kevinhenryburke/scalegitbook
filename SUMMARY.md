@@ -12,6 +12,9 @@
   * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
   * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
 
+* Packaging
+  * [Namespacing](packages/Namespaces.md)
+
 ## Framework Details
 
 
