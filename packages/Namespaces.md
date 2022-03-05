@@ -1,4 +1,4 @@
-### Namespaces
+# Namespaces
 
 It is important to understand the use of Namespaces in Microscope.
 
@@ -15,20 +15,17 @@ Configured processing classes must always have the same namespace as the package
 
 ### Invocation Side: these use the invocation package namespace
 
-Invocation -> Stub Implementation Class
-Invocation -> Explicit Implementation Class
-Invocation -> Explicit Implementation Flow
-Invocation -> Input Audit Override Class
-Invocation -> Output Audit Override Class
-
+* Invocation -> Stub Implementation Class
+* Invocation -> Explicit Implementation Class
+* Invocation -> Explicit Implementation Flow
+* Invocation -> Input Audit Override Class
+* Invocation -> Output Audit Override Class
 ### Service Side: these use the service package namespace
 
-Service Method -> Down Service Method
-Service Method -> Stub Service Method
-Service Implementation -> Implementing Class
-Service Implementation -> Implementing Flow
-
-
+* Service Method -> Down Service Method
+* Service Method -> Stub Service Method
+* Service Implementation -> Implementing Class
+* Service Implementation -> Implementing Flow
 ### Technical Notes
 
 When flows are used to implement services they are launched from a class *ServiceFlowImplementation* within the *mscope* namespace. Behind the scenes *mscope* is used to call the launching class but the flow must be associated with the invocation or service package namespace, whichever is relevant. 
