@@ -15,6 +15,12 @@
 * Packaging
   * [Namespacing](packages/Namespaces.md)
 
-## Framework Details
+## Maintenance Guide
+
+* Developing
+  * [Developing Microscope](app-maintenance/DevelopingMicroscope.md)
+  * [Packaging Microscope](app-maintenance/PackagingMicroscope.md)
+
+
 
 
