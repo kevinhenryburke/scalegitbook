@@ -9,6 +9,7 @@
 
 * Getting Started - Fundamentals
   * [Microscope Package Installation](getting-started/Installation.md)
+  * [Creating a Demo](getting-started/DemoSetup.md)
   * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
   * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
 
