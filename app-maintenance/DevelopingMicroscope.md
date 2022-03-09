@@ -1,17 +1,12 @@
 # Developing the Scaleable Architecture Framework for Salesforce
 
 This page outlines how to work on the Microscope, demo and the Analytics apps all in one scratch org instance. 
-
 ## Github access
 
-This is a private repo. Repo info is below in clone command. You will need to authenticate to the repo with VS Studio.
-
-
+The source for these apps is in a private repo on [Github](https://github.com/kevinhenryburke/frictionless). Repo info is below in clone command. You will need to authenticate to the repo within VS Studio to develop Microscope.
 ## Branching Strategy
 
 Create a branch when starting to work on something new. During the solo development phase I use the convention b*YYYYMMDD* (e.g. b20211219) for my branch names but these will need to feature specific in multi-developer mode
-
-
 ## Branching and getting code from repo to VS Code
 
 Create new folder and open in VS Code. I give the folder the name of the branch I'm working on (e.g. b20211219)
@@ -20,11 +15,9 @@ At the top level of this folder is a file called *envVarSettings.sh*. This file 
 
 To get the code we need for Microscope you should edit *envVarSettings.sh* as follows, so that the MYBRANCH fields matches your github branch name.
 
-
 ```
 export MYBRANCH=b*YYYYMMDD*  (change as required for your build)
 ```
-
 
 Open a new terminal in VS Code (via Terminal -> New Terminal) and run the following which checks out the correct branch into the folder (don't forget to include the full-stop at the end of the second command!):
 
@@ -36,13 +29,11 @@ git clone https://github.com/kevinhenryburke/frictionless.git -b $MYBRANCH .
 Check that the top level folder in VS Code (the folder representing your location on disk) contains the file *sfdx-project.json* , if so we're should be all good
 
 If SFDX commands like push/pull are not available for you in the VSCode command palette, close the folder in VSCode and reopen it. This should now recognize that we have an SFDX project. However you will need to run "source envVarSettings.sh" again.
-
 ## Scratch org creation
 
 For scratch orgs we use the naming convention  *expYYYYMMDD* with the date being the expiry date of the org. The *createScratch.sh* script (see below) defaults to 30 days. 
 
 We need to set an environment variable to the alias that is used by the CLI to interact with the default scratch org. Edit the file  *envVarSettings.sh* again, this time editing the line
-
 
 ```
 export MYSCRATCH=exp20220122 (change as required)
@@ -54,7 +45,6 @@ And then in a terminal window within VSCode again run to update our environment:
 source envVarSettings.sh
 ```
 
-
 Follow your normal DX process to authorize a DevHub. You can then create a default scratch org using these lines:
 
 ```
@@ -62,10 +52,7 @@ Follow your normal DX process to authorize a DevHub. You can then create a defau
 ./createScratch.sh
 ```
 *createScratch.sh* actually does a few more things than just create a scratch org, look in the file for the details. After running this, if the default scratch org is not set in the bottom bar of VS Code then click where it says "No Default Org Set" and set to be the alias you just created.
-
-
 ## Pushing the code and permissions
-
 
 Push the code to the scratch org, this will push both the serviceBase, addOns (including Tableau CRM) and the demo. Assuming we are still in the top level folder run:
 
@@ -88,7 +75,6 @@ To do this quickly just run this:
 ```
 ./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./randomize.sh;./randomize.sh;./randomize.sh
 ```
-
 ## Checking all is ok
 
 Run all the Apex unit tests in VS Code.

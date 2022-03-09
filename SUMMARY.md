@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome to Microscope](README.md)
+* [Welcome to Microscope](getting-started/Welcome.md)
 * [How to use this guide](guides/HowToUseGuides.md)
 
 # Guides for Different Users
