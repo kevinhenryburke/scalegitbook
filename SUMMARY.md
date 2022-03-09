@@ -8,7 +8,7 @@
 ## User Guide
 
 * Getting Started - Fundamentals
-  * [Managed Package Installation](getting-started/Installation.md)
+  * [Microscope Package Installation](getting-started/Installation.md)
   * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
   * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
 

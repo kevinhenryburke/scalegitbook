@@ -97,24 +97,6 @@ In the scratch org, go to the Apps “Service Framework Demo” and “Service F
 
 In Analytics Studio run the dashboards "Service Connections", "Service Forensics" and "Service Performance" after running the jobs (see "Jobs to run" below)
 
-
-
-
-## Creating Demo Package
-
-We recommend doing all of the above to catch any errors
-
-Then run from the *serviceBase* folder run
-
-```
-./createPackageVersion.sh
-```
-
-As this package has no dependencies the *sfdx-package.json* does not need to be updated. However there is one update we need to perform to allow packages we are layering on top of this to build. We head back to the top folder and *envVarSettings.sh*. This time we use the package version id (starting "04t...") and put this value against the MSCOPE_PACKAGE_VERSION_ID variable.
-
-
-
-
 ## Finessing a demo
 
 Search for App Menu in Setup and move the Services Framework applications (e.g. Demo and Dashboards) to the top of the app list to allow quick access in the demo. This cannot at present be controlled by any setting available to VS Code to automate.
