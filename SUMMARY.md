@@ -12,7 +12,7 @@
   * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
   * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
 
-* Packaging
+* Packaging your apps
   * [Namespacing](packages/Namespaces.md)
 
 ## Maintenance Guide

@@ -23,7 +23,7 @@ For the full demo experience make sure you are using an org which includes Table
 
 
 
-[Microscope Demo Package installation URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t8d000000DXefAAG)
+[Microscope Demo Package installation URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t8d000000DYKbAAO)
 
 The package is called **Microscope Demo** and also uses the namespace **mscopedemo**
 

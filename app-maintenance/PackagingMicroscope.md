@@ -2,11 +2,7 @@
 
 ## Building the Microscope Package
 
-As a starting position make sure you have a scratch org created and that any changes are fully tested and that Apex unit tests are written and passing. Instructions on creating branches and scratch orgs for Microscope are here 
-
-{% content-ref url="fundamentals/projects.md" %}
-[Developing Microscope](app-maintenance/DevelopingMicroscope.md)
-{% endcontent-ref %}
+As a starting position make sure you have a scratch org created and that any changes are fully tested and that Apex unit tests are written and passing. Instructions on creating branches and scratch orgs for Microscope are [here](/app-maintenance/DevelopingMicroscope.md)
 
 From the top level folder of the VS project, open a terminal and run
 
@@ -24,7 +20,7 @@ cd serviceBase
 
 ## Building the Microscope Demo Package
 
-The demo application can be developed in tandem with the core app using the common scratch org. However when building the package we will make a couple of tweaks to the process in [Developing Microscope](app-maintenance/DevelopingMicroscope.md).
+The demo application can be developed in tandem with the core app using the common scratch org. However when building the package we will make a couple of tweaks to the process in [Developing Microscope](/app-maintenance/DevelopingMicroscope.md).
 
 1. Check out your development branch to a new folder structure. 
 2. Instead of opening VS code at the top of the folder structure, go down a level and open VS code at the *demo* folder.
