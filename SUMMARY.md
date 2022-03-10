@@ -7,9 +7,17 @@
 
 ## User Guide
 
+* Getting Started - Installation
+  * [Microscope Package Overview - and what to install](installation/PackageOverview.md)
+  * [Microscope Package Installation](installation/Installation.md)
+  * [Microscope Package Post Installation](installation/InstallationPost.md)
+  * [Microscope Demo Package Installation](installation/InstallationDemo.md)
+  * [Microscope Demo Package Post Installation](installation/InstallationDemoPost.md)
+  * [Microscope Analytics Package Installation](installation/InstallationAnalytics.md)
+  * [Microscope Package Post Installation](installation/InstallationAnalyticsPost.md)
+
 * Getting Started - Fundamentals
-  * [Microscope Package Installation](getting-started/Installation.md)
-  * [Creating a Demo](getting-started/DemoSetup.md)
+
   * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
   * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
 
