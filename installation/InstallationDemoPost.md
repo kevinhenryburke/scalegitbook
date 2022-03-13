@@ -13,7 +13,7 @@
 ) 
 
 ```
-NewOrgDataLoad.loadCustomSetting();
+mscopedemo.NewOrgDataLoad.loadCustomSetting();
 ```
 
 ### Finessing

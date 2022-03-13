@@ -27,7 +27,7 @@ This class, and indeed any of our Apex method implementations of decoupled metho
 ```
 global inherited sharing class ExampleDecoupledMethod implements mscope.IService_Implementation {
  
-    public Object dispatch(mscope.InvocationPropertiesF1 invocationDetails, Object inputData) {
+    global Object dispatch(mscope.InvocationPropertiesF1 invocationDetails, Object inputData) {
         String inputDataCast = (String) inputData;
         return 'Returning back: ' + inputDataCast;
     }

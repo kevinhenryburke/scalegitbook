@@ -20,16 +20,20 @@ cd serviceBase
 
 ## Building the Microscope Demo Package
 
-The demo application can be developed in tandem with the core app using the common scratch org. However when building the package we will make a couple of tweaks to the process in [Developing Microscope](/app-maintenance/DevelopingMicroscope.md).
+The demo application can be developed in tandem with the core app using the common scratch org. To create the demo package, starting at the top of the folder structure in VS Code, open a terminal and run:
 
-1. Check out your development branch to a new folder structure. 
-2. Instead of opening VS code at the top of the folder structure, go down a level and open VS code at the *demo* folder.
-3. Run ./createPackageVersion.sh 
+```
+cd demo
+./createPackageVersion.sh
+```
+
+
+The *createPackageVersion.sh* script performs a few extra steps, check the script to see these. Most of these involve making changes to namespaces from the scratch org code prior to building the package version and then reverting those changes back after the package is built.
 
 When that script completes you will be presented with a new Subscriber Package Version Id for the demo app. As for the main Microscope app we need to do a couple of things with this id
 
-1. At the top level of our demo project there is another *envVarSettings.sh* which in this case is specific to the demo package. Edit this file, putting the new Package Version Id to be the value of the variable MSCOPE_DEMO_PACKAGE_VERSION_ID
-4. If this new package version is to become the new installable demo, in the documentation project go to Installation.md and in the section "Microscope Demo Package Installation" update the *Microscope Demo Package installation URL* to point to this new Package Version Id.
+1.With the *demo* folder there is another *envVarSettings.sh* which in this case is specific to the demo package. Edit this file, putting the new Package Version Id to be the value of the variable MSCOPE_DEMO_PACKAGE_VERSION_ID
+2. If this new package version is to become the new installable demo, in the documentation project go to Installation.md and in the section "Microscope Demo Package Installation" update the *Microscope Demo Package installation URL* to point to this new Package Version Id.
 
 ## Building the Microscope Analytics Package
 

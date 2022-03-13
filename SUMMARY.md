@@ -3,11 +3,8 @@
 * [Welcome to Microscope](getting-started/Welcome.md)
 * [How to use this guide](guides/HowToUseGuides.md)
 
-# Why Microsope - Application Vision
+## Why Microsope - Application Vision
 
-* Getting Started - Installation
-  * Subsection
-    * [Microscope Package Overview - and what to install](installation/PackageOverview.md)
 
 ## User Guide
 
