@@ -12,10 +12,12 @@
   * [Microscope Package Overview - and what to install](installation/PackageOverview.md)
   * [Microscope Package Installation](installation/Installation.md)
   * [Microscope Package Post Installation](installation/InstallationPost.md)
-  * [Microscope Demo Package Installation](installation/InstallationDemo.md)
-  * [Microscope Demo Package Post Installation](installation/InstallationDemoPost.md)
   * [Microscope Analytics Package Installation](installation/InstallationAnalytics.md)
   * [Microscope Package Post Installation](installation/InstallationAnalyticsPost.md)
+* Getting Started - Demo Setup
+  * [Microscope Demo Package Installation](installation/InstallationDemo.md)
+  * [Microscope Demo Package Post Installation](installation/InstallationDemoPost.md)
+  * [Advanced Topic - Integration Demo](installation/IntegrationDemo.md)
 
 * Getting Started - Fundamentals
 
