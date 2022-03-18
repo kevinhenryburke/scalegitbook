@@ -11,29 +11,31 @@ Create a branch when starting to work on something new. During the solo developm
 
 Create new folder and open in VS Code. I give the folder the name of the branch I'm working on (e.g. b20211219)
 
-At the top level of this folder is a file called *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages.
-
-To get the code we need for Microscope you should edit *envVarSettings.sh* as follows, so that the MYBRANCH fields matches your github branch name.
+Open a new terminal in VS Code (via Terminal -> New Terminal) and export a variable holding the branch name:
 
 ```
 export MYBRANCH=b*YYYYMMDD*  (change as required for your build)
 ```
 
-Open a new terminal in VS Code (via Terminal -> New Terminal) and run the following which checks out the correct branch into the folder (don't forget to include the full-stop at the end of the second command!):
+
+Next check out the correct branch into the folder with the following (don't forget to include the full-stop at the end of the second command!):
 
 ```
-source envVarSettings.sh
 git clone https://github.com/kevinhenryburke/frictionless.git -b $MYBRANCH .
 ```
 
+Once this has run, the top level of this folder is a file called *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages.
+
+
+
 Check that the top level folder in VS Code (the folder representing your location on disk) contains the file *sfdx-project.json* , if so we're should be all good
 
-If SFDX commands like push/pull are not available for you in the VSCode command palette, close the folder in VSCode and reopen it. This should now recognize that we have an SFDX project. However you will need to run "source envVarSettings.sh" again.
+If SFDX commands like push/pull are not available for you in the VSCode command palette, close the folder in VSCode and reopen it. This should now recognize that we have an SFDX project. However you will need to run the export MYBRANCH variable command again.
 ## Scratch org creation
 
 For scratch orgs we use the naming convention  *expYYYYMMDD* with the date being the expiry date of the org. The *createScratch.sh* script (see below) defaults to 30 days. 
 
-We need to set an environment variable to the alias that is used by the CLI to interact with the default scratch org. Edit the file  *envVarSettings.sh* again, this time editing the line
+We need to set an environment variable to the alias that is used by the CLI to interact with the default scratch org. Edit the file  *envVarSettings.sh* again, editing the line
 
 ```
 export MYSCRATCH=exp20220122 (change as required)
@@ -45,22 +47,21 @@ And then in a terminal window within VSCode again run to update our environment:
 source envVarSettings.sh
 ```
 
-Follow your normal DX process to authorize a DevHub. You can then create a default scratch org using these lines:
+Follow your normal DX process to authorize a DevHub. For Microscope the DevHub is accessed via the login *mscope@devhub.org*. You can then create a default scratch org:
 
 ```
-./deleteScratch.sh (if you need to delete a scratch org with the same name)
 ./createScratch.sh
 ```
 *createScratch.sh* actually does a few more things than just create a scratch org, look in the file for the details. After running this, if the default scratch org is not set in the bottom bar of VS Code then click where it says "No Default Org Set" and set to be the alias you just created.
 ## Pushing the code and permissions
 
-Push the code to the scratch org, this will push both the serviceBase, addOns (including Tableau CRM) and the demo. Assuming we are still in the top level folder run:
+Push the code to the scratch org, this will push both the serviceBase and the demo. Assuming we are still in the top level folder run:
 
 ```
 sfdx force:source:push -u $MYSCRATCH
 ```
 
-We need to assign a permission set and create a small bit of demo data. 
+We need to assign some permissions and create a small bit of demo data. 
 
 ```
 cd demo/scripts
@@ -92,6 +93,15 @@ There are some parts of the demo that require a user name to run and share dashb
 sfdx force:user:list
 ```
 Replace all of the _@example.com_ in the code base with the Username retrieved by this query and save the files. These files do not need to be committed back to the repo.
+
+# Deleting a scratch org
+
+
+When you have finished you development it is good practice to delete you scratch org if it won't be used any more. Do so with this command, run at the top level of the VS Code structure:
+
+```
+./deleteScratch.sh
+```
 
 # Code Quality
 

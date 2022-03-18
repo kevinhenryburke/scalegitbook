@@ -11,12 +11,16 @@ cd serviceBase
 ./createPackageVersion.sh
 ```
 
-*createPackageVersion.sh* does a bit more than just create a new package version, look at the script for the details. However when it completes you will be presented with a new Subscriber Package Version Id. We need to update a few things with this id:
+*createPackageVersion.sh* does a bit more than just create a new package version, look at the script for the details. However when it completes successfully you will be presented with a new Subscriber Package Version Id. We need to update a few things with this id.
 
-1. Go to the top level folder and the file  *envVarSettings.sh*. Edit this file, putting the new Package Version Id to be the value of the variable MSCOPE_PACKAGE_VERSION_ID
-2. Go to the folder /demo and open the *sfdx-project.json* file. In the packageDirectories / Dependencies section update the package referenced to be this new Subscriber Package Version Id.
-3. Similarly, from the top folder navigate to addOns/Analytics and in the *sfdx-project.json* file edit the dependency package to point to this new Subscriber Package Version Id.
-4. Finally, if this new package version is to become the new installable baseline for the build, in the documentation project go to Installation.md and in the section "Microscope Package Installation" update the *Microscope Package installation URL* to point to this new Package Version Id.
+Firstly use it as the argument to *updatePackageVersionRefs* which lives in the same folder we used to create the package.
+
+```
+./updatePackageVersionRefs.sh <new id>
+```
+This script updates file references in the build structure to point to the new package version.
+
+Finally, if this new package version is to become the new installable baseline for the build, in the documentation project go to Installation.md and in the section "Microscope Package Installation" update the *Microscope Package installation URL* to point to this new Package Version Id.
 
 ## Building the Microscope Demo Package
 
@@ -32,8 +36,14 @@ The *createPackageVersion.sh* script performs a few extra steps, check the scrip
 
 When that script completes you will be presented with a new Subscriber Package Version Id for the demo app. As for the main Microscope app we need to do a couple of things with this id
 
-1.With the *demo* folder there is another *envVarSettings.sh* which in this case is specific to the demo package. Edit this file, putting the new Package Version Id to be the value of the variable MSCOPE_DEMO_PACKAGE_VERSION_ID
-2. If this new package version is to become the new installable demo, in the documentation project go to Installation.md and in the section "Microscope Demo Package Installation" update the *Microscope Demo Package installation URL* to point to this new Package Version Id.
+Firstly use it as the argument to *updatePackageVersionRefs* which lives in the same folder we used to create the package.
+
+```
+./updatePackageVersionRefs.sh <new id>
+```
+This script updates file references in the build structure to point to the new package version.
+
+If this new package version is to become the new installable demo, in the documentation project go to Installation.md and in the section "Microscope Demo Package Installation" update the *Microscope Demo Package installation URL* to point to this new Package Version Id.
 
 ## Building the Microscope Analytics Package
 
