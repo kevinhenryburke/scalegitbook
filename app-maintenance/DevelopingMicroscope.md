@@ -1,6 +1,6 @@
-# Developing the Scaleable Architecture Framework for Salesforce
 
-This page outlines how to work on the Microscope, demo and the Analytics apps all in one scratch org instance. 
+This page outlines how to work on the Microscope, demo and the Analytics apps. 
+
 ## Github access
 
 The source for these apps is in a private repo on [Github](https://github.com/kevinhenryburke/frictionless). Repo info is below in clone command. You will need to authenticate to the repo within VS Studio to develop Microscope.
