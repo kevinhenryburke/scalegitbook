@@ -50,6 +50,10 @@ data. A simple import ends up taking weeks or months as we untangle a
 myriad of knots in our implementation. From this point onwards even a
 small change is going to be hard.
 
+
+![An unplanned journey](vision/UnstructuredOrg.png)
+
+
 A further consideration is that every year the tools available to
 developers gets better and better, the number of features that can be
 delivered increases in sophistication. This allows for bigger
