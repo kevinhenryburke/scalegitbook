@@ -12,6 +12,10 @@ Syntax:
 embed a video: 
 {% embed url="https://www.loom.com/share/3bfa83acc9fd41b7b98b803ba9197d90" %}
 
+embed an image:
+put the image in the same folder as the md file and use this syntax:
+![An unplanned journey](UnstructureOrg.png)
+
 
 create a link with link text:
 From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)

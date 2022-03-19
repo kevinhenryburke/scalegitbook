@@ -73,7 +73,15 @@ create more work at this point. After all, a team is usually "just"
 charged with delivering a program and that is what they do. The
 challenges however will manifest themselves during subsequent programs
 and unless actions are taken will increase with each new program the
-company implements. The best time to address these was at the very start
+company implements. 
+
+
+
+![Complexity Increases Continually](Complexity.png)
+
+
+
+The best time to address these was at the very start
 of course but there were later points where our hypothetical company
 could have avoided the issues:
 
