@@ -51,7 +51,7 @@ myriad of knots in our implementation. From this point onwards even a
 small change is going to be hard.
 
 
-![An unplanned journey](UnstructuredOrg.png)
+![An unplanned journey](UnstructureOrg.png)
 
 
 A further consideration is that every year the tools available to
