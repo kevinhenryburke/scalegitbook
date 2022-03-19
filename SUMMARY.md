@@ -7,6 +7,8 @@
 
 * Application Vision
   * [An Unstructured Org](vision/UnstructuredOrg.md)
+  * [Knowing There's a Problem](vision/KnowThereProblem.md)
+  * [How To Respond](vision/HowToRespond.md)
   * [Principles](vision/Principles.md)
 
 
