@@ -50,6 +50,7 @@ source envVarSettings.sh
 Follow your normal DX process to authorize a DevHub. For Microscope the DevHub is accessed via the login *mscope@devhub.org*. You can then create a default scratch org:
 
 ```
+sfdx config:set defaultusername=$MYSCRATCH
 ./createScratch.sh
 ```
 *createScratch.sh* actually does a few more things than just create a scratch org, look in the file for the details. After running this, if the default scratch org is not set in the bottom bar of VS Code then click where it says "No Default Org Set" and set to be the alias you just created.

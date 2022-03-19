@@ -3,7 +3,11 @@
 * [Welcome to Microscope](getting-started/Welcome.md)
 * [How to use this guide](guides/HowToUseGuides.md)
 
-## Why Microsope - Application Vision
+## Why Microsope
+
+* Application Vision
+  * [An Unstructured Org](vision/UnstructuredOrg.md)
+  * [Principles](vision/Principles.md)
 
 
 ## User Guide
