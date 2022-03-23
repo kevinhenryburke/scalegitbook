@@ -1,3 +1,9 @@
+## Analytics App - add permissions to the Integration User
+
+To allow the import data jobs to run we need to add the Permission Set __microscopeAnalyticsIntegration__ to the Tableau CRM 'Integration User'. This can be scripted of course if teams prefer that.
+
+
+
 ## Analytics App - Jobs to run
 
 In the org, open Analytics Studio, go to Data Manager -> Connect and "Run Data Sync / Run Full Sync" for each of the Salesforce objects that are listed. Check the Monitor option to see when these have successfully run.

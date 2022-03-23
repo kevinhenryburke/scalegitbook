@@ -2,11 +2,16 @@
 **What is Microscope?:** 
 
 
+## What is Microscope? (and when to use it)
+
+
 Microscope is an architecture which may be adopted by  Large Implementations of the Core Salesforce Platform with big plans for expansion. 
 
 It has particular benefits for those working within a common org instance spanning multiple business units or geographies. Such implementations have often struggled as complexity and dependencies increase in their orgs, new feature velocity falls. Microscope's design takes into account the key reasons this happens and is focused on making an org as readable and easy to work with no matter how many programs are working within it. 
 
-Microscope requires a rethink of many of the practices that delivery teams, architects and sponsors currently adopt. It requires and investment of time to adopt, but it is as investment that will pay for itself many times over in the years to follow.
+Microscope requires a rethink of many of the practices that delivery teams, architects and sponsors currently adopt. It is designed to allow a greater connection between the Shapers of a program (the sponsors, program managers, business analysts, designers) and those delivering the end product (developers, admins, testers, release teams). This benefit however requires an investment of time to adopt from all parties, but it is as investment that will pay for itself many times over in the years to follow.
+
+Microscope may also be thought of as a collection of capabilities for some of the common tasks an enterprise delivery brings. An exmample might be that a team uses Microscope just to handle external interfaces on the path to production, allowing stubbed responses to call that are made in environments where the external is not available or fully functional in test environments. This is a simple problem for Microscope and could be an organization's only use of the application or be a first step towards a fuller adoption. We will see several such capabilities as we go into the details of how this app works.
 
 
 {% hint style="info" %}

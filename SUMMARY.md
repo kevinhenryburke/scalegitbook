@@ -37,6 +37,7 @@
 
 * Developing
   * [Developing Microscope](app-maintenance/DevelopingMicroscope.md)
+  * [Developing Microscope Analytics](app-maintenance/DevelopingMicroscopeAnalytics.md)
   * [Packaging Microscope](app-maintenance/PackagingMicroscope.md)
 
 

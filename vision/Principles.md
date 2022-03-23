@@ -106,7 +106,7 @@ principles emerge. We subdivide these principles into groups:
 3.  The architecture must be easy to understand and the mechanisms to
     conform to it by technical teams should not be onerous to learn.
 
-## Benefits
+## TODO Benefits - review from docx
 
 There are many benefits of adopting these principles:
 

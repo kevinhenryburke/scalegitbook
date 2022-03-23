@@ -1,5 +1,5 @@
 
-This page outlines how to work on the Microscope, demo and the Analytics apps. 
+This page outlines how to work on the Microscope and its Demo apps. 
 
 ## Github access
 
@@ -70,13 +70,10 @@ cd demo/scripts
 ./imports.sh
 ```
 
-Within the demo/scripts folder you can also run the *./populate.sh* script a few times. This will run 17 invocations each time and provide data for reports and dashboards. A small number of these invocation should fail to include some errors too. Another script, *./randomize.sh* , will spread out the times of some audit records that will give a better spread of audit times for demoing analytics. 
+Within the demo/scripts folder you can also run the *./massPopulate.sh* script a few times. This will run 17 invocations via that *populate.sh* script and perform 3 runs of *./randomize.sh* to spread out the times of some audit records for demoing analytics. 
 
-To do this quickly just run this:
 
-```
-./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./populate.sh;./randomize.sh;./randomize.sh;./randomize.sh
-```
+
 ## Checking all is ok
 
 Run all the Apex unit tests in VS Code.
