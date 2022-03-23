@@ -77,26 +77,29 @@ And once the package is insalled
 
 ```
 ./installDemo.sh
-cd ..
 ```
 
 
 
 ## Pushing the code and permissions
 
-Push the code to the scratch org, this will push both the serviceBase and the demo. Assuming we are still in the top level folder run:
-
-```
-sfdx force:source:push -u $MYSCRATCHTCRM
-```
 
 Staying inside the *scripts* folder we next run 
 
 ```
 ./permissions.sh
 ```
-
 This will add a permission set with API name __microscopeAnalyticsIntegration__ to the Tableau CRM 'Integration User'. 
+
+
+Then push the Tableau CRM artefacts to the scratch org:
+
+```
+cd ..
+sfdx force:source:push -u $MYSCRATCHTCRM
+```
+
+
 
 
 ## Creating Demo data and Running the Analytics jobs
