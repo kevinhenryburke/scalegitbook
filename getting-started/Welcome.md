@@ -42,18 +42,12 @@ This document addresses build complexity but not data volumes and when we talk a
 
 ## How To Learn
 
-The best way to learn this application is to use the demo application. 
+The best way to learn the capabilities of the Microscope application is to use the demo application. The package overview is detailed at [Microscope Package Overview](../installation/PackageOverview.md)
 
-TODO links to installation and the build demo
+TODO Need to document the Demo package tabs etc
 
+The quickest route to starting to develop is to jump in with the [Simplest Use Case](getting-started/DecoupledMethod.md)
 
-### Quick Start
-
-Ready to start? The quickest route starts here 
-
-{% content-ref url="getting-started/DecoupledMethod.md" %}
-[Simplest Use Case](getting-started/DecoupledMethod.md)
-{% endcontent-ref %}
 
 ### Acknowledgements
 
