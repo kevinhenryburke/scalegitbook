@@ -46,7 +46,7 @@ The best way to learn the capabilities of the Microscope application is to use t
 
 TODO Need to document the Demo package tabs etc
 
-The quickest route to starting to develop is to jump in with the [Simplest Use Case](getting-started/DecoupledMethod.md)
+The quickest route to starting to develop is to jump in with the [Simplest Use Case](DecoupledMethod.md)
 
 
 ### Acknowledgements
