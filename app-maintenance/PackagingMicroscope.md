@@ -20,7 +20,7 @@ Firstly use it as the argument to *updatePackageVersionRefs* which lives in the 
 ```
 This script updates file references in the build structure to point to the new package version.
 
-Finally, if this new package version is to become the new installable baseline for the build, in the documentation project go to Installation.md and in the section "Microscope Package Installation" update the *Microscope Package installation URL* to point to this new Package Version Id.
+Finally, if this new package version is to become the new installable baseline for the build, in the documentation project go to [Microscope Package Installation](../installation/Installation.md) and in the section "Microscope Package Installation" update the *Microscope Package installation URL* to point to this new Package Version Id.
 
 ## Building the Microscope Demo Package
 
@@ -43,8 +43,25 @@ Firstly use it as the argument to *updatePackageVersionRefs* which lives in the 
 ```
 This script updates file references in the build structure to point to the new package version.
 
-If this new package version is to become the new installable demo, in the documentation project go to Installation.md and in the section "Microscope Demo Package Installation" update the *Microscope Demo Package installation URL* to point to this new Package Version Id.
+If this new package version is to become the new installable demo, in the documentation project go to [Microscope Demo Package Installation](../installation/InstallationDemo.md) and in the section "Microscope Demo Package Installation" update the *Microscope Demo Package installation URL* to point to this new Package Version Id.
 
 ## Building the Microscope Analytics Package
 
-TODO
+We develop the Microscope Analytics Package against a different Dev Hub and build using the *addOns/Analytics* repo subfolder as the Analytics project root. This is all outlined in [Developing Microscope Analytics](DevelopingMicroscopeAnalytics.md)
+
+Within the Analytics project root we create a new package version by running 
+
+```
+./createPackageVersion.sh
+```
+
+When that script completes you will be presented with a new Subscriber Package Version Id for the Analytics app. 
+
+Firstly use it as the argument to *updatePackageVersionRefs* which lives in the same folder we used to create the package.
+
+```
+./updatePackageVersionRefs.sh <new id>
+```
+This script updates file references in the build structure to point to the new package version.
+
+If this new package version is to become the new installable demo, in the documentation project go to [Microscope Analytics Package Installation](../installation/InstallationAnalytics.md) and in the section "Microscope Analytics Package Installation" update the *Microscope Analytics Package installation URL* to point to this new Package Version Id.

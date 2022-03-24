@@ -4,7 +4,7 @@
 
 The main package is called **Microscope** and uses the namespace **mscope**. The latest recommended version can be installed via this link:
 
-[Microscope Package installation URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t8d000000DYKqAAO)
+[Microscope Package installation URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t8d000000DaN7AAK)
 ### Recommendations
 
 We recommend that you install the app for Administrators only. In normal circumstances the objects or reports are needed for administrative users only and not by end users of the org. Additional sharing of reports and objects might be needed for business analysis and in the case can be shared to other non-admin users using the standard platform folder and object sharing techniques (e.g. permission sets and groups).

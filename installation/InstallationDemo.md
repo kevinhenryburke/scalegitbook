@@ -5,7 +5,7 @@
 
 There is also a package provided to help teams to learn the Microsope application. 
 
-[Microscope Demo Package installation URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t8d000000DYKbAAO)
+[Microscope Demo Package installation URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t8d000000DaNCAA0)
 
 
 {% hint style="danger" %}
