@@ -31,7 +31,9 @@ The CMT Record has a few properties:
 
 **Step 2: Raise the Error in your code**
 
-We can see a coded example in the demo app in the class [Demo_echo_1_1.cls](https://github.com/kevinhenryburke/frictionless/blob/master/demo/force-app/service-Demo/method-echo-1/impl-1/Demo_echo_1_1.cls). The implementation takes an string input that it converts to an integer and show signal an error if that number is negative. These are the main lines we're interested in as they show how the error is raised:
+We can see a coded example in the demo app in the class [Demo_echo_1_1.cls](https://github.com/kevinhenryburke/frictionless/blob/master/demo/force-app/service-Demo/method-echo-1/impl-1/Demo_echo_1_1.cls). This class is used in the Microscope Demo App too, in the Errors tab (click on *Show Meta* on each components to see which one has this class as its *Implementing Class*)
+
+The implementation takes an string input that it converts to an integer and show signal an error if that number is negative. These are the main lines we're interested in as they show how the error is raised:
 
 ```
 invocationDetails.raiseError('DEMO_ECHO_BAD_INPUT');

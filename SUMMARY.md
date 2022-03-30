@@ -31,7 +31,7 @@
   * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
   * [Invocation Details and Error Handling](getting-started/InvocationDetails.md)
   * [Error Handling - Raising Errors](getting-started/ErrorRaising.md)
-  * [Error Handling - Handling Errors in invoking code](getting-started/ErrorRaising.md)
+  * [Error Handling - Handling Errors in invoking code](getting-started/ErrorHandling.md)
 
 * Packaging your apps
   * [Namespacing](packages/Namespaces.md)
