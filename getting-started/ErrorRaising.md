@@ -99,4 +99,15 @@ System.debug('State: ' + invocationDetails.State);
 System.debug('ErrorMessage: ' + invocationDetails.ErrorMessage);
 ```
 
-You should see different responses in the debug statements, or if you prefer, take a look at the Audit record for this latest invocation.
+You should see different responses in the debug statements, or if you prefer, take a look at the Audit record for the invocation details in the latest record.
+
+```
+{
+...
+  "State":"FAILURE: Example Error State",
+  "IsFail":true,
+  "ErrorMessage":"Example Error Message (ExampleErrorCode). Invocation: ExampleDecoupledMethod",
+  "ErrorCode":"ExampleErrorCode",
+...
+}
+```
