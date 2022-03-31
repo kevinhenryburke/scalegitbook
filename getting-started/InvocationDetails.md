@@ -23,9 +23,79 @@ We are retrieving an object called **mscope.InvocationDetails**, but what is it?
 
 In our debug statements we've picked up some key information about the outcome of the invocation, whether it was successful, its State and an Error Message (we should not have one in this example). The object additionally holds information that was derived from the invocation, the time it ran, the running user, if cache was used to increase performance and a host of other information which we will cover in time.
 
+
+### Introduction to Audit Records
+
 To see the invocation details after an invocation we'll switch on auditing for our invocation **ExampleDecoupledMethod**. Go to Custom Metadata Types from the Setup menu and select Edit against that record and enter the value **AuditSync** against the field *Audit Invocation* and save. Next run the sample code again in execute anonymous.
 
-This time we should have done a bit of extra processing. If you go to the App Selector (the 9 dots) and search for Audit and select the object *Service Framework Audit*, select the most recent record using the *Audit Full* list view you should now see a record that was created by your most recent code run.
+This time we should have done a bit of extra processing. If you go to the App Selector (the 9 dots) and search for Audit and select the object *Service Framework Audit*, select the most recent record using the *Audit Full* list view you should now see a record that was created by your most recent code run. There's a field called *Invocation Details* and inside that there's some JSON, and this is how our Invocation Details were at the end of the transaction. 
 
+Prettifying this, it will look something like this:
 
+```
 
+{
+  "UserId":"xxx",
+  "UseCache":false,
+  "TransactionsRolledBack":false,
+  "StaticParameters":{
+    
+  },
+  "State":"SUCCESS",
+  "ServiceTime":"2022-03-31T18:09:51.797Z",
+  "ServiceEnd":"2022-03-31T18:09:51.804Z",
+  "ServiceDuration":7,
+  "Quiddity":"ANONYMOUS",
+  "Purpose":"Business Function",
+  "OutputDefinitionNamespace":"",
+  "OutputDefinition":"String",
+  "MetadataId":"m000C0000005BQ6QAM",
+  "IsVariant":false,
+  "IsValid":true,
+  "IsTransactional":false,
+  "IsSuccess":true,
+  "IsStub":false,
+  "IsOverride":false,
+  "IsLocalInvocation":true,
+  "IsFail":false,
+  "IsAsyncCall":false,
+  "InvocationTime":"2022-03-31T18:09:51.769Z",
+  "InvocationPositionList":[
+    1
+  ],
+  "InvocationName":"ExampleDecoupledMethod",
+  "InvocationMetadataType":"Metadata Record",
+  "InvocationMechanism":"Sync",
+  "InvocationEnd":"2022-03-31T18:09:51.810Z",
+  "InvocationDuration":41,
+  "InvocationDetailsClass":"InvocationDetails",
+  "InvocationContextId":"4i58Z2_D34VjeDkCag6Lb-",
+  "InputDefinitionNamespace":"",
+  "InputDefinition":"String",
+  "InputCreationClassNamespace":"",
+  "InitiatingContextTrackingId":"4i58Z2_D34VjeDkCag6Lb-",
+  "ImplementingType":"ApexClass",
+  "ImplementingClass":"ExampleDecoupledMethod",
+  "IgnoreCacheValidation":false,
+  "HasVariants":false,
+  "ForceComputeCacheValidation":false,
+  "ExternalInvocation":false,
+  "ExplicitImplementation":"ExampleDecoupledMethod",
+  "ConfigurationValid":true,
+  "ConfigurationState":"SUCCESS",
+  "ConfigurationHasWarning":false,
+  "childInvocations":[
+    
+  ],
+  "CacheUsed":false,
+  "BubbleUpErrors":true,
+  "AuditOutputDataSerialized":"IlJldHVybmluZyBiYWNrOiBNeSBJbnB1dCI=",
+  "AuditInvocation":"AuditSync",
+  "AuditInputDataSerialized":"Ik15IElucHV0Ig==",
+  "AuditErrorsOnly":false,
+  "AttemptCacheReadWrite":false
+}
+
+```
+
+Some of this is self-explanatory, some of it certainly is not, but hopefully you will see that this is a very useful object to get to know and it is the key to understanding how this application works.
