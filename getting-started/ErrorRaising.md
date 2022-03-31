@@ -12,11 +12,9 @@ There are several benefits to this approach:
 Something is lost too however. We do not have compile-time validation that the name of the CMT Record referenced in code actually exists in the org. But unit testing can cover this and every error scenario should have a unit test, right? We'll see how to do that in a bit.
 
 
-### Example - how to raise errors in Service Implementations
+### How to raise errors in Service Implementations
 
-This example references the Demo Service Echo Method which you can find [here](https://github.com/kevinhenryburke/frictionless/tree/master/demo/force-app/service-Demo/method-echo-1)
-
-So, you are writing an apex service method and you need to report an error back to the invoker based on the input they have provided, perhaps it is not formatted as you want or references a resource that is missing. 
+We will look at the Demo Service Echo Method which you can find [here](https://github.com/kevinhenryburke/frictionless/tree/master/demo/force-app/service-Demo/method-echo-1) to show how Errors can be raised in Microscope and what to do when you are  writing an apex service method and you need to report an error back to the invoker. This might be an error based on the input they have provided, for example if it is not formatted as you want, or if it references a resource that is missing. 
 
 **Step 1: Create a Custom Metadata Record for the Error**
 
@@ -57,4 +55,48 @@ System.assertEquals('DEMO_ECHO_BAD_INPUT', invocationDetails.ErrorCode, 'Impleme
 
 The first line tests that the method is reporting an error when the input is negative and the second is testing that the correct Error Code has been set in the Invocation Details.
 
+### Extending our Exercise
 
+To extend our example, let's first create a Service Error CMT record. Go to "Manage Records" on that Custom Metadata Type in the Setup menu and click New and enter these value:
+
+- Label / Service Error Code Name: ExampleErrorCode
+- State: Example Error State
+- Message: Example Error Message
+- Severity: Error
+- Error Category: CustomServiceError
+
+Then update the class *ExampleDecoupledMethod* to include a check on the input the method receives, and raise an error if the input is the string 'Failure'. 
+
+```
+global inherited sharing class ExampleDecoupledMethod implements mscope.IService_Implementation {
+ 
+    global Object dispatch(mscope.InvocationDetails invocationDetails, Object inputData) {
+        String inputDataCast = (String) inputData;
+        String returnValue;
+        
+        if (inputDataCast == 'Failure') {
+            invocationDetails.raiseError('ExampleErrorCode');
+            invocationDetails.addErrorReference('Invocation', invocationDetails.InvocationName);        
+        }
+        else {
+            returnValue = 'Returning back: ' + inputDataCast;
+        }
+        return returnValue;
+    }
+}
+```
+
+We can then see how an error being returned by changing the invoking code to send the string 'Failure' to teh service:
+
+
+```
+mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleDecoupledMethod');
+String returnedValue = (String) sinv.invokeService('Failure');
+System.debug(returnedValue);
+mscope.InvocationDetails invocationDetails = sinv.getInvocationDetails();
+System.debug('IsSuccess: ' + invocationDetails.IsSuccess);
+System.debug('State: ' + invocationDetails.State);
+System.debug('ErrorMessage: ' + invocationDetails.ErrorMessage);
+```
+
+You should see different responses in the debug statements, or if you prefer, take a look at the Audit record for this latest invocation.
