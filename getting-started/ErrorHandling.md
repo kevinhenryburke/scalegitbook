@@ -1,2 +1,7 @@
-## Handling Errors raised by an Apex Service Implementation
+## Handling Responses
+
+TODO Errors
+
+TODO Outcomes
+
 
