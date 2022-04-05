@@ -6,8 +6,6 @@ In this section we will try to understand the simple example we started on the p
 Whilst reading this page you might want to open [Quick Start: A Decoupled Method Call](DecoupledMethod.md) in an adjacent tab or window, there will be some cross-referencing between the two pages. 
 {% endhint %}
 
-
-
 ### Inspecting our invocation response
 
 To shine some light, let's add one more code line and some debug lines to our example call
