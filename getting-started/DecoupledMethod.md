@@ -54,6 +54,7 @@ Enter values:
 * Label: ExampleDecoupledMethod
 * Input Definition: String
 * Output Definition: String
+* Invocation Mechanism: Sync
 * Explicit Implementation: ExampleDecoupledMethod
 
 You'll see many other configuration options on the Invocation Custom Metadata Type which we will cover later but these values are enough to get us started in the simplest scenario.
