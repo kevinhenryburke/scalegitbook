@@ -29,7 +29,7 @@
 * Getting Started - Fundamentals
 
   * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
-  * [Invocation Details and Key Fields](getting-started/InvocationDetails.md)
+  * [Invocation Details](getting-started/InvocationDetails.md)
   * [Error Handling - Raising Errors](getting-started/ErrorRaising.md)
   * [Error Handling - Handling responses in invoking code](getting-started/ErrorHandling.md)
 
