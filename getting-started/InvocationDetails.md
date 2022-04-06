@@ -106,7 +106,7 @@ The next set of fields are not set explicitly when an implementation is run but 
 *	IsSuccess: a convenience parameter which is true if State is "SUCCESS", false otherwise 
 *	IsFail: a convenience parameter, the boolean opposite of IsSuccess
 *	ErrorMessage: returns any associated error information when State does not signal a success. We'll see how this is populated soon.
-*	ErrorCode: The name of the **Service Error CMT Record** that holds the information on what to report for a raised error
+*	ErrorCode: The name of the **Service Error CMT Record** that holds the information on what to report for a raised error (see [Error Raising](ErrorRaising.md))
 
 
 ## (Phase 4) Audit
