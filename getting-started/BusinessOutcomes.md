@@ -1,12 +1,12 @@
 ## Specifying Business Outcomes
 
-As we've seen [last 2 pages], the State field allows an implementation class to pass back to the invoker that somethings has gone wrong with processing. We also mentioned another concept, a *Business Outcome* that can be used as simple mechanism to communicate from a business perspective what happened when an implementation ran.
+As we've seen ( [Invocation Details](InvocationDetails.md), [Raising Errors](ErrorRaising.md) ), the *State* field allows an implementation class to report back to the invoker that something has gone wrong with processing. We also mentioned another concept, a *Business Outcome* that can be used as simple mechanism to communicate from a business perspective what happened when an implementation ran.
 
-This is a very useful standardization, if used across an Enterprise then it will greatly ease how quickly people can switch from developing in one part of the business to another and will massively reduce the complexity required for applications to respond to the data they receive when they invoke other parts of the org or external interfaces. It is particularly useful when invoking a service implementation from a Flow, [TODO reference to flow page when written], when a service is invoked from a flow we return two parameters, the output data and the invocation details, and as the business outcome is visible to the flow it can be used in future decision gates with nothing more complicated as a string equality check. It is simple and powerful.
+This is already a very useful standardization, if used across an Enterprise then it will greatly ease how quickly people can switch from developing in one part of the business to another  It will also reduce the complexity required for applications to respond to the data they receive when they invoke other parts of the org or external interfaces.. It is particularly useful when invoking a service implementation from a Flow[TODO reference to flow page when written]. When a service is invoked from a flow we return two parameters, the output data and the invocation details, and as the business outcome is visible to the flow it can be used in future decision gates with nothing more complicated than a string equality check. It is simple and powerful.
 
-When working out how to classify business outcomes we need to think about the business process. The ideal business outcomes list should be something that we can map to a list of paths that may be followed at decision points in our process. So for example if an implementation gives a rating as High Value or Low Value for a customer and these trigger different processes in the business process then these might be good choices for business outcomes from the service.
+When working out how to classify business outcomes we need to think about the __Business Process__. The ideal business outcomes list should be something that we can map to a list of paths that may be followed at decision points in the process. So for example if an implementation gives a rating as High Value or Low Value for a customer and these trigger different processes in the business process then these might be good choices for business outcomes from the service.
 
-We can extend our example to show this in action. Suppose that our method retrieves information about an individual and in the process determines if they are a Sensitive figure and we know that this is of interest to our business process. We can update our method like this.
+We can extend our toy example to show how to add Business Outcomes. Suppose that our method retrieves information about an individual and in the process determines if they are a Sensitive figure and we know that this is of interest to our business process. We can update our method to support this with a few extra lines (13-20)
 
 ```
 global inherited sharing class ExampleDecoupledMethod implements mscope.IService_Implementation {
@@ -38,7 +38,7 @@ global inherited sharing class ExampleDecoupledMethod implements mscope.IService
 
 We note that we have not changed the output of the method at all, we have just highlighted an extra attribute
 
-We can call now call this and add a little extra debug, but of course we can look at the newly created audit record too, there's a Business Outcome field on the page.
+We can now call this and add a little extra debug, but of course we can look at the newly created audit record too, there's a Business Outcome field on the page which should now be populated.
 
 ```
 mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleDecoupledMethod');
