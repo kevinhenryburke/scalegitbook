@@ -28,10 +28,11 @@
 
 * Getting Started - Fundamentals
 
-  * [Quick Start: A Decoupled Method Call](getting-started/DecoupledMethod.md)
+  * [A Decoupled Method Call](getting-started/DecoupledMethod.md)
   * [Invocation Details](getting-started/InvocationDetails.md)
-  * [Error Handling - Raising Errors](getting-started/ErrorRaising.md)
-  * [Error Handling - Handling responses in invoking code](getting-started/ErrorHandling.md)
+  * [Raising Errors](getting-started/ErrorRaising.md)
+  * [Business Outcomes](getting-started/BusinessOutcomes.md)
+  * [Handling responses in invoking code](getting-started/ErrorHandling.md)
 
 * Packaging your apps
   * [Namespacing](packages/Namespaces.md)
