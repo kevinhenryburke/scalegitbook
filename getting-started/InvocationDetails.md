@@ -65,10 +65,11 @@ This phase additionally sets dynamic information information the time it was kic
 
 The (__Validate__) phase looks at our configuration setup for the invocation and confirms if it's valid and runnable. A lot of checks are run, for example is the Implementing Class really a class that exists in the org and which satisfies any required interfaces? If not we set these fields to report back any errors or warnings, though we won't see that in our example as the configuration is valid as specified.
 
-*	ConfigurationValid
-*	ConfigurationHasWarning
-*	ConfigurationState
-*	ConfigurationErrorMessage
+*	ConfigurationValid: if this is false the configuration won't be runnable and service invocations will be aborted without running *invokeService()*
+*	ConfigurationHasWarning: if this is false the configuration is not ideal but is runnable and invocations will be perfored. 
+*	ConfigurationState: This is the invocations's State as it was at the end of the *validate* process. It reflects configuration issues but not processing issues.
+*	ConfigurationErrorMessage: The invocations's ErrorMessage as it was at the end of the *validate*.
+
 
 ## (Phase 3) Execute
 
