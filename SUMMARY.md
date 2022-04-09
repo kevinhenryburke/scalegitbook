@@ -40,9 +40,9 @@
 ## Microscope Use Cases
 
 * Use Cases
-  * [Use Cases in Demo App] UseCasesDemo.md
-  * Pilots
+  * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
   * Versions
+  * Pilots
   * Development Stubs
   * All the Other Tabs
 
