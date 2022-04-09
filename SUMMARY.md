@@ -39,7 +39,7 @@
 
 ## Microscope Use Cases
 
-* Use Cases
+* [Use Cases](UseCaseIntro.md)
   * Pilots
   * Versions
   * All the Other Tabs
