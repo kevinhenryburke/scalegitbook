@@ -24,18 +24,18 @@ Next check out the correct branch into the folder with the following (don't forg
 git clone https://github.com/kevinhenryburke/frictionless.git -b $MYBRANCH .
 ```
 
-Once this has run, the top level of this folder is a file called *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages.
-
-
 
 Check that the top level folder in VS Code (the folder representing your location on disk) contains the file *sfdx-project.json* , if so we're should be all good
 
-If SFDX commands like push/pull are not available for you in the VSCode command palette, close the folder in VSCode and reopen it. This should now recognize that we have an SFDX project. However you will need to run the export MYBRANCH variable command again.
+Another file to call out in the top file *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages and we'll see it a couple of times in what follows.
+
+If in the bottom tool bar of VS Code you see "No Default Org Set" we are ready to proceed. If not close the VS Code folder and reopen it. VS Code should now recognize that we have an SFDX project but you will need to run the export MYBRANCH variable command again after re-opening.
+
 ## Scratch org creation
 
 For scratch orgs we use the naming convention  *expYYYYMMDD* with the date being the expiry date of the org. The *createScratch.sh* script (see below) defaults to 30 days. 
 
-We need to set an environment variable to the alias that is used by the CLI to interact with the default scratch org. Edit the file  *envVarSettings.sh* again, editing the line
+We need to set an environment variable to be the alias that is used by the CLI to interact with the default scratch org. Edit the file  *envVarSettings.sh* again, editing the line
 
 ```
 export MYSCRATCH=exp20220122 (change as required)
@@ -82,7 +82,7 @@ In the scratch org, go to the Apps “Service Framework Demo” and “Service F
 In Analytics Studio run the dashboards "Service Connections", "Service Forensics" and "Service Performance" after running the jobs (see "Jobs to run" below)
 
 
-# Troubleshooting
+## Troubleshooting
 
 There are some parts of the demo that require a user name to run and share dashboards and Tableau CRM dashboards. These should be replaced when pushing to a scratch org with the username of the deploying user (https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm). However sometimes we need to update the username in the codebase, ideally prior to pushing the code. In VS Code search for all occurrences of _@example.com_ . Each of these will represent a user name. In the VS Code terminal run
 
@@ -91,7 +91,7 @@ sfdx force:user:list
 ```
 Replace all of the _@example.com_ in the code base with the Username retrieved by this query and save the files. These files do not need to be committed back to the repo.
 
-# Deleting a scratch org
+## Deleting a scratch org
 
 
 When you have finished you development it is good practice to delete you scratch org if it won't be used any more. Do so with this command, run at the top level of the VS Code structure:
@@ -100,7 +100,7 @@ When you have finished you development it is good practice to delete you scratch
 ./deleteScratch.sh
 ```
 
-# Code Quality
+## Code Quality
 
 We can use the PMD and CPD code quality tools to check the core build. We run this through the Salesforce CLI Scanner plugin in VS Code (https://forcedotcom.github.io/sfdx-scanner/) rather than directly
 

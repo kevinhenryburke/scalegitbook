@@ -15,27 +15,38 @@
 
 ## User Guide
 
-* Getting Started - Installation
+* Installing Microscope
   * [Microscope Package Overview - and what to install](installation/PackageOverview.md)
   * [Microscope Package Installation](installation/Installation.md)
   * [Microscope Package Post Installation](installation/InstallationPost.md)
   * [Microscope Analytics Package Installation](installation/InstallationAnalytics.md)
   * [Microscope Analytics Package Post Installation](installation/InstallationAnalyticsPost.md)
-* Getting Started - Demo Setup
+
+* Installing the Demos
   * [Microscope Demo Package Installation](installation/InstallationDemo.md)
   * [Microscope Demo Package Post Installation](installation/InstallationDemoPost.md)
   * [Advanced Topic - Integration Demo](installation/IntegrationDemo.md)
 
-* Getting Started - Fundamentals
-
-  * [A Decoupled Method Call](getting-started/DecoupledMethod.md)
+* Creating a Simple Service
+  * [A Decoupled Call](getting-started/DecoupledMethod.md)
   * [Invocation Details](getting-started/InvocationDetails.md)
   * [Raising Errors](getting-started/ErrorRaising.md)
   * [Business Outcomes](getting-started/BusinessOutcomes.md)
   * [Handling responses in invoking code](getting-started/ErrorHandling.md)
 
-* Packaging your apps
+* Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)
+
+## Microscope Use Cases
+
+* Use Cases
+  * Pilots
+  * Versions
+  * All the Other Tabs
+
+
+
+
 
 ## Maintenance Guide
 
