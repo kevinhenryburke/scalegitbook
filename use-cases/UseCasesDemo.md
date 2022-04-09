@@ -12,6 +12,3 @@ Here *your-domain* is the top level custom domain for the org into which you hav
 
 Installation instructions for the Demo App can be found [here](../installation/InstallationDemo.md) with follow up instructions on loading settings for the demo [here](../installation/InstallationDemoPost.md).
 
-
-Input:
-<input type="text" id="name" name="name"/>

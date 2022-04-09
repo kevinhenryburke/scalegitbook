@@ -1,17 +1,22 @@
 
-**What is Microscope?:** 
 
+## A Holistic Scalable Architectural Fremework for Salesforce
 
-## What is Microscope? (and when to use it)
-
-
-Microscope is an architecture which may be adopted by  Large Implementations of the Core Salesforce Platform with big plans for expansion. 
+Microscope has been created as an architecture which may be adopted by  Large Implementations of the Core Salesforce Platform with big plans for expansion. 
 
 It has particular benefits for those working within a common org instance spanning multiple business units or geographies. Such implementations have often struggled as complexity and dependencies increase in their orgs, new feature velocity falls. Microscope's design takes into account the key reasons this happens and is focused on making an org as readable and easy to work with no matter how many programs are working within it. 
 
 Microscope requires a rethink of many of the practices that delivery teams, architects and sponsors currently adopt. It is designed to allow a greater connection between the Shapers of a program (the sponsors, program managers, business analysts, designers) and those delivering the end product (developers, admins, testers, release teams). This benefit however requires an investment of time to adopt from all parties, but it is as investment that will pay for itself many times over in the years to follow.
 
-Microscope may also be thought of as a collection of capabilities for some of the common tasks an enterprise delivery brings. An exmample might be that a team uses Microscope just to handle external interfaces on the path to production, allowing stubbed responses to call that are made in environments where the external is not available or fully functional in test environments. This is a simple problem for Microscope and could be an organization's only use of the application or be a first step towards a fuller adoption. We will see several such capabilities as we go into the details of how this app works.
+## .. Or a Rich Toolbox of Features
+
+It can however be hard for Enterprises to adopt such a fundamental architectural shift and Nicroscope can be very useful even if only adopted for a small number of use cases, even for just one. 
+We can approach it as a collection of capabilities for some of the common challenges an enterprise delivery brings. 
+
+An example might be that a team uses Microscope just to handle external interfaces on the path to production, allowing stubbed responses to call that are made in environments where the external is not available or fully functional in test environments. Or an organization might want a unified way to call Apex from flows or to implement controllers for LWC components in a configurable and easily testable way. 
+These are simple tasks for Microscope that developers can adopt quickly and just one of these could be an organization's only use of the application. We will see several such capabilities, for example in our section on (../use-cases) as we go into the details of how this application works works.
+
+An enterprise can gradually add new use cases as and when they see the value of the initial implementations which can then become first steps towards a fuller adoption of this framework. 
 
 
 {% hint style="info" %}

@@ -2,13 +2,13 @@ Development
 
 Dev Hub: mscope@devhub.org
 Namespace Org: mscope@namespace.org
-
 Repo: https://github.com/kevinhenryburke/frictionless
+Package Test Org: micropackage@install.org (install and uninstall packages prior to push to demo orgs)
 
 Documentation: https://kevinhenryburke.gitbook.io/microscope/
 
-These should always be available for demos
+Real Demos: These should always be available for demos
 
 Main Demo Org: microview@install.org
-Remote Demo Org: microremote@install.org
+Remote Demo Org (for integration demos): microremote@install.org
 
