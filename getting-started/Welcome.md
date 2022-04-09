@@ -10,18 +10,25 @@ Microscope requires a rethink of many of the practices that delivery teams, arch
 
 ## Or a Rich Toolbox of Features
 
-It can however be hard for Enterprises to adopt such a fundamental architectural shift and Nicroscope can be very useful even if only adopted for a small number of use cases, even for just one. 
-We can view it as a collection of capabilities for some of the common challenges an enterprise delivery brings and adopt this architecture gradually and as far as makes sense for the enterprise. 
+It can however be hard for Enterprises to adopt such a fundamental architectural shift and Microscope can be very useful even if it is only adopted for a small number of use cases. 
+We can alternatively view it also as a collection of capabilities for some of the common challenges an enterprise delivery brings and adopt this architecture gradually and as far as makes sense for the enterprise. 
 
 An example might be that a team uses Microscope just to handle external interfaces on the path to production, allowing stubbed responses to call that are made in environments where the external is not available or fully functional in test environments. Or an organization might want a unified way to call Apex from flows or to implement controllers for LWC components in a configurable and easily testable way. 
-These are simple tasks for Microscope that developers can adopt quickly and just one of these could be an organization's only use of the application. We will see several such capabilities, for example in our section on (../use-cases) as we go into the details of how this application works works.
 
-An enterprise can gradually add new use cases as and when they see the value of the initial implementations which can then become first steps towards a fuller adoption of this framework. As the number of features used increases, the value-add of the framework becones as we have hit a benefits loop:
+These are simple tasks for Microscope that developers can adopt quickly and just one of these might be an organization's only use of the application and it would still bring benefits. There are a number of such capabilities, for example see the section on [Use Cases](../use-cases), where we go into the details of how this application works.
+
+## Gradual Adoption and Snowballing Benefits
+
+
+An enterprise can gradually add new use cases as and when they see the value of the initial implementations. These initial implementations can then become first steps towards a fuller adoption of this framework. As the number of features used increases, and because so many functionalities are built using the same techniques, the value-add of the framework increases. In time we will hit a benefits loop:
 
 1. The more standardized the org becomes around Microscope, 
 2. The more familiar the teams becone in using the framework, 
-3. The more fluid the teams can become in moving to delivering functionality wherever or whatever it is within the enterprise.
-4. The quicker they can deliver, 
+3. The quicker they can deliver,
+4. The more fluid the teams can become in moving to delivering functionality wherever or whatever it is within the enterprise.
+
+And we start again:
+
 1. ... The more standardized the org becomes around Microscope
 
 
