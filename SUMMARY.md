@@ -39,7 +39,8 @@
 
 ## Microscope Use Cases
 
-* [Use Cases](UseCaseIntro.md)
+* Use Cases
+  * [Use Cases in Demo App] UseCasesDemo.md
   * Pilots
   * Versions
   * Development Stubs
