@@ -43,6 +43,16 @@
   * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
   * Versions
   * Pilots
+  * Packaging
+  * Environments
+  * Governance
+  * Errors (Split this)
+  * Security (Split this)
+  * Chaining
+  * Business Intelligence
+  * Rerun
+  * External Invocations
+  * Build Hygiene
   * Development Stubs
   * All the Other Tabs
 
