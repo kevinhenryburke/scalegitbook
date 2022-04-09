@@ -18,11 +18,11 @@ These are simple tasks for Microscope that developers can adopt quickly and just
 
 An enterprise can gradually add new use cases as and when they see the value of the initial implementations which can then become first steps towards a fuller adoption of this framework. As the number of features used increases, the value-add of the framework becones as we have hit a benefits loop:
 
-The more standardized the org becomes around Microscope, 
-The more familiar the teams becone in using the framework, 
-The more fluid the teams can become in moving to delivering functionality wherever or whatever it is within the enterprise.
-The quicker they can deliver, 
-The more standardized the org becomes around Microscope
+1. The more standardized the org becomes around Microscope, 
+2. The more familiar the teams becone in using the framework, 
+3. The more fluid the teams can become in moving to delivering functionality wherever or whatever it is within the enterprise.
+4. The quicker they can deliver, 
+1. ... The more standardized the org becomes around Microscope
 
 
 {% hint style="info" %}
