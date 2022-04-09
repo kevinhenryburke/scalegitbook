@@ -1,0 +1,14 @@
+Development
+
+Dev Hub: mscope@devhub.org
+Namespace Org: mscope@namespace.org
+
+Repo: https://github.com/kevinhenryburke/frictionless
+
+Documentation: https://kevinhenryburke.gitbook.io/microscope/
+
+These should always be available for demos
+
+Main Demo Org: microview@install.org
+Remote Demo Org: microremote@install.org
+
