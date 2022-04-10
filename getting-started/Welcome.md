@@ -8,6 +8,18 @@ It has particular benefits within an org spanning multiple business units or geo
 
 Microscope requires a rethink of many of the practices that delivery teams, architects and sponsors currently adopt. It is designed to allow a greater connection between the Shapers of a program (the sponsors, program managers, business analysts, designers) and those delivering the end product (developers, admins, testers, release teams). This benefit however requires an investment of time to adopt from all parties, but it is as investment that will pay for itself many times over in the years to follow.
 
+{% hint style="info" %}
+
+**Why is this app called Microscope?:** 
+
+We hope, that like a real microscope, this app will show its users a clear view of the structure of what they are working with, for us a Salesforce implementation. 
+
+The term also may also create a connection in the user's mind with Microservices architectures. This app does not provide a true microservice architecture, that's not its intention, but there is certainly an conceptual overlap.
+
+And finally, Microscope can be read as providing small scope for changes and for artifacts that can be built using this architecture. This architecture facilitates a connections between scoped stories and build artifacts, and managing scope and maximizing the independence of scoped changes is at its core.
+{% endhint %}
+
+
 ## A Single Approach for many Use Cases
 
 It can however be hard for Enterprises to adopt such a fundamental architectural shift and Microscope can be very useful even if it is only adopted for a small number of use cases. 
@@ -45,26 +57,6 @@ An enterprise can gradually add new use cases as and when they see the value of 
 
 
 
-1. The more standardized the org becomes around Microscope, 
-2. The more familiar the teams becone in using the framework, 
-3. The quicker they can deliver,
-4. The more fluid the teams can become in moving to delivering functionality wherever or whatever it is within the enterprise.
-
-And we start again:
-
-1. ... The more standardized the org becomes around Microscope
-
-
-{% hint style="info" %}
-
-**Why is this app called Microscope?:** 
-
-We hope, that like a real microscope, this app will show its users a clear view of the structure of what they are working with, for us a Salesforce implementation. 
-
-The term also may also create a connection in the user's mind with Microservices architectures. This app does not provide a true microservice architecture, that's not its intention, but there is certainly an conceptual overlap.
-
-And finally, Microscope can be read as providing small scope for changes and for artifacts that can be built using this architecture. This architecture facilitates a connections between scoped stories and build artifacts, and managing scope and maximizing the independence of scoped changes is at its core.
-{% endhint %}
 
 ## When not use Microscope
 
