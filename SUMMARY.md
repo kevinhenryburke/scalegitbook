@@ -36,6 +36,7 @@
 
 * Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)
+* Removing Microscope
 
 ## Microscope Use Cases
 
