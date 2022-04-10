@@ -59,6 +59,19 @@
 
 
 
+## Delivery Model
+
+* Actors and Role
+  * Business Sponsor
+  * and others - have Astros [TODO]
+* Fixing the Delivery Gaps
+* Visbility
+  * A Transparent Build
+* Stories and The Build
+* Parallel Teaming
+  * Managing Subcos
+
+
 
 
 ## Maintenance Guide
