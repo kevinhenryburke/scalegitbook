@@ -4,7 +4,9 @@
 
 Microscope is an architecture franework which may be adopted by any enterprise planning or already working within a Large Scale Implementation of the Core Salesforce Platform. 
 
-It has particular benefits within an org spanning multiple business units or geographies with parallel, complex implementations which need to minimize their inter-dependencies. Such implementations have often struggled because because there is a fundamental inverse relationship: as complexity and dependencies increase in their orgs, new feature velocity falls. Microscope's design takes into account the key reasons this happens and is focused on making an org as readable and easy to work with, no matter how many programs are working within it. 
+It has particular benefits within an org spanning multiple business units or geographies with parallel, complex implementations which need to minimize their inter-dependencies. Such implementations have often struggled because as complexity and dependencies increase in their orgs they become opaque, no one has a structural overview of how things relate, new feature velocity falls and bugs become commonplace. 
+
+Microscope's design takes into account the key reasons this happens and is focused on making an org readable and easy to work with for all roles, no matter how many programs are working within it. 
 
 Microscope requires a rethink of many of the practices that delivery teams, architects and sponsors currently adopt. It is designed to allow a greater connection between the Shapers of a program (the sponsors, program managers, business analysts, designers) and those delivering the end product (developers, admins, testers, release teams). This benefit however requires an investment of time to adopt from all parties, but it is as investment that will pay for itself many times over in the years to follow.
 
