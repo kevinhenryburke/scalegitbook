@@ -39,6 +39,12 @@ Rather than a Swiss Army Knife, a  better analogy comes from Children's TV. In t
 
 An enterprise can gradually add new use cases as and when they see the value of the initial implementations. These initial implementations can then become first steps towards a fuller adoption of this framework. As the number of features used increases, and because so many functionalities are built using the same techniques, the value-add of the framework increases. In time we will hit a benefits loop:
 
+![Gradual Adoption has Snowballing Benefits](SnowballingAdoption.png
+)
+
+
+
+
 1. The more standardized the org becomes around Microscope, 
 2. The more familiar the teams becone in using the framework, 
 3. The quicker they can deliver,
