@@ -11,16 +11,18 @@ Microscope requires a rethink of many of the practices that delivery teams, arch
 ## A Single Approach for many Use Cases
 
 It can however be hard for Enterprises to adopt such a fundamental architectural shift and Microscope can be very useful even if it is only adopted for a small number of use cases. 
-We can alternatively view it also as a collection of capabilities for some of the common challenges an enterprise delivery brings and adopt this architecture gradually and as far as makes sense for the enterprise. 
+Microscope addresses the common challenges an enterprise delivery brings and a team can adopt this architecture gradually, start small and take it as far as makes sense for the enterprise. 
 
-An example might be that a team uses Microscope just to handle external interfaces on the path to production, allowing stubbed responses to call that are made in environments where the external is not available or fully functional in test environments. Or an organization might want a unified way to call Apex from flows or to implement controllers for LWC components in a configurable and easily testable way. 
+An example might be that a team uses Microscope just to handle external interfaces on the path to production, allowing stubbed responses to call that are made in environments where the external system is not available or fully functional in test environments. Or an organization might want a unified way to call Apex from flows or to implement controllers for LWC components in a configurable and easily testable way. 
 
-These are simple tasks for Microscope that developers can adopt quickly and just one of these might be an organization's only use of the application and it would still bring benefits. There are a number of such capabilities, for example see the section on *Use Cases*, where we go into the details of how this application works.
+These are simple tasks for Microscope that developers can adopt quickly and just one of these might be an organization's only use of the application and it would still bring benefits. See the section on *Use Cases* for a more comprehensive list, but as you get familiar with the application you will think of still more.
 
 {% hint style="info" %}
 It is importat that we do not think of Microscope as a Swiss Army Knife, as a set of disparate tools for Enterprise development. It does help to solve a wide array of challenges but by adopting a single strategy and applying it to each.
 
 Rather than a Swiss Army Knife, a  better analogy comes from Children's TV. In the UK there is a Science Fiction series called *Doctor Who*, about a time-traveling, human looking alien who can seemingly defy most laws of physics at will. Often when set with a challenge, The Doctor will pull out a *Sonic Screwdriver* and point it at whatever needs to be fixed and, sure enough, whatever outcome was desired comes to pass. 
+
+{% endhint %}
 
 
 {% embed url="https://www.youtube.com/watch?v=FOixJvAgERQ" %}
@@ -28,7 +30,6 @@ Rather than a Swiss Army Knife, a  better analogy comes from Children's TV. In t
 
 
 
-{% endhint %}
 
 
 
