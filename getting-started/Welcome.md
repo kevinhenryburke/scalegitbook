@@ -1,6 +1,6 @@
 
 
-## A Holistic Scalable Architectural Fremework for Salesforce
+## A Holistic Scalable Architectural Framework for Salesforce
 
 Microscope is an architecture franework which may be adopted by any enterprise planning or already working within a Large Scale Implementation of the Core Salesforce Platform. 
 
