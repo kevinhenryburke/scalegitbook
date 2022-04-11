@@ -60,7 +60,7 @@ An enterprise can gradually add new use cases as and when they see the value of 
 
 
 
-## When not use Microscope
+## When not to use Microscope
 
 
 {% hint style="danger" %}

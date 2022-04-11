@@ -12,8 +12,7 @@
   * [How To Respond](vision/HowToRespond.md)
   * [Principles](vision/Principles.md)
 
-
-## User Guide
+## Installation / Removal
 
 * Installing Microscope
   * [Microscope Package Overview - and what to install](installation/PackageOverview.md)
@@ -27,6 +26,10 @@
   * [Microscope Demo Package Post Installation](installation/InstallationDemoPost.md)
   * [Advanced Topic - Integration Demo](installation/IntegrationDemo.md)
 
+* Removing Microscope
+
+## Using the Application
+
 * Creating a Simple Service
   * [A Decoupled Call](getting-started/DecoupledMethod.md)
   * [Invocation Details](getting-started/InvocationDetails.md)
@@ -36,7 +39,6 @@
 
 * Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)
-* Removing Microscope
 
 ## Microscope Use Cases
 
