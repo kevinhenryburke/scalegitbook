@@ -1,7 +1,13 @@
+### Before we start
 
-(We assume that Microscope has been installed, if not please do so using the [Installation instructions](../installation/Installation.md)).
 
-### The simplest method call
+We assume that Microscope has been installed, if not please do so using the [Installation instructions](../installation/Installation.md).
+
+We also assume that you have some experience with Apex, how to create and edit classes and how to run code snippets in "Execute Anonymous". You also need to know what a Custom Metadata Type (CMT) is and how to add records to a CMT.
+
+These exercises can all be done without an IDE, just using the Salesforce App's Developer Tools or, from VS Code, whatever your preference.
+
+## The simplest method call
 
 We are going to build a simple decoupled method and call it. 
 It will represent call to a fictitious Ratings system, it will expect a client's name as input and return a rating score (Good / Poor) if the client is found. We will build this example over the next pages and for now, to keep things really simple, we will assume that everyone's Rating is Good.
