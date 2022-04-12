@@ -65,33 +65,33 @@ To extend our example, let's first create a Service Error CMT record. Go to "Man
 - Severity: Error
 - Error Category: CustomServiceError
 
-Then update the class *ExampleDecoupledMethod* to include a check on the input the method receives, and raise an error if the input is the string 'Failure'. 
+Then update the class *ExampleRating* to include a check on the input the method receives, and raise an error if the input is the string 'Bad Call'. 
 
 ```
-global inherited sharing class ExampleDecoupledMethod implements mscope.IService_Implementation {
+global inherited sharing class ExampleRating implements mscope.IService_Implementation {
  
     global Object dispatch(mscope.InvocationDetails invocationDetails, Object inputData) {
         String inputDataCast = (String) inputData;
         String returnValue;
         
-        if (inputDataCast == 'Failure') {
+        if (inputDataCast == 'Bad Call') {
             invocationDetails.raiseError('ExampleErrorCode');
             invocationDetails.addErrorReference('Invocation', invocationDetails.InvocationName);        
         }
         else {
-            returnValue = 'Returning back: ' + inputDataCast;
+            returnValue = 'Rating: ' + inputDataCast;
         }
         return returnValue;
     }
 }
 ```
 
-We can then see how an error being returned by changing the invoking code to send the string 'Failure' to teh service:
+We can then see how an error being returned by changing the invoking code to send the string 'Failure' to the service:
 
 
 ```
-mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleDecoupledMethod');
-String returnedValue = (String) sinv.invokeService('Failure');
+mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleRating');
+String returnedValue = (String) sinv.invokeService('Bad Call');
 System.debug(returnedValue);
 mscope.InvocationDetails invocationDetails = sinv.getInvocationDetails();
 System.debug('IsSuccess: ' + invocationDetails.IsSuccess);
@@ -106,7 +106,7 @@ You should see different responses in the debug statements, or if you prefer, ta
 ...
   "State":"FAILURE: Example Error State",
   "IsFail":true,
-  "ErrorMessage":"Example Error Message (ExampleErrorCode). Invocation: ExampleDecoupledMethod",
+  "ErrorMessage":"Example Error Message (ExampleErrorCode). Invocation: ExampleRating",
   "ErrorCode":"ExampleErrorCode",
 ...
 }

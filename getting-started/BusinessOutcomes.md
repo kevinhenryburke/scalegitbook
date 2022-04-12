@@ -6,30 +6,64 @@ This is already a very useful standardization, if used across an Enterprise then
 
 When working out how to classify business outcomes we need to think about the __Business Process__. The ideal business outcomes list should be something that we can map to a list of paths that may be followed at decision points in the process. So for example if an implementation gives a rating as High Value or Low Value for a customer and these trigger different processes in the business process then these might be good choices for business outcomes from the service.
 
-We can extend our toy example to show how to add Business Outcomes. Suppose that our method retrieves information about an individual and in the process determines if they are a Sensitive figure and we know that this is of interest to our business process. We can update our method to support this with a few extra lines (13-20)
+## Extending our Example
+
+We can extend our toy Rating example to show how to add Business Outcomes. We'll add a data structure inside the class to hold a few names and their ratings.
+The Rating is of interest to our business process so we use this measure at the Business Outcome for this method. We can update our method to support this with a few extra lines which set the BusinessOutcome to be either 'High-Rated Client' and 'Low-Rated Client' .
 
 ```
-global inherited sharing class ExampleDecoupledMethod implements mscope.IService_Implementation {
+global inherited sharing class ExampleRating implements mscope.IService_Implementation {
  
+    class RatingReply {
+        String name;
+        String rating;
+    }
+
+    static Map<String, RatingReply> RatingDB;
+    
+    static {
+        RatingDB = new Map<String, RatingReply>();
+        RatingReply ratingReply;
+        ratingReply = new RatingReply();
+        ratingReply.name = 'Barack Obama'; 
+        ratingReply.rating = 'Good'; 
+        RatingDB.put(ratingReply.name, ratingReply);
+
+        ratingReply = new RatingReply();
+        ratingReply.name = 'Homer Simpson'; 
+        ratingReply.rating = 'Poor'; 
+        RatingDB.put(ratingReply.name, ratingReply);
+    }
+
+    static RatingReply queryRating (String name) {
+        return RatingDB.get(name);
+    }
+
     global Object dispatch(mscope.InvocationDetails invocationDetails, Object inputData) {
         String inputDataCast = (String) inputData;
-        String returnValue;
+        // in a more real world example a full data structure with rating related values would be the return value
+        String returnValue = 'Not Relevant';
         
-        if (inputDataCast == 'Failure') {
-            // How to respond to a failure in processing
+        // mimic a failure scenario
+        if (inputDataCast == 'Bad Call') {
             invocationDetails.raiseError('ExampleErrorCode');
             invocationDetails.addErrorReference('Invocation', invocationDetails.InvocationName);        
         }
         else {
-            // How to respond to a business routing
-            // For example if a process needs to know if a client is sensitive
-            if (inputDataCast == 'Barack Obama' || inputDataCast == 'Angela Merkel'){
-                invocationDetails.BusinessOutcome = 'Sensitive Client';
+            RatingReply ratingReply = queryRating(inputDataCast);
+
+            if (ratingReply != null) {
+                if (ratingReply.rating == 'Poor') {
+                    invocationDetails.BusinessOutcome = 'Low-Rated Client';
+                }
+                else {
+                    invocationDetails.BusinessOutcome = 'High-Rated Client';
+                }
+                returnValue = 'Rating:  ' + ratingReply.rating;
             }
             else {
-                invocationDetails.BusinessOutcome = 'Standard Client';
+                invocationDetails.BusinessOutcome = 'New Client';
             }
-            returnValue = 'Returning back: ' + inputDataCast;
         }
         return returnValue;
     }
@@ -41,7 +75,7 @@ We note that we have not changed the output of the method at all, we have just h
 We can now call this and add a little extra debug, but of course we can look at the newly created audit record too, there's a Business Outcome field on the page which should now be populated.
 
 ```
-mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleDecoupledMethod');
+mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleRating');
 String returnedValue = (String) sinv.invokeService('Barack Obama');
 System.debug(returnedValue);
 mscope.InvocationDetails invocationDetails = sinv.getInvocationDetails();

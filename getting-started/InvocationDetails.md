@@ -12,8 +12,8 @@ To shine some light on how the example works, let's add one more code line and s
 
 ```
 
-mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleDecoupledMethod');
-String returnedValue = (String) sinv.invokeService('My Input');
+mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleRating');
+String returnedValue = (String) sinv.invokeService('Barack Obama');
 System.debug(returnedValue);
 
 mscope.InvocationDetails invocationDetails = sinv.getInvocationDetails();
@@ -39,13 +39,13 @@ The process of invoking a service follows 4 main phases:
 Looking at the invoking code again, the first two phases are covered by the *initialize()* method:
 
 ```
-mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleDecoupledMethod');
+mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize('ExampleRating');
 ```
 
 The third and fourth phases are covered by the *invokeService()* method:
 
 ```
-String returnedValue = (String) sinv.invokeService('My Input');
+String returnedValue = (String) sinv.invokeService('Barack Obama');
 ```
 
 ## (Phase 1) Retrieve Metadata
@@ -112,7 +112,7 @@ The next set of fields are not set explicitly when an implementation is run but 
 
 ## (Phase 4) Audit
 
-To see the invocation details after an invocation we'll switch on auditing for our invocation **ExampleDecoupledMethod**. Go to Custom Metadata Types from the Setup menu and select Edit against that record and enter the value **AuditSync** against the field *Audit Invocation* and save. Then run the sample code again for that exercise in execute anonymous.
+To see the invocation details after an invocation we'll switch on auditing for our invocation **ExampleRating**. Go to Custom Metadata Types from the Setup menu and select Edit against that record and enter the value **AuditSync** against the field *Audit Invocation* and save. Then run the sample code again for that exercise in execute anonymous.
 
 This time we should have done a bit of extra processing, with an Audit process now configured Microscope sends a copy of the InvocationDetails, InputData and the OutputData to the Audit tables. If you go to the App Selector (the 9 dots in the top left of the Salesforce page) and search for Audit and select the object *Service Framework Audit*, find the most recent record using the *Audit Full* list view and you should now see a record that was created by your most recent code run. There's a field called *Invocation Details* and inside that there's some JSON, and this is how our Invocation Details looked at the end of the transaction. 
 
@@ -149,7 +149,7 @@ Prettifying this, it will look something like this:
   "InvocationPositionList":[
     1
   ],
-  "InvocationName":"ExampleDecoupledMethod",
+  "InvocationName":"ExampleRating",
   "InvocationMetadataType":"Metadata Record",
   "InvocationMechanism":"Sync",
   "InvocationEnd":"2022-03-31T18:09:51.810Z",
@@ -161,12 +161,12 @@ Prettifying this, it will look something like this:
   "InputCreationClassNamespace":"",
   "InitiatingContextTrackingId":"4i58Z2_D34VjeDkCag6Lb-",
   "ImplementingType":"ApexClass",
-  "ImplementingClass":"ExampleDecoupledMethod",
+  "ImplementingClass":"ExampleRating",
   "IgnoreCacheValidation":false,
   "HasVariants":false,
   "ForceComputeCacheValidation":false,
   "ExternalInvocation":false,
-  "ExplicitImplementation":"ExampleDecoupledMethod",
+  "ExplicitImplementation":"ExampleRating",
   "ConfigurationValid":true,
   "ConfigurationState":"SUCCESS",
   "ConfigurationHasWarning":false,
