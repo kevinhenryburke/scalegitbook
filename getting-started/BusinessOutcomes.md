@@ -8,8 +8,9 @@ When working out how to classify business outcomes we need to think about the __
 
 ## Extending our Example
 
-We can extend our toy Rating example to show how to add Business Outcomes. We'll add a data structure inside the class to hold a few names and their ratings.
-The Rating is of interest to our business process so we use this measure at the Business Outcome for this method. We can update our method to support this with a few extra lines which set the BusinessOutcome to be either 'High-Rated Client' and 'Low-Rated Client' .
+We can extend our toy Rating example to show how to add Business Outcomes. We'll add a data structure inside the class to hold a few names and their ratings (obviously in a real-world context such information would be retrieved via a query to a data source).
+
+The business team has told us that the customer's Rating status is of interest to our business process so we use this measure at the Business Outcome for this method. We can update our method to support this with a few extra lines which set the BusinessOutcome to be either 'High-Rated Client' and 'Low-Rated Client' .
 
 ```
 global inherited sharing class ExampleRating implements mscope.IService_Implementation {
@@ -70,7 +71,6 @@ global inherited sharing class ExampleRating implements mscope.IService_Implemen
 }
 ```
 
-We note that we have not changed the output of the method at all, we have just highlighted an extra attribute
 
 We can now call this and add a little extra debug, but of course we can look at the newly created audit record too, there's a Business Outcome field on the page which should now be populated.
 
@@ -85,7 +85,9 @@ System.debug('ErrorMessage: ' + invocationDetails.ErrorMessage);
 System.debug('BusinessOutcome: ' + invocationDetails.BusinessOutcome);
 ```
 
-There are of course instances where a calling application needs a level of granularity that the service does not provide to drive its processing.. In these cases then the application is of course able to parse out whatever it needs from the output data to create the business process that it needs to follow. 
+Try changing 'Barack Obama' to 'Homer Simpson', 'Bad Call' or any different input and rerun you should see some different States, Error Messages and Business Outcomes.
+
+There are of course instances where a calling application two consider Business Outcomes in more than one category. For example the same system might provide Rating and Current Balance information in one call where both values drive the ongoing business process. Ideally we would split these into 2 methods with separate calls that provide us with one business outcome each. But this might mean extra processing and callouts that might impact on performance.  In these cases then the application is of course able to parse out whatever it needs from the output data to create the input to the business process that it needs to follow. 
 
 
 
