@@ -59,13 +59,13 @@ The first line tests that the method is reporting an error when the input is neg
 
 To extend our example, let's first create a Service Error CMT record. Go to "Manage Records" on that Custom Metadata Type in the Setup menu and click New and enter these value:
 
-- Label / Service Error Code Name: ExampleErrorCode
-- State: Example Error State
-- Message: Example Error Message
+- Label / Service Error Code Name: RatingSystemError
+- State: Rating System Error
+- Message: Rating System Error
 - Severity: Error
 - Error Category: CustomServiceError
 
-Then update the class *ExampleRating* to include a check on the input the method receives, and raise an error if the input is the string 'Bad Call'. 
+Then update the class *ExampleRating* to include a check on the input the method receives, and raise an error if the input is the string 'Bad Call' (to simulate an error in processing). 
 
 ```
 global inherited sharing class ExampleRating implements mscope.IService_Implementation {
@@ -75,7 +75,7 @@ global inherited sharing class ExampleRating implements mscope.IService_Implemen
         String returnValue;
         
         if (inputDataCast == 'Bad Call') {
-            invocationDetails.raiseError('ExampleErrorCode');
+            invocationDetails.raiseError('RatingSystemError');
             invocationDetails.addErrorReference('Invocation', invocationDetails.InvocationName);        
         }
         else {
@@ -86,7 +86,7 @@ global inherited sharing class ExampleRating implements mscope.IService_Implemen
 }
 ```
 
-We can then see how an error being returned by changing the invoking code to send the string 'Failure' to the service:
+We can then see how an error being returned by changing the invoking code to send the string 'Bad Call' to the service:
 
 
 ```
@@ -104,10 +104,10 @@ You should see different responses in the debug statements, or if you prefer, ta
 ```
 {
 ...
-  "State":"FAILURE: Example Error State",
+  "State":"FAILURE: Rating System Error",
   "IsFail":true,
-  "ErrorMessage":"Example Error Message (ExampleErrorCode). Invocation: ExampleRating",
-  "ErrorCode":"ExampleErrorCode",
+  "ErrorMessage":"Rating System Error (RatingSystemError). Invocation: ExampleRating",
+  "ErrorCode":"RatingSystemError",
 ...
 }
 ```

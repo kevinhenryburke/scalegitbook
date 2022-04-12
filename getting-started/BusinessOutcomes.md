@@ -46,7 +46,7 @@ global inherited sharing class ExampleRating implements mscope.IService_Implemen
         
         // mimic a failure scenario
         if (inputDataCast == 'Bad Call') {
-            invocationDetails.raiseError('ExampleErrorCode');
+            invocationDetails.raiseError('RatingSystemError');
             invocationDetails.addErrorReference('Invocation', invocationDetails.InvocationName);        
         }
         else {

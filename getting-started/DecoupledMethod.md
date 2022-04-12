@@ -70,7 +70,7 @@ Enter values:
 * Input Definition: String
 * Output Definition: String
 * Invocation Mechanism: Sync
-* Explicit Implementation: ExampleRating
+* Explicit Implementation Class: ExampleRating
 
 You'll see a few other configuration options on the Invocation Custom Metadata Type which we will cover later but these values are enough to get us started in the simplest scenario.
 
