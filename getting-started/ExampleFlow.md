@@ -12,20 +12,20 @@ First off, create a screen flow called *Chaining Invocations Rating Example* and
 
 ### Step 2: Invoke the Sensitivity service
 
-This is where it starts to get more interesting. After the *UserEntryScreen* add an Action. In the New Action screen you will see a category called *Microscope Actions*. Select this and in the Action search box select *Microscope: String to String Invocation*. 
+This is where it starts to get more interesting. After the *UserEntryScreen* element add an Action. In the New Action screen you will see a category called **Microscope Actions**. Select this and in the Action search box select *Microscope: String to String Invocation*. 
 
 {% hint style="info" %}
 
-What is this? In order to invoke Apex from flow a class with an *InvocableMethod* needs to be referenced. This class must specifies input and output types that the flow uses to call Apex. In this case we want to invoke a service with a *String => String* signature, hence the name of the Microscope Action we have selected. 
+What is this? In order to invoke Apex from flow, a class with an *InvocableMethod* needs to be referenced. This class must specify input and output types that the flow can use to call Apex. In this case we want to invoke a service with a *String => String* signature, hence the name of the Microscope Action we have selected. 
 
-Optional: If you are interested in how this works, you can see the implementation of this class in [ActionStringString.cls](https://github.com/kevinhenryburke/frictionless/blob/master/serviceBase/force-app/Framework/classes/flow/actions/reusable/ActionStringString.cls). You'll see an inner class called *InputFromFlow* which are the parameters that Flow will provide. This has two members:
+If you are interested in how this works, you can see the implementation of this action in [ActionStringString.cls](https://github.com/kevinhenryburke/frictionless/blob/master/serviceBase/force-app/Framework/classes/flow/actions/reusable/ActionStringString.cls). You'll see an inner class called *InputFromFlow* which holds the parameters that Flow will provide. This has two members:
 
 * The name of the Invocation we want to run
 * The input data, in this case a String
 
 The invocable method takes this input, initializes and invocation using the invocation name provided in the input, and runs *invokeService()* on this. If you look back at [Handling Responses - Apex](ErrorHandling.md) this is precisely the same pattern that was used there, but here it is not something that the flow developer needs to worry about directly.
 
-Finally the invocable method populates a response which will be available to the flow as the output parameters. This also consists of two members
+Finally the invocable method populates a response (another inner class, *OutputToFlow*) which will be available to the flow as the output parameters. This also consists of two members
 
 * The Invocation Details that we created when the invocation was initialized and enriched as the service was invoked. 
 * The output data, in this case a String
@@ -72,6 +72,11 @@ Put a Decision Gate below the *ExampleRating* which this time has two outcome pa
 
 1. Low-Rated Client: Use the output from the ExampleRating invocation action and check InvocationDetails / BusinessOutcome and check if the value is *Low-Rated Client*. If so we put a screen on this path to show that this is routed to the Client Risk Team.
 2. Default outcome: Otherwise add a screen to state we are routing to the Services Team. 
+
+### Step 6: Test the Flow
+
+Try with our examples from the Apex Implementation: Barack Obama, Homer Simpson, Bad Call and with a random name. Hopefully you will get taken to the correct end screen.
+
 
 ## Summary / Identified Patterns
 
