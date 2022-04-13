@@ -54,7 +54,7 @@ global inherited sharing class ExampleSensitivity implements mscope.IService_Imp
         
         // mimic a failure scenario
         if (inputDataCast == 'Bad Call') {
-            invocationDetails.raiseError('ExampleErrorCode');
+            invocationDetails.raiseError('SensitivitySystemError');
             invocationDetails.addErrorReference('Invocation', invocationDetails.InvocationName);        
         }
         else {
@@ -88,6 +88,7 @@ Enter values:
 * Output Definition: String
 * Invocation Mechanism: Sync
 * Explicit Implementation: ExampleSensitivity
+* Audit Invocation: AuditSync
 ```
 
 And an Service Error invocation record:
@@ -176,7 +177,7 @@ ExampleMultipleCalls.call('Bad Call');
 
 Going back to the *ExampleMultipleCalls.call()* method, it is getting longer but look at how clear the calling code is and imagine the benefits for a real-world complexity application.
 
-In reality such services as checks against a Privacy or Ratings system would return complex data structures filled with information, not the little strings we have in these examples. In these real-world examples you do not want client applications to have to sift through these structures to work out business processing. You want your calls to such services to provide errors and outcomes in a single way that leaves as little work as possible to the calling application to do in interpreting what the outcome really was. 
+In reality such services as checks against a Privacy or Ratings system would return complex data structures filled with information, not the little strings we have in these examples. In real-world scenarios you do not want client applications to have to sift through these structures to work out business processing. You want your calls to such services to be provided errors and outcomes in a single way that leaves as little work as possible to the calling application to do in interpreting the outcome. 
 
 The ideal scenario, and recommended approach when using *Microscope* is for a service to perform these 3 key actions on top of the essential business work it is designed to perform:
 

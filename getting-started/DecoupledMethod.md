@@ -7,6 +7,8 @@ We also assume that you have some experience with Apex, how to create and edit c
 
 These exercises can all be done without an IDE, just using the Salesforce App's Developer Tools or, from VS Code, whatever your preference.
 
+We also note that these initial examples cover Services that are both written in and invoked from **Apex**. We'll cover how this can be extended to **Flow** later.
+
 ## The simplest method call
 
 We are going to build a simple decoupled method and call it. 
@@ -93,5 +95,6 @@ Run this in an execute anonymous session and hopefully you should see a debug li
 
 What benefit is this? There is already a small benefit in decoupling a method like this. The calling code (our execute anonymous session) does not explicitly know the name of the class holding the implementation. We have the ability now to change the implementation without making any change to the calling code, but just by changing the value in the Custom Metadata Record for the field "Explicit Implementation". 
 
-It also wasn't a huge amount of work, the method was implemented in its own class rather than as a method in a class that might contain other functionality. And we had to create a metadata record but that was about it. It would be hard to argue for implementing an entire framework just for this benefit though and we'll start to build up the benefits in the next sections. 
+It also wasn't a huge amount of work, the method was implemented in its own class rather than as a method in a class that might contain other functionality. And we had to create a metadata record but that was about it. 
 
+You might also have seen people implementing this pattern before, there's a few examples out there, so you might legitimately ask what's new here? The difference is that Microscope takes this concept a lot further than a simple decoupling/injection use case, this concept is central to a holistic approach to many use cases. It would be hard to argue for implementing an entire framework just for this decoupling option but we'll start to build up the benefits throughout these pages. 

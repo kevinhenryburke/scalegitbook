@@ -1,9 +1,9 @@
 ## Digging into our example
 
-In this section we will try to understand the simple example we started on the previous page, [Quick Start: A Decoupled Method Call](DecoupledMethod.md). 
+In this section we will try to understand the simple example we started on the previous page, [Decoupled Calls](DecoupledMethod.md). 
 
 {% hint style="tip" %}
-Whilst reading this page you might want to open [Quick Start: A Decoupled Method Call](DecoupledMethod.md) in an adjacent tab or window, there will be some referencing to it in what follows.
+Whilst reading this page you might want to open [Decoupled Calls](DecoupledMethod.md) in an adjacent tab or window, there will be some referencing to it in what follows.
 {% endhint %}
 
 ### Inspecting our invocation response

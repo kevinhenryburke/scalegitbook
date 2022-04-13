@@ -31,11 +31,12 @@
 ## Using the Application
 
 * Creating a Simple Service
-  * [A Decoupled Call](getting-started/DecoupledMethod.md)
+  * [Decoupled Calls](getting-started/DecoupledMethod.md)
   * [Invocation Details](getting-started/InvocationDetails.md)
   * [Raising Errors](getting-started/ErrorRaising.md)
   * [Business Outcomes](getting-started/BusinessOutcomes.md)
-  * [Handling responses in invoking code](getting-started/ErrorHandling.md)
+  * [Handling Responses - Apex](getting-started/ErrorHandling.md)
+  * [Handling Responses - Flow](getting-started/ExampleFlow.md)
 
 * Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)
