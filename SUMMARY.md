@@ -38,8 +38,8 @@
   * [Handling Responses in Apex](getting-started/ErrorHandling.md)
   * [Invocations from Flow](getting-started/ExampleFlow.md)
 
-* Invoking Microscope from Anywhere
-  * [Input/Output From Flow - Details](./invocations/InvocationFromFlow.md)
+* Invoking Microscope - Input/Output
+  * [Flow & Invocation Actions](./invocations/InvocationFromFlow.md)
 
 * Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)
