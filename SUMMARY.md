@@ -35,8 +35,11 @@
   * [Invocation Details](getting-started/InvocationDetails.md)
   * [Raising Errors](getting-started/ErrorRaising.md)
   * [Business Outcomes](getting-started/BusinessOutcomes.md)
-  * [Handling Responses - Apex](getting-started/ErrorHandling.md)
-  * [Handling Responses - Flow](getting-started/ExampleFlow.md)
+  * [Handling Responses in Apex](getting-started/ErrorHandling.md)
+  * [Invocations from Flow](getting-started/ExampleFlow.md)
+
+* Invoking Microscope from Anywhere
+  * [Invocation From Flow](./invocations/InvocationFromFlow.md)
 
 * Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)

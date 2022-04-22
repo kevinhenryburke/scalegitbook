@@ -68,7 +68,7 @@ To extend our example, let's first create a Service Error CMT record. Go to "Man
 Then update the class *ExampleRating* to include a check on the input the method receives, and raise an error if the input is the string 'Bad Call' (to simulate an error in processing). 
 
 ```
-global inherited sharing class ExampleRating implements mscope.IService_Implementation {
+global inherited sharing class ExampleRating implements mscope.IImplementation {
  
     global Object dispatch(mscope.InvocationDetails invocationDetails, Object inputData) {
         String inputDataCast = (String) inputData;

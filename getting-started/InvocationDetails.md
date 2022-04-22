@@ -54,7 +54,7 @@ Using the *InvocationName* as its input we retrieve information from the **Invoc
 
 *	InvocationName: The name of the **Invocation CMT Record** that is referenced in the calling code. 
 *	InvocationMechanism: The technical mechanism that will be used to run our invocation. The main options are *Sync* (synchronous invocation), *Async* (via Platform Event) and *Queueable*
-*	InputDefinition / InputDefinitionNamespace: An Apex class, interface, literal or collection, that this invocation will provide to the Implementation
+*	InputDefinition / InputDefinitionNamespace: An Apex class, interface, literal or collection (list, map), that this invocation will provide to the Implementation
 *	OutputDefinition / OutputDefinitionNamespace: An Apex class, interface, literal or collection, that this invocation will receive back from the Implementation 
 *	ImplementingClass: In our example we have explicitly provided the implemenation class name to the invocation using the *Explicit Implementation* field in the Invocation CMT Record. The implementation can also be provided by custom metadata that represents decoupled services too, which can provide a lot more development lifecycle and deployment options, but here we are choosing the implementation explicitly.
 

@@ -19,7 +19,7 @@ These parts are not as interesting to us as we have seen this before, but this i
 Let's first create the Sensitivity Service implementation which is structured identically to our last version of the Ratings implementation. Both of these service implementations are raising errors and setting business outcomes.
 
 ```
-global inherited sharing class ExampleSensitivity implements mscope.IService_Implementation {
+global inherited sharing class ExampleSensitivity implements mscope.IImplementation {
  
     class SensitiveReply {
         String name;
@@ -183,7 +183,7 @@ The ideal scenario, and recommended approach when using *Microscope* is for a se
 
 1. Recognize errors that have occured within the Service's domain and raise and report on these in a standardized way
 2. Allow some semantic interpretation of the data and map these to business process events in a way that is both standardized and trivial to interpret for a calling party.
-3. Map complex structures to simple data claases, standard objects, literals or interfaces.
+3. Map complex structures to simple data classes, standard objects, literals or interfaces.
 
 This last point leads us to input and output data structures. (TODO link)
 

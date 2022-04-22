@@ -13,7 +13,7 @@ We can extend our toy Rating example to show how to add Business Outcomes. We'll
 The business team has told us that the customer's Rating status is of interest to our business process so we use this measure at the Business Outcome for this method. We can update our method to support this with a few extra lines which set the BusinessOutcome to be either 'High-Rated Client' and 'Low-Rated Client' .
 
 ```
-global inherited sharing class ExampleRating implements mscope.IService_Implementation {
+global inherited sharing class ExampleRating implements mscope.IImplementation {
  
     class RatingReply {
         String name;

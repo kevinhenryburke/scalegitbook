@@ -32,17 +32,17 @@ Every method needs input parameters and to return a value of a pre-defined type.
 In our example let's keep it very simple and choose *String* for both the input customer name and output rating. *String* is an existing literal in Apex so there is no new work required building input or output structures in this case as these types already exist. 
 
 {% hint style="info" %}
-Generally input and output definitions might be Apex literals, classes, intefaces or SObjects or collections of these. We discuss the pros and cons at (TODO ADDLINK(Parameter Choices)). Also if the method you wish to decouple has more than one input parameter we suggest creating a class with each parameter as a named member variable and passing an instance of this class to the method as the single input parameter. This is clearer and more maintainable.
+Generally input and output definitions might be Apex literals, classes, interfaces or SObjects or collections (lists, maps) of these. We discuss the pros and cons at (TODO ADDLINK(Parameter Choices)). Also if the method you wish to decouple has more than one input parameter we suggest creating a class with each parameter as a named member variable and passing an instance of this class to the method as the single input parameter. This is clearer and more maintainable.
 {% endhint %}
 
 ### 2. Create a class with a method to implement the functionality. 
 
 We next define a class and implement our decoupled method within it. 
 
-This class, and indeed any of our Apex method implementations of decoupled methods, will need to implement an interface *mscope.IService_Implementation* which has a single method *dispatch* and this will be our decoupled method
+This class, and indeed any of our Apex method implementations of decoupled methods, will need to implement an interface *mscope.IImplementation* which has a single method *dispatch* and this will be our decoupled method
 
 ```
-global inherited sharing class ExampleRating implements mscope.IService_Implementation {
+global inherited sharing class ExampleRating implements mscope.IImplementation {
  
     global Object dispatch(mscope.InvocationDetails invocationDetails, Object inputData) {
         String inputDataCast = (String) inputData;
