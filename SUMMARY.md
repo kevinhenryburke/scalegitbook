@@ -39,7 +39,7 @@
   * [Invocations from Flow](getting-started/ExampleFlow.md)
 
 * Invoking Microscope from Anywhere
-  * [Invocation From Flow](./invocations/InvocationFromFlow.md)
+  * [Input/Output From Flow - Details](./invocations/InvocationFromFlow.md)
 
 * Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)
