@@ -1,9 +1,9 @@
-# Table of contents
+## Introduction
 
 * [Welcome to Microscope](getting-started/Welcome.md)
 * [How to use this guide](guides/HowToUseGuides.md)
 
-# Why Microsope
+## Vision
 
 * Application Vision
   * [An Unstructured Org](vision/UnstructuredOrg.md)
