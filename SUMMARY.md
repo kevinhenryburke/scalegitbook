@@ -3,7 +3,7 @@
 * [Welcome to Microscope](getting-started/Welcome.md)
 * [How to use this guide](guides/HowToUseGuides.md)
 
-## Why Microsope
+# Why Microsope
 
 * Application Vision
   * [An Unstructured Org](vision/UnstructuredOrg.md)
@@ -11,6 +11,40 @@
   * [What Does an Enterprise Implementation Need](vision/EnterpriseImplementation.md)
   * [How To Respond](vision/HowToRespond.md)
   * [Principles](vision/Principles.md)
+
+## Architecture Use Cases
+
+* Use Cases
+  * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
+  * [Versions](use-cases/Versions.md)
+  * Pilots
+  * Packaging
+  * Environments
+  * Governance
+  * Errors (Split this)
+  * Security (Split this)
+  * Chaining
+  * Business Intelligence
+  * Rerun
+  * External Invocations
+  * Build Hygiene
+  * Development Stubs
+  * All the Other Tabs
+
+
+## Delivery Use Cases
+
+* Actors and Role
+  * Business Sponsor
+  * and others - have Astros [TODO]
+* Fixing the Delivery Gaps
+* Visbility
+  * A Transparent Build
+* Stories and The Build
+* Parallel Teaming
+  * Managing Subcos
+
+# Working with Microscope
 
 ## Installation / Removal
 
@@ -38,47 +72,21 @@
   * [Handling Responses in Apex](getting-started/ErrorHandling.md)
   * [Invocations from Flow](getting-started/ExampleFlow.md)
 
-* Invoking Microscope - Input/Output
+* Invoking Microscope
+  * [Invocation Metadata](./invocations/InvocationMetadata.md)
+  * [Input & Output](./invocations/InputOutput.md)
+  * [Apex Invocations](./invocations/InvocationFromApex.md)
   * [Flow & Invocation Actions](./invocations/InvocationFromFlow.md)
+  * [Omnistudio Invocations](./invocations/InvocationFromOmnistudio.md)
+  * [Rest Invocations](./invocations/InvocationFromRest.md)
+
+* Services
+  * [Service Metadata](./invocations/ServiceMetadata.md)
 
 * Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)
 
-## Microscope Use Cases
-
-* Use Cases
-  * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
-  * [Versions](use-cases/Versions.md)
-  * Pilots
-  * Packaging
-  * Environments
-  * Governance
-  * Errors (Split this)
-  * Security (Split this)
-  * Chaining
-  * Business Intelligence
-  * Rerun
-  * External Invocations
-  * Build Hygiene
-  * Development Stubs
-  * All the Other Tabs
-
-
-
-## Delivery Model
-
-* Actors and Role
-  * Business Sponsor
-  * and others - have Astros [TODO]
-* Fixing the Delivery Gaps
-* Visbility
-  * A Transparent Build
-* Stories and The Build
-* Parallel Teaming
-  * Managing Subcos
-
-
-
+# Maintaining Microscope
 
 ## Maintenance Guide
 
