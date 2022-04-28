@@ -81,7 +81,8 @@ Note that in that example, all of our Standard Invocation Actions appeared when 
 
 ### Versioning an Invocation Action
 
-Provided the signature of the service method (and therefore the related Apex Action)  remains the same then new functionality provided by the call does not need to result in a new version of the flow: we just update Invocation Metadata. 
+Provided the signature of the input and output to the Apex Action's Flow Element  (and therefore the related Apex Action) remains the same then new functionality provided by the call does not need to result in a new version of the flow: we just update Invocation Metadata to point to the latest Implementation. This is analogous to a Microscope Service Method changing when the method signature changes. 
+<!-- TODO reference to Service Methods when written --> 
 
 If the signature changes and we need a new version of the input or output class, we may need a separate invocation and for the existing flow to be saved as a new flow and then updated with the new functionality. If this is likely to be a common occurrence in a frequently changing service then the option we mentioned earlier of invoking the flow from inside a standard Apex Action might be a good choice.
 

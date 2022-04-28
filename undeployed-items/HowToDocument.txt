@@ -17,7 +17,8 @@ put the image in the same folder as the md file and use this syntax:
 ![An unplanned journey](UnstructureOrg.png)
 
 comment:
-[//]: This is a comment
+<!-- Use standard HTML block comments -->
+
 create a link with link text:
 From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)
 
