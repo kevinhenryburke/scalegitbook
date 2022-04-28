@@ -1,7 +1,7 @@
 Apex Invocations are a great way to handle complex functionality, callouts or heavy-duty processing required of a flow. Apex is called via an *Apex Action* which consists of a class, a method and Input/Output types with some special properties (see [here](https://help.salesforce.com/articleView?id=sf.flow_ref_elements_apex_invocable.htm&type=5) for example). Here we will extend this concept and show how to create actions to run service invocations. We will create **Invocation Actions**, Apex Actions that wrap and call Invocations that can be configured for use in a flow directly from the Flow Palette. 
 
 {% hint style="info" %}
-An *Invocation Action* is an easy and efficient way to invoke a service from a flow. Developers are of course also free to invoke a service within the logic of any method acting as an Apex Action for a flow, by explicitly creating a *ServiceInvocation* object and running the *invokeService()* method on this. 
+Micrsoscope's *Invocation Actions* are an easy and efficient way to invoke a service from a flow. Developers are of course also free to invoke a service within the logic of any *@InvocableMethod* called by a flow, by explicitly creating a *ServiceInvocation* object and running the *invokeService()* method on this. 
 {% endhint %}
 
 
@@ -60,7 +60,7 @@ The same considerations and options are true for output classes as input classes
 
 Inspecting any of the example methods above (e.g. [ActionSObjectSObject](https://github.com/kevinhenryburke/frictionless/blob/master/serviceBase/force-app/Framework/classes/flow/actions/reusable/ActionSObjectSObject.cls)) we see that the execute method takes the same form. It is an @InvocableMethod and the input and output are Lists of the types discussed above. The body loops through the input lists and calls the invocations requested, building up the output structure on completion of each call.
 
-[//]: TODO - this needs bulkification: https://github.com/kevinhenryburke/frictionless/issues/374
+<!--  TODO - this needs bulkification: https://github.com/kevinhenryburke/frictionless/issues/374 -->
 
 
 ### Standard Invocation Actions
