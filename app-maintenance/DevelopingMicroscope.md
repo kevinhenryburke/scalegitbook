@@ -27,7 +27,7 @@ git clone https://github.com/kevinhenryburke/frictionless.git -b $MYBRANCH .
 
 Check that the top level folder in VS Code (the folder representing your location on disk) contains the file *sfdx-project.json* , if so we're should be all good
 
-Another file to call out in the top file *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages and we'll see it a couple of times in what follows.
+Another file to call out in the top-level folder is *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages and we'll see it a couple of times in what follows.
 
 If in the bottom tool bar of VS Code you see "No Default Org Set" we are ready to proceed. If not close the VS Code folder and reopen it. VS Code should now recognize that we have an SFDX project but you will need to run the export MYBRANCH variable command again after re-opening.
 
