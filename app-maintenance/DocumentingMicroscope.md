@@ -6,9 +6,9 @@ The source for these apps is in a private repo on [Github](https://github.com/ke
 
 ## Getting Documentation from the repo to VS Code
 
-Create a new folder and open in VS Code. 
+Create a new folder and open it in VS Code. 
 
-Open a new terminal in VS Code (via Terminal -> New Terminal) and run
+Open a new terminal in VS Code (via Terminal -> New Terminal) and run the following, being careful not to miss the final full point (this is needed).
 
 ```
 git clone https://github.com/kevinhenryburke/scalegitbook.git  -b gitbooksync .
