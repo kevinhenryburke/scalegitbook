@@ -21,37 +21,5 @@ Any *Push to Origin* from VS Code will now become part of the live documentation
 ## Documentation Conventions
 
 
-````
-
-
-embed a video: 
-{% embed url="https://www.loom.com/share/3bfa83acc9fd41b7b98b803ba9197d90" %}
-
-embed an image:
-put the image in the same folder as the md file and use this syntax:
-![An unplanned journey](UnstructureOrg.png)
-
-comment:
-<!-- Use standard HTML block comments -->
-
-create a link with link text:
-From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)
-
-link to another page via a separate full width section
-{% content-ref url="fundamentals/projects.md" %}
-[projects.md](fundamentals/projects.md)
-{% endcontent-ref %}
-
-
-hint boxes: styles are: info,tip,danger,working
-{% hint style="info" %}
-**Good to know:** here's how to add an info
-{% endhint %}
-
-A bit if subtext with a line done the left hand side:
-> add a greater than
-> to each line
-> and they will appear in a block
-
-````
+Convenstions for gitbook-specific syntax used in this documentation set are listed [here](https://github.com/kevinhenryburke/scalegitbook/blob/gitbooksync/undeployed-items/HowToDocument.txt)
 
