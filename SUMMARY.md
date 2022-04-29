@@ -95,6 +95,9 @@
   * [Developing Microscope Analytics](app-maintenance/DevelopingMicroscopeAnalytics.md)
   * [Packaging Microscope](app-maintenance/PackagingMicroscope.md)
 
+* Documenting
+  * [Documenting Microscope](app-maintenance/DocumentingMicroscope.md)
+
 
 
 

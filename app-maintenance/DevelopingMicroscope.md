@@ -7,9 +7,10 @@ The source for these apps is in a private repo on [Github](https://github.com/ke
 ## Branching Strategy
 
 Create a branch when starting to work on something new. During the solo development phase I use the convention b*YYYYMMDD* (e.g. b20211219) for my branch names but these will need to feature specific in multi-developer mode
+
 ## Branching and getting code from repo to VS Code
 
-Create new folder and open in VS Code. I give the folder the name of the branch I'm working on (e.g. b20211219)
+Create a new folder and open in VS Code. I give the folder the name of the branch I'm working on (e.g. b20211219)
 
 Open a new terminal in VS Code (via Terminal -> New Terminal) and export a variable holding the branch name:
 
