@@ -13,18 +13,19 @@ In the rest of this page we partially solve this Map I/O issue by introducing a 
 
 ## Map I/O and Data Validation
 
-The Framework has an interface [IMultiArgMap](https://github.com/kevinhenryburke/frictionless/blob/master/serviceBase/force-app/Framework/interfaces/IMultiArgMap.cls) which has a method *getMap()* returning a *Map<String,Type>* instance. 
+The key to Map I/O validation in Microscope is the interface [IMultiArgMap](https://github.com/kevinhenryburke/frictionless/blob/master/serviceBase/force-app/Framework/interfaces/IMultiArgMap.cls) which has a method *getMap()* returning a *Map<String,Type>* instance. 
 
-We also have a section in Invocation CMT page layout called *Multiple Arguments I/O**. When we have an invocation with *Map<String, Object>* input for example (the output use case is directly analogous) then we can elect to validate the input by checking the box *Check Map Input Field Validity*. Below this box are fields to define the namespace and class (API name *Input_Multi_Arg_Map_Class__c*) that will be used to validate the input.
+We reference implementations of *IMultiArgMap* in a section in Invocation CMT page layout called *Multiple Arguments I/O**. When we have an invocation with *Map<String, Object>* input for example (the output use case is directly analogous) then we can elect to validate the input by checking the box *Check Map Input Field Validity*. 
+Below this box are fields to reference a namespace and class (API name *Input_Multi_Arg_Map_Class__c*) that implement  *IMultiArgMap* and will be used to validate the input.
 
-The Apex Class defined in *Input_Multi_Arg_Map_Class__c* is an implementation of IMultiArgMap and each time the invocation fires we check the key set of the *inputData* and check that every element expected by the *Input_Multi_Arg_Map_Class__c* class, specified by the output of its *getMap)* method, is present in the *inputData*. If any key is not present the invocation is flagged with a *Warning* but allowed to continue. Similarly for output we check that the *outputData( from each invocation class specified in *Output_Multi_Arg_Map_Class__c* if the *Check Map Output Field Validity* box is checked.
+Each time the invocation fires we inspect the key set of the *inputData* and check that every element expected by the *Input_Multi_Arg_Map_Class__c* class, specified by the output of its *getMap)* method, is present in the *inputData*. If any key is not present the invocation is flagged with a *Warning* but allowed to continue. Similarly for output we check that the *outputData* from each invocation class specified in *Output_Multi_Arg_Map_Class__c*, this time only if the *Check Map Output Field Validity* box is checked.
 
-Any Developer Stubs or Invocation Overrides will be subject to the same checks, thus adding some assurance that moving from a stub to an *real* invocation will not create any key set mismatches.
+Any Developer Stubs or Invocation Overrides for the invocation will be subject to the same checks. This adds some assurance that moving from a stub to a *real* invocation will not create any key set mismatches and that an override follows the same rules as the parent invocation.
 
 
 ### Configuration Validation for Services
 
-If the invocation we wish to check is using a *Service Method* configuration then there is an additional guardrail that is performed as a configuration check and shows in the Configuration Dashboard. The  *Service Method* Metadata Type also has *Input_Multi_Arg_Map_Class__c* and *Output_Multi_Arg_Map_Class__c* fields. When an invocation has *Check Map Input Field Validity* set and a service configuration then there is a configuration check that *Input_Multi_Arg_Map_Class__c* on the Invocation and the Service Method are set to the same value. The same holds for the output configuration.
+If the invocation we wish to check is using a *Service Method* configuration then there is an additional guardrail in the form of a configuration check that shows in the Configuration Dashboard. The  *Service Method* Metadata Type also has *Input_Multi_Arg_Map_Class__c* and *Output_Multi_Arg_Map_Class__c* fields. When an invocation has *Check Map Input Field Validity* set and a service configuration then there is a configuration check that *Input_Multi_Arg_Map_Class__c* on the Invocation and the Service Method are set to the same value. The same holds for the output configuration.
 
 In all cases the team that writes the implementation is also responsible for ensuring the IMultiArgMap classes exist.
 
