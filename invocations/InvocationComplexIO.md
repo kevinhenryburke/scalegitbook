@@ -1,12 +1,15 @@
 ## Complex Input and Output
 
-If we have multiple input or output parameters we could suggest creating a class with all these as attributes and mapping to this and using it as input. However this does require creating a custom class.
+The Invocation metadata type has only provision for only a single input and output argument. But what if our I/O is more complicated than this and has multiple attributes for either input or output? 
 
-Map<String, Object> is a valid input and output structure for a service, so can be used as generic multi-parameter IO without the need for creating a custom class. I/O in this format is the standard for Omnistudio, the Callable Interface in Apex and is handy for integration and dynamic I/O scenarios.
+The obvious option (considering just input, output is the same argument) is to create a class with all these input attributes as member variables and mapping *inputData* to these. However this does have the overhead of requiring us to create a custom class.
 
-However an invocation using *Map<String, Object>* would not have the same robust type validation as other invocations and may therefore be more prone to breaking at runtime, especially if components are. being developed by different teams and we are dealing the large attributes sets common in the enterprise. However the use cases above are critical to many enterprises so we must be able to handle it, but also we can try to make it more robust.
+Another option we should consider is that *Map<String, Object>* is a valid input and output structure for a service, so can be used as generic multi-parameter IO without the need for creating a custom class. 
+Indeed, I/O in this format is the standard for Omnistudio, the Callable Interface in Apex and it is also handy for integration and dynamic I/O scenarios.
 
-In the rest of this page we partially solve this by introducing a validation process to make sure the invocation will match the service side definitions for *Map<String, Object>* input and output. We then finish up with recommendations for different use cases 
+This too has its drawbacks. An invocation using *Map<String, Object>* would not have the same robust type validation as specifying a class and may therefore be more prone to breaking at runtime, especially if components are being developed by different teams and we are dealing the very large attributes sets common in the enterprise. However we can't ignore Maps as input or output, the use cases mentioned above are critical to many enterprises so we must be able to handle it, but also we can try to make it more robust.
+
+In the rest of this page we partially solve this Map I/O issue by introducing a validation process to make sure the invocation will match the implementation definitions for *Map<String, Object>* input and output. We conclude with recommendations for our different use cases.
 
 ## Map I/O and Data Validation
 
