@@ -15,7 +15,7 @@ In the rest of this page we partially solve this Map I/O issue by introducing a 
 
 The key to Map I/O validation in Microscope is the interface [IMultiArgMap](https://github.com/kevinhenryburke/frictionless/blob/master/serviceBase/force-app/Framework/interfaces/IMultiArgMap.cls) which has a method *getMap()* returning a *Map<String,Type>* instance. 
 
-We reference implementations of *IMultiArgMap* in a section in Invocation CMT page layout called *Multiple Arguments I/O**. When we have an invocation with *Map<String, Object>* input for example (the output use case is directly analogous) then we can elect to validate the input by checking the box *Check Map Input Field Validity*. 
+We reference implementations of *IMultiArgMap* in a section of the Invocation CMT page layout called *Multiple Arguments I/O*. When we have an invocation with *Map<String, Object>* input for example (the output use case is directly analogous) then we can elect to validate the input by checking the box *Check Map Input Field Validity*. 
 Below this box are fields to reference a namespace and class (API name *Input_Multi_Arg_Map_Class__c*) that implement  *IMultiArgMap* and will be used to validate the input.
 
 Each time the invocation fires we inspect the key set of the *inputData* and check that every element expected by the *Input_Multi_Arg_Map_Class__c* class, specified by the output of its *getMap)* method, is present in the *inputData*. If any key is not present the invocation is flagged with a *Warning* but allowed to continue. Similarly for output we check that the *outputData* from each invocation class specified in *Output_Multi_Arg_Map_Class__c*, this time only if the *Check Map Output Field Validity* box is checked.
@@ -27,22 +27,22 @@ Any Developer Stubs or Invocation Overrides for the invocation will be subject t
 
 If the invocation we wish to check is using a *Service Method* configuration then there is an additional guardrail in the form of a configuration check that shows in the Configuration Dashboard. The  *Service Method* Metadata Type also has *Input_Multi_Arg_Map_Class__c* and *Output_Multi_Arg_Map_Class__c* fields. When an invocation has *Check Map Input Field Validity* set and a service configuration then there is a configuration check that *Input_Multi_Arg_Map_Class__c* on the Invocation and the Service Method are set to the same value. The same holds for the output configuration.
 
-In all cases the team that writes the implementation is also responsible for ensuring the IMultiArgMap classes exist.
-
+In all cases the team that writes the implementation is also responsible for ensuring the *IMultiArgMap* classes exist.
 
 
 # Recommendations for Complex Input and Output
 
-## Apex Implementations:
-For invocations called and implemented in Apex we would always recommend using objects to encapsulate input and output over a Map<String,Object>. This gives compile-time validation that all the input and output parameters match up, with the dual benefits of 100% reliability and no need to check the input and output in each call.
+### Apex Implementations
+For invocations called and implemented in Apex we would always recommend using objects to encapsulate input and output over a *Map<String,Object>* definition. This gives compile-time validation that all the input and output data structures are as they should be and there is no need to check the input and output in each call as there is for Map I/O.
 
-## Flow:
-Flow does not support the use of generic mechanisms using calls to Map<String,Object>.
-Documented at: https://github.com/kevinhenryburke/frictionless/issues/352
-Started example as Tab_Versions_5
+### Flow
+Flow cannot invoke Apex using generic calls to *Map<String,Object>*, see [Invocations From Flow](./InvocationFromFlow.md). Multiple input and output arguments are passed as *@InvocableVariable* parameters. 
 
-### Industries:
-This is one of the main use cases
-Here it is possible and advantageous to do in a standard way.
-The validation on the invocation side is useful - is this just a separate method call per invocation.
+The Microsoft Demo contains an example of a Flow [Invoked From a Flow](https://github.com/kevinhenryburke/frictionless/blob/master/demo/force-app/flows/Demo_Multi_Arg/Demo_Multi_Arg.flow-meta.xml) invoking a service with multiple input and output. We can see in the Apex Action class used by the flow that the input and output are provided by specific classes [DemoMultiArgInvocableMethod.cls](https://github.com/kevinhenryburke/frictionless/blob/master/demo/force-app/flows/Demo_Multi_Arg/classes/DemoMultiArgInvocableMethod.cls).
+
+### Salesforce Industries
+
+This is one of the main use cases and is a key mechanism for invoking Apex from Omnistudio. Here it is possible and advantageous to add in the validations discussed above.
+
+<!-- TODO need to put in Omnistudio example here. For example when setting up an Omnistudio FlexCard .... -->
 
