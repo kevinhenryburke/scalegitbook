@@ -77,8 +77,7 @@
   * [Input & Output](./invocations/InputOutput.md)
   * [Apex Invocations](./invocations/InvocationFromApex.md)
   * [Flow & Invocation Actions](./invocations/InvocationFromFlow.md)
-  * [Omnistudio Invocations](./invocations/InvocationFromOmnistudio.md)
-  * [Rest Invocations](./invocations/InvocationFromRest.md)
+  * [Complex I/O](./invocations/InvocationComplexIO.md)
 
 * Services
   * [Service Metadata](./invocations/ServiceMetadata.md)
