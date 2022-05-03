@@ -105,11 +105,12 @@ sfdx force:source:push -u $MYSCRATCHTCRM
 ## Creating Demo data and Running the Analytics jobs
 
 
-Within the Analytics scripts folder you can  run the *./massPopulate.sh* script a few times. This will run 17 invocations via that *populate.sh* script and perform 3 runs of *./randomize.sh* to spread out the times of some audit records for demoing analytics. This is the same process we use in [Developing Microscope](../app-maintenance/DevelopingMicroscope.md)
+Within the Analytics scripts folder you can run the *./massPopulate.sh* script a few times. This will run 17 invocations via that *populate.sh* script and perform 3 runs of *./randomize.sh* to spread out the times of some audit records for demoing analytics. This is the same process we use in [Developing Microscope](../app-maintenance/DevelopingMicroscope.md)
 
 
 Running import jobs and dataflows is the same as for the Analytics App post installation, as outlined in [Microscope Analytics Package Post Installation](../installation/InstallationAnalyticsPost.md)
 
+Note that if you wish to run the Microscope Demo App itself you may need to make the Security Settings change as documented in the [Microscope Demo Package Installation](../installation/InstallationDemo.md).
 
 
 ## Checking all is ok
