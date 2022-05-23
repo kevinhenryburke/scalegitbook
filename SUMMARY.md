@@ -12,6 +12,10 @@
   * [How To Respond](vision/HowToRespond.md)
   * [Principles](vision/Principles.md)
 
+* Process
+  * [Storying](vision/Storying.md)
+
+
 ## Architecture Use Cases
 
 * Use Cases

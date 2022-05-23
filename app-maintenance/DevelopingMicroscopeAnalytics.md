@@ -110,7 +110,7 @@ Within the Analytics scripts folder you can run the *./massPopulate.sh* script a
 
 Running import jobs and dataflows is the same as for the Analytics App post installation, as outlined in [Microscope Analytics Package Post Installation](../installation/InstallationAnalyticsPost.md)
 
-Note that if you wish to run the Microscope Demo App itself you may need to make the Security Settings change as documented in the [Microscope Demo Package Installation](../installation/InstallationDemo.md).
+Note that if you wish to run the Microscope Demo App itself you may need to make the Security Settings change as documented in the [Microscope Demo Package Installation](../installation/InstallationDemo.md) for the LWC components to render properly.
 
 
 ## Checking all is ok
