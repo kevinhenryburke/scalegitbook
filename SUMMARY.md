@@ -7,10 +7,10 @@
 
 * Application Vision
   * [An Unstructured Org](vision/UnstructuredOrg.md)
-  * [A Typical Large Org](TODO.md)
-  * [Technology Issue](TODO.md)
-  * [Process Issue](TODO.md)
-  * [People Issue](TODO.md)
+  * [A Typical Large Org](TypicalLargeOrg.md)
+  * [Technology Issue](TechnologyIssue.md)
+  * [Process Issue](ProcessIssue.md)
+  * [People Issue](PeopleIssue.md)
 
 
 
