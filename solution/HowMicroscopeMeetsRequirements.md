@@ -1,2 +1,3 @@
-## Page to be written
+
+![How Microscope Meets Requirements](HowMicroscopeMeetsRequirements.png)
 

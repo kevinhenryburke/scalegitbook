@@ -1,2 +1,3 @@
-## Page to be written
 
+
+![Business Intelligence](BusinessIntelligence.png)

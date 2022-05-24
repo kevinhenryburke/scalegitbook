@@ -1,4 +1,3 @@
-## Page to be written
 
 ![People Issue](PeopleIssue.png)
 

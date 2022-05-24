@@ -1,2 +1,3 @@
-## Page to be written
+
+![A Structured Landscape](StructuredLandscape.png)
 

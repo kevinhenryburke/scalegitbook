@@ -26,6 +26,7 @@
   * [Connections, Process and Build](solution/ConnectionsProcessBuild.md)
   * [Visible Connections](solution/VisibleConnections.md)
   * [A Structured Landscape](solution/StructuredLandscape.md)
+  * [Separate Delivery Teams](solution/SeparateDeliveryTeams.md)
   * [Delivery Intelligence](solution/DeliveryIntelligence.md)
   * [Business Intelligence](solution/BusinessIntelligence.md)
 
