@@ -6,11 +6,11 @@
 ## Vision
 
 * Application Vision
-  * [An Unstructured Org](vision/UnstructuredOrg.md)
-  * [A Typical Large Org](TypicalLargeOrg.md)
-  * [Technology Issue](TechnologyIssue.md)
-  * [Process Issue](ProcessIssue.md)
-  * [People Issue](PeopleIssue.md)
+  * [An Unstructured Org](problem/UnstructuredOrg.md)
+  * [A Typical Large Org](problem/TypicalLargeOrg.md)
+  * [Technology Issue](problem/TechnologyIssue.md)
+  * [Process Issue](problem/ProcessIssue.md)
+  * [People Issue](problem/PeopleIssue.md)
 
 
 
@@ -21,13 +21,13 @@
 -->
 
 * Solution
-  * [How a Solution Should Look](TODO.md) <!-- Include 2 slides here -->
-  * [How Microscope Meets Requirements](TODO.md)
-  * [Connections, Process and Build](TODO.md)
-  * [Visible Connections](TODO.md) <!-- Include 2 slides here, old and new -->
-  * [A Structured Landscape](TODO.md)
-  * [Delivery Intelligence](TODO.md)
-  * [Business Intelligence](TODO.md)
+  * [How a Solution Should Look](solution/HowSolutionShouldLook.md)
+  * [How Microscope Meets Requirements](solution/HowMicroscopeMeetsRequirements.md)
+  * [Connections, Process and Build](solution/ConnectionsProcessBuild.md)
+  * [Visible Connections](solution/VisibleConnections.md)
+  * [A Structured Landscape](solution/StructuredLandscape.md)
+  * [Delivery Intelligence](solution/DeliveryIntelligence.md)
+  * [Business Intelligence](solution/BusinessIntelligence.md)
 
 
 * Solution Details
