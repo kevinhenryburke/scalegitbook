@@ -6,6 +6,11 @@ Part of the value of *Microscope*
 
 *Microscope* puts a lot more work into the Storying process than is common in Salesforce programs. This allows control of the overall structure of the build to lie with the Designers and Architects of the system rather than passing on this responsibility to the test teams. As a result we do need to add a number of details to the process of creating a story to communicate how a new development should be constructed so that relationships within the org are no longer hidden in the code and tooling.
 
+*Microscope* also encourages the use of versioning of artifacts and separation of concerns. This allows stories to be more independent with fewer dependencies.
+
+
+Stories are standalone and not impacted by technical debt
+Targeted Testing
 
 ## Story Relationships
 
@@ -55,13 +60,6 @@ If it is an upgrade then need to indicate if this a change of signature from the
 
 
 
-KB Move to a new issue:
-Should it be the case that if the source and target packages are the same then the connection is local?
-If the packages are different then it has to be a service definition. This is interesting but maybe a bit harsh
-Perhaps it's a tooling validation that shows that there is a remote invocation which does not have a full definition.
-
-
-
 
 - Invocation Side: The Developer Stub field: Stub Implementation Class (if required) if populated needs to have its functionality specified 
 
@@ -69,6 +67,3 @@ Perhaps it's a tooling validation that shows that there is a remote invocation w
 Difference is not service side)
 
 
-
-Stories are standalone and not impacted by technical debt
-Targeted Testing

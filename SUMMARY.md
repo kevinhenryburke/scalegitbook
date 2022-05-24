@@ -7,12 +7,31 @@
 
 * Application Vision
   * [An Unstructured Org](vision/UnstructuredOrg.md)
+  * [A Typical Large Org](TODO.md)
+  * [Technology Issue](TODO.md)
+  * [Process Issue](TODO.md)
+  * [People Issue](TODO.md)
+
+
+
+<!-- Feed these in   
   * [Knowing There's a Problem](vision/KnowThereProblem.md)
-  * [What Does an Enterprise Implementation Need](vision/EnterpriseImplementation.md)
   * [How To Respond](vision/HowToRespond.md)
   * [Principles](vision/Principles.md)
+-->
 
-* Process
+* Solution
+  * [How a Solution Should Look](TODO.md) <!-- Include 2 slides here -->
+  * [How Microscope Meets Requirements](TODO.md)
+  * [Connections, Process and Build](TODO.md)
+  * [Visible Connections](TODO.md) <!-- Include 2 slides here, old and new -->
+  * [A Structured Landscape](TODO.md)
+  * [Delivery Intelligence](TODO.md)
+  * [Business Intelligence](TODO.md)
+
+
+* Solution Details
+  * [Connections and Invocations](TODO.md)
   * [Storying](vision/Storying.md)
 
 
@@ -21,19 +40,19 @@
 * Use Cases
   * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
   * [Versions](use-cases/Versions.md)
-  * Pilots
-  * Packaging
-  * Environments
-  * Governance
-  * Errors (Split this)
-  * Security (Split this)
-  * Chaining
-  * Business Intelligence
-  * Rerun
-  * External Invocations
-  * Build Hygiene
-  * Development Stubs
-  * All the Other Tabs
+  * [Pilots](TODO.md)
+  * [Packaging](TODO.md)
+  * [Environments](TODO.md)
+  * [Governance](TODO.md)
+  * [Errors](TODO.md)
+  * [Security](TODO.md)
+  * [Chaining](TODO.md)
+  * [Business Intelligence](TODO.md)
+  * [Rerun](TODO.md)
+  * [External Invocations](TODO.md)
+  * [Build Hygiene](TODO.md)
+  * [Development Stubs](TODO.md)
+  * [All the Other Tabs](TODO.md)
 
 
 ## Delivery Use Cases

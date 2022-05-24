@@ -18,6 +18,8 @@ The package is called **Microscope Demo** and uses the namespace **mscopedemo**
 
 This package contains demo components for Microscope and the **Microscope Demo** app.
 
-### Recommendations
+### Session Settings
 
 The Demo pages will throw errors without a change to Session Settings. We need to enable the option: Session Settings -> Use Lightning Web Security for Lightning web components. This setting enables a newer security architecture which, amongst other things, allows LWC components to host other LWC components from different namespaces without wrapping them in Aura components.
+
+It is hoped that this will become standard for all orgs in the near future. However as this only impacts the demo LWC components which should never be installed in a production or path-to-live environment it is safe to ask that this be switched on.
