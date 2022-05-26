@@ -5,7 +5,7 @@
 
 ## Vision
 
-* Application Vision
+* Customer Challenges
   * [An Unstructured Org](problem/UnstructuredOrg.md)
   * [A Typical Large Org](problem/TypicalLargeOrg.md)
   * [Technology Issue](problem/TechnologyIssue.md)
@@ -31,33 +31,9 @@
   * [Business Intelligence](solution/BusinessIntelligence.md)
 
 
-* Solution Details
-  * [Connections and Invocations](TODO.md)
-  * [Storying](vision/Storying.md)
+## Delivery
 
-
-## Architecture Use Cases
-
-* Use Cases
-  * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
-  * [Versions](use-cases/Versions.md)
-  * [Pilots](TODO.md)
-  * [Packaging](TODO.md)
-  * [Environments](TODO.md)
-  * [Governance](TODO.md)
-  * [Errors](TODO.md)
-  * [Security](TODO.md)
-  * [Chaining](TODO.md)
-  * [Business Intelligence](TODO.md)
-  * [Rerun](TODO.md)
-  * [External Invocations](TODO.md)
-  * [Build Hygiene](TODO.md)
-  * [Development Stubs](TODO.md)
-  * [All the Other Tabs](TODO.md)
-
-
-## Delivery Use Cases
-
+<!-- Add in some of the Slides here for delivery -->
 * Actors and Role
   * Business Sponsor
   * and others - have Astros [TODO]
@@ -65,12 +41,50 @@
 * Visbility
   * A Transparent Build
 * Stories and The Build
+* Fast Deployment
+* Rollback
 * Parallel Teaming
   * Managing Subcos
 
+
+## Architecture and Build
+
+* Key Concepts
+  * [Connections and Invocations](TODO.md)
+  * Local Invocations, Services
+
+
+* Use Cases
+  * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
+  * [Versions](use-cases/Versions.md)
+  * [Pilots](TODO.md)
+  * [Security](TODO.md)
+  * [Chaining](TODO.md)
+  * [Business Intelligence](TODO.md)
+  * [External Invocations](TODO.md)
+  * [All the Other Tabs](TODO.md)
+
+
+* Development Model
+  * [Development Stubs](TODO.md)
+  * [Environments](TODO.md)
+  * [Packaging](TODO.md)
+  * [Governance](TODO.md)
+  * [Build Hygiene](TODO.md)
+
+
+## Run time
+
+* Use Cases
+  * [Audit](TODO.md)
+  * [Rerun](TODO.md)
+  * [Errors](TODO.md)
+
+
+
 # Working with Microscope
 
-## Installation / Removal
+## Installation
 
 * Installing Microscope
   * [Microscope Package Overview - and what to install](installation/PackageOverview.md)
@@ -84,9 +98,12 @@
   * [Microscope Demo Package Post Installation](installation/InstallationDemoPost.md)
   * [Advanced Topic - Integration Demo](installation/IntegrationDemo.md)
 
-* Removing Microscope
 
 ## Using the Application
+
+* The Microscope Process
+  * [Storying](vision/Storying.md)
+
 
 * Creating a Simple Service
   * [Decoupled Calls](getting-started/DecoupledMethod.md)
@@ -109,7 +126,9 @@
 * Packaging Apps and Services
   * [Namespacing](packages/Namespaces.md)
 
-# Maintaining Microscope
+* Retrofit and Removal
+  * Adopting in an Existing Org
+  * Removing Microscope
 
 ## Maintenance Guide
 
