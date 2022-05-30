@@ -1,5 +1,5 @@
 
-![Connecting Process and Technology](ConnectionsProcessBuild.png)
+![Connecting Process and Technology](ConnectionsProcessBuild2.png)
 
 Contracts on the business side
 Services on the technical side
