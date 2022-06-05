@@ -1,8 +1,6 @@
+We have determined that we need to make a connection between the Delivery *Process* and the Build *Technology*, but what is the best way to do this. Let's look at the Process side and imagine our Business Analyst and Designers have been charged with defining some new functionality. Let's further assume that they have a full view of the build, in reality in many orgs this is not the case of course, but we'll assume we do to show how we can continue to retain visibility of the org when new functionality.
 
 ![Connecting Process and Technology](ConnectionsProcessBuild2.png)
-
-
-We have determined that we need to make a connection between the Delivery *Process* and the Build *Technology*, but what is the best way to do this. Let's look at the Process side and imagine our Business Analyst and Designers have been charged with defining some new functionality. Let's further assume that they have a full view of the build, in reality in many orgs this is not the case of course, but we'll assume we do to show how we can continue to retain visibility of the org when new functionality.
 
 The Designers should look for connections between different functional areas within the new requirement that are new or need to change. They should define a *Lightweight Contract* between these, so for example between an Engagement Technology like a Flow or Omnistudio Omniscript and a Business Function, iike a a new account creation process or a pricing engine.
 

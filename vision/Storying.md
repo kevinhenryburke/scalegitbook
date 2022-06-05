@@ -1,27 +1,25 @@
 
 # Linking Stories and Implementation Reality
 
-Part of the value of *Microscope*
- is that it aligns Design, Process and Build.
+A key part of the value of *Microscope*
+ is that it aligns Design, Process and Build. Treating these as separate entities allows an information gap to grow between those defining and those delivering inside an org that results in a build-up of complexity that can become very hard to rectify. Inside *Microscope* works towards creating a *Build Map*, a high-level view of the org that can be understood by all people involved in designing, managing and delivering into an org. We introduced this concept in our discussion on [Connections, Process and Build](../solution/ConnectionsProcessBuild.md)
 
-*Microscope* puts a lot more work into the Storying process than is common in Salesforce programs. This allows control of the overall structure of the build to lie with the Designers and Architects of the system rather than passing on this responsibility to the test teams. As a result we do need to add a number of details to the process of creating a story to communicate how a new development should be constructed so that relationships within the org are no longer hidden in the code and tooling.
+In order to facilitate and maintain this visbility *Microscope* puts a lot more work into the Storying process than is common in Salesforce programs. This allows control of the overall structure of the build to lie with the Designers and Architects of the system rather than passing on this responsibility to development, environment and test teams. We add a number of details to the process of creating a story to communicate how a new development should be constructed - it is extra work but it means that relationships within the org are no longer hidden in the code and tooling.
 
-*Microscope* also encourages the use of versioning of artifacts and separation of concerns. This allows stories to be more independent with fewer dependencies.
+*Microscope* also encourages the use of versioning of artifacts and separation of concerns. This allows our stories to be more independent with fewer dependenciesa which reduces technical debt, allows for targeted testing and reduces the need for system-wide regression testing for every new and updated feature.
 
 
-Stories are standalone and not impacted by technical debt
-Targeted Testing
 
 ## Story Relationships
 
-The key to building a useful and accurate Build Map is that Requirements and Design capture the relationships between different functional areas in the Org. To facilitate this, 
+The key to building a useful and accurate *Build Map* is that Requirements and Design capture the relationships between different functional areas in the Org. We will use the concepts of Connection, Package and Business Process from [Visible Connections, Key Concepts](../solution/VisibleConnections.md) to show how to story our Build Connections.
+
+
+To facilitate this, 
 Stories should have a one : (zero or many) relationship with an object in the issue tracking tool that represents **Connections**.
 
-How to configure this in whatever issue tracking tool you are using is left to the reader. The implementation detail is not what is important to us here, but the existence of the relation is! We will call this subsidiary object a **Connection Sub-Story**.
+How to configure this in whatever issue tracking tool you are using is decision for your teams to make. The implementation detail is not what is important to us here, but the existence of the relation is! We will call this subsidiary object a **Connection Sub-Story**.
 
-KB MOVE TO A NEW PAGE - Connections and Build Map
-
-Connection has two sides - invocation and service (can keep these names for the two sides). Better in a way as a Connection has an Invocation and a Service...
 
 
 ## Connection Sub-Story Details and Tasks
@@ -34,6 +32,8 @@ A Connection Sub-Story should contain the following information. In addition tas
 - Package Level: The invocation and service packages. 
 
     (Tasks: If either is a new package then all those details too).
+
+- The Build Process that the invocation belongs to.
 
 - Connection Level: Stories should state if this is an upgrade or is a new connection
 If it is an upgrade then need to indicate if this a change of signature from the existing active versions?
