@@ -1,16 +1,19 @@
-
+In [Connections, Process and Build](ConnectionsProcessBuild.md) we discussed the importance of understanding connections between different functional areas and how implementing contracts that represent the connections could provide a huge benefit in visibility of an org's structure. And finally how enscaptulating these in configuration was the final key to the puzzle. We're ready to start to define the key concepts that make up *Microscope* and atart to get a feel for how we deliver on the promise to increase visibility and understanding for the full team.
 
 ## Key Microscope Concepts
 
-In *Microscope* we consider a **Connection** to be a decouplong between parts of the build. 
+In *Microscope* we consider a **Connection** to be a decouplong between different parts of the build. 
 
-A Connection has two sides, an **Invocation** and a **Service**. The Invocation states what it wants to run, which Service, *Methods* and *Versions*, whilst the Service side determines which the implementation class or flow should be run based on that information. 
+A Connection has two sides, an **Invocation** and a **Service**. The Invocation states what it wants to run, which Service, *Methods* and *Versions*, whilst the Service side determines which the implementation class or flow should be run based on that information. A typcial Invocation and Service scenario might be a Engagement mechanism (an LWC and its controller) hosting an Invoation and a business function (e.g. a pricing engine) being encapsulated in a Service.
 
 At runtime, invocations and services are connected via the **Microscope Engine**. The Engine connects the invocation with the correct implementation and runs it. In addition the Engine will look at the input and output data from each call, user, timing, status and metric information and record data in the **Microsope Audit** object. 
 
 Invocations and Services both belong to **Packages**. These are connected groups of functionality, all of which are under the control of a single business owner and a development team. These may or may not correspond to Salesforce DX Packages but in *Microscope* the term Package does not necessarily infer a DX Package. Additionally each Inovcation should be considered to be part of a **Business Process**, this is a soft term in *Microscope*, it is not a build construct as such, but a free-text field on an invocation that helps to map our [Storying](../vision/Storying.md) to the build.
 
-![Key Relationships](VisibleConnections2.png)
+The high-level relationships are captured below, the Invocation, Service and PAckage elements are all *Custom Metadata Type* and the *Microscope Audit* is a Custom Object.
+
+![Key Relationships - Service Invocations](VisibleConnectionsServiceInvocation.png)
+
 
 Ultimately all of the Connections, the Invocation and Services, the Packages and the Business Processes all combine to form a **Build Map**, a set of tooling that sits on top of the *Microscope* configuration that illuminates the implementation and informs the future design.
 
