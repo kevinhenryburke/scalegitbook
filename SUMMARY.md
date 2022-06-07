@@ -24,7 +24,7 @@
   * [How a Solution Should Look](solution/HowSolutionShouldLook.md)
   * [How Microscope Meets Requirements](solution/HowMicroscopeMeetsRequirements.md)
   * [Connections, Process and Build](solution/ConnectionsProcessBuild.md)
-  * [Visible Connections](solution/VisibleConnections.md)
+  * [Key Concepts for Visible Connections](solution/VisibleConnections.md)
   * [A Structured Landscape](solution/StructuredLandscape.md)
   * [Separate Delivery Teams](solution/SeparateDeliveryTeams.md)
   * [Delivery Intelligence](solution/DeliveryIntelligence.md)
@@ -48,11 +48,6 @@
 
 
 ## Architecture and Build
-
-* Key Concepts
-  * [Connections and Invocations](TODO.md)
-  * Local Invocations, Services
-
 
 * Use Cases
   * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
