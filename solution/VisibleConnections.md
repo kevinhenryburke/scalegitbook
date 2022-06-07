@@ -1,7 +1,3 @@
-## Making Connections Visible
-
-
-![Visible Connections](VisibleConnections.png)
 
 
 ## Key Microscope Concepts

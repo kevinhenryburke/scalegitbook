@@ -13,17 +13,8 @@ Once this is complete the Architect turns these contracts into Microscope config
 
 * Each time an invocation runs it records the configuration details that have been used and dynamic information (users, timing, input, output, calling context) and records this information in an Audit object. These can be subsequently processed in a BI tool like Tableau or CRM Analytics and used to provide the [Business Intelligence](./BusinessIntelligence.md) we'll see soon.
 
-Armed with this intelligence about the connections in the org will arm the Analysts and Designers when the next set of the requirements come in. In this way the structure of the org remains clear no matter how many functions are developed inside it.
+This intelligence about the connections in the org will arm the Analysts and Designers when the next set of the requirements come in. In this way the structure of the org remains clear no matter how many functions are developed inside it between Engagement and Core Business Packages.
 
+![Visible Connections](VisibleConnections.png)
 
-
-
-
-
-
-
-
-Contracts on the business side
-Services on the technical side
-And a may of interpreting between the two
 
