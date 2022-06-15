@@ -10,7 +10,7 @@ At runtime, invocations and services are connected via the **Microscope Engine**
 
 Invocations and Services both belong to **Packages**. These are connected groups of functionality, all of which are under the control of a single business owner and a development team. These may or may not correspond to Salesforce DX Packages but in *Microscope* the term Package does not necessarily infer a DX Package. Additionally each Inovcation should be considered to be part of a **Business Process**, this is a soft term in *Microscope*, it is not a build construct as such, but a free-text field on an invocation that helps to map our [Storying](../vision/Storying.md) to the build.
 
-The high-level relationships are captured below, the Invocation, Service and PAckage elements are all *Custom Metadata Type* and the *Microscope Audit* is a Custom Object.
+The high-level relationships are captured below, the Invocation, Service and PAckage elements are all *Custom Metadata Type* and the *Microscope Audit* is a Custom Object. The Build Map covers the whole piece and is delivered by the realationships, reports on *Microscope Audit*, LWC Components and by taking the data out of the build and analyzing in a BI tool.
 
 ![Key Relationships - Service Invocations](VisibleConnectionsServiceInvocation.png)
 
@@ -25,3 +25,6 @@ Local Invocations still show up in the *Microsoft Audit* and the *Build Map*
 
 ![Local Invocations](VisibleConnectionsLocalInvocation.png)
 
+## Events
+
+Invocations can also be combined into an Event-Based model, whereby any team working in any business area can subscribe to an *Event*, without the creator of that *Event* needing to know. The term *Event* is perhaps the most overused in the industry, here we mean that any team can attach an asynchronous invocation to an Event published anywhere in the org. We outline this precisely [here](../use-cases/Events.md) but 
