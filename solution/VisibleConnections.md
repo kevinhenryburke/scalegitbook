@@ -27,4 +27,4 @@ Local Invocations still show up in the *Microsoft Audit* and the *Build Map*
 
 ## Events
 
-Invocations can also be combined into an Event-Based model, whereby any team working in any business area can subscribe to an *Event*, without the creator of that *Event* needing to know. The term *Event* is perhaps the most overused in the industry, here we mean that any team can attach an asynchronous invocation to an Event published anywhere in the org. We outline this precisely [here](../use-cases/Events.md) but 
+Invocations can also be combined into an Event-Based model, whereby any team working in any business area can subscribe to a *Microscope Event*, without the creator of that *Event* needing to know. The term *Event* is perhaps the most overused in the industry, here we mean that any team can attach an asynchronous invocation to an Event published anywhere in the org. We outline this precisely [here](../use-cases/Events.md).  
