@@ -42,6 +42,8 @@ If it is an upgrade then need to indicate if this a change of signature from the
 
     (Tasks: Changes should be assigned to the Architect responsible for the Invocation Package).
 
+- Invocation side: Is an *Event-Based model* appropriate? If the connection is asynchronous and represents a change in the system that may have multiple consumers, either now or in the foreseeable future, then definining it as a *Microsoft Event* and attaching the first invocation to that Event might have longer-term benefits. For more info, *Microscope Events* are outlined [here](../use-cases/Events.md).  
+
 
 - Service side: All fields on Service-Side CMT Records, except those that are using a default value that is defined for the field. 
 
