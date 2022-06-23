@@ -44,74 +44,7 @@ The Microsoft Demo contains an example of a Flow [Invoked From a Flow](https://g
 
 Salesforce Industries provide some of the main use cases for *Microscope* invocations and is a key mechanism for invoking Apex from Omnistudio. Most of the interactions between *Omnistudio* elements and Apex use Multi-Argument Maps as the interface mechanism, we won't cover all possibilities here but provide one example of how to implement an Apex interaction from a FlexCard. 
 
+We'll see an exmaple of how to use *Microscope Invocations* within an *Omnistudio Flexcard* [here](./IndustryIO.md)
 
-
-
-
-Here it is possible and advantageous to add in the validations discussed above.
-
-<!-- TODO need to put in Omnistudio example here. For example when setting up an Omnistudio FlexCard .... -->
-
-Set up an invocation called *MicroscopeGenericVL* with a Sync local implementation called *MicroscopeMapInMapOut*. Implement this class as follows:
-
-```
-global class MicroscopeMapInMapOut implements mscope.IService_Implementation {        
-    global Object dispatch(mscope.InvocationDetails invocationDetails, Object inputData) {
-        Map<String,Object> inputDataCast = new Map<String,Object>();
-        inputDataCast.put('outputParam', 'hola');
-        return inputDataCast;
-    }
-}
-```
-
-Next create a class in the org as follows. This will only compile if you have the *Omnistudio* package installed in the org in order for this to compile and deploy. the *invokeMethod* method reads in an invocation name and runs the invocation specified using the *inputMap* values.
-
-
-```
-
-global class MicroscopeGenericInvocation implements omnistudio.VlocityOpenInterface {
-
-    global Boolean invokeMethod(String methodName, Map<String,Object> inputMap, Map<String,Object> outMap, Map<String,Object> options){
-
-        try {
-            String invocationName = (String) options.get('invocationName');
-            mscope.ServiceInvocation sinv = mscope.ServiceInvocation.initialize(invocationName);  
-            
-            Object outputData = sinv.invokeService(inputMap);
-
-            mscope.InvocationDetails invDetails = sinv.getInvocationDetails();            
-
-            // add invocation details to the outMap
-            outMap.put('invocationDetails',invDetails);
-
-            // and then add in the implementation's output (the real output) to the outMap
-            if (invDetails.State == 'SUCCESS'){
-                Map<String,Object> returnMap = (Map<String,Object>) outputData;
-                for (String s : returnMap.keyset()){
-                    outMap.put(s,returnMap.get(s));
-               }
-            }            
-        } catch(Exception e) {
-            system.debug('The error is ' + e.getMessage());
-        }
-        return true;
-        
-    }
-                
-
-}
-
-```
-
-Now in the org create a FlexCard, selecting Data Source Type to be *Apex Remote*. On the next page select the
-
-*  *Remote Class* to be *MicroscopeGenericInvocation*. 
-*  *Remote Method* to be *invokeMethod*. 
-
-For this example there is no need to set any input map fields but the options map is used to pass teh name of the invocation through to the remote class and method. Here we need to specify one key/value pair:
-
-* Key: invocationName
-* Value: MicroscopeGenericVL
-
-Save the FlexCard and when it opens in the UI you can add an Output Field for the output parameter *outputParam*. This should return the message "Hola" back from the implementation.
+For these *Omnistudio* interactions it is possible and advantageous to add in the Map I/O validations discussed above to ensure that the for each invocation the input and output data definitions are as expected and agreed.
 

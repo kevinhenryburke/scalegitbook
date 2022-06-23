@@ -115,6 +115,7 @@
   * [Apex Invocations](./invocations/InvocationFromApex.md)
   * [Flow & Invocation Actions](./invocations/InvocationFromFlow.md)
   * [Complex I/O](./invocations/InvocationComplexIO.md)
+  * [Salesforce Industries](./invocations/IndustryIO.md)
 
 * Services
   * [Service Metadata](./invocations/ServiceMetadata.md)
