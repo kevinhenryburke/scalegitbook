@@ -4,17 +4,17 @@ We'll run through an example of calling an invocation from a *FlexCard*. This re
 
 ### Microscope Set up
 
-First we need to set up an invocation called *OmniInvocationExample* with the following parameters set:
+First we need to set up an invocation called *OSInvocationExample* with the following parameters set:
 
 * Input Definition:	Map<String,Object>
 * Output Definition:	Map<String,Object>
 * Invocation Mechanism:	Sync
-* Explicit Implementation Class:	OmniImplementationExample
+* Explicit Implementation Class:	OSImplementationExample
 
 This Implementation Class needs to be implemented which you can do as below. Note that we are using *Map<String,Object>* as both input and output in this toy example as these are the structures that will be passed to us by the *FlexCard*s
 
 ```
-global class OmniImplementationExample implements mscope.IService_Implementation {        
+global class OSImplementationExample implements mscope.IService_Implementation {        
     global Object dispatch(mscope.InvocationDetails invocationDetails, Object inputData) {
         Map<String,Object> outMap = new Map<String,Object>();
         outMap.put('outputParam', 'hola');
@@ -73,7 +73,7 @@ Now in the org create a *FlexCard*, selecting Data Source Type to be *Apex Remot
 For this example there is no need to set any input map fields but the options map is used to pass the name of the invocation through to the remote class and method. Here we need to specify one key/value pair:
 
 * Key: invocationName
-* Value: OmniInvocationExample
+* Value: OSInvocationExample
 
 You can further add an Output Field for the output parameter *outputParam*. When the *FlexCard* is loaded it should return the message "Hola" in this field back from the implementation. This was set in the *Microscope* implementation line 
 
