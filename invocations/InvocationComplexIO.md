@@ -4,7 +4,7 @@ The Invocation metadata type has only provision for only a single input and outp
 
 The obvious option (considering just input, output is the same argument) is to create a class with all these input attributes as member variables and mapping *inputData* to these. However this does have the overhead of requiring us to create a custom class.
 
-Another option we should consider is that *Map<String, Object>* is a valid input and output structure for a service, so can be used as generic multi-parameter IO without the need for creating a custom class. 
+Another option we should consider is that *Map<String, Object>* is a valid input and output structure for a service, so can be used as generic multi-parameter I/O without the need for creating a custom class. 
 Indeed, I/O in this format is the standard for Omnistudio, the Callable Interface in Apex and it is also handy for integration and dynamic I/O scenarios.
 
 This too has its drawbacks. An invocation using *Map<String, Object>* would not have the same robust type validation as specifying a class and may therefore be more prone to breaking at runtime, especially if components are being developed by different teams and we are dealing the very large attributes sets common in the enterprise. However we can't ignore Maps as input or output, the use cases mentioned above are critical to many enterprises so we must be able to handle it, but also we can try to make it more robust.
@@ -44,7 +44,7 @@ The Microsoft Demo contains an example of a Flow [Invoked From a Flow](https://g
 
 Salesforce Industries provide some of the main use cases for *Microscope* invocations and is a key mechanism for invoking Apex from Omnistudio. Most of the interactions between *Omnistudio* elements and Apex use Multi-Argument Maps as the interface mechanism, we won't cover all possibilities here but provide one example of how to implement an Apex interaction from a FlexCard. 
 
-We'll see an exmaple of how to use *Microscope Invocations* within an *Omnistudio Flexcard* [here](./IndustryIO.md)
+We'll see an example of how to use *Microscope Invocations* within an *Omnistudio Flexcard* [here](./IndustryIO.md)
 
 For these *Omnistudio* interactions it is possible and advantageous to add in the Map I/O validations discussed above to ensure that the for each invocation the input and output data definitions are as expected and agreed.
 
