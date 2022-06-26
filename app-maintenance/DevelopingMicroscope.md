@@ -70,7 +70,7 @@ cd demo/scripts
 ./imports.sh
 ```
 
-Within the demo/scripts folder you can also run the *./massPopulate.sh* script a few times. This will run 17 invocations via that *populate.sh* script and perform 3 runs of *./randomize.sh* to spread out the times of some audit records for demoing analytics. 
+Within the demo/scripts folder you can also run the *./massPopulate.sh* script a few times. This will run about 400 invocations with a smattering of errors, spread acorss a number of dates for demoing reports and analytics. 
 
 
 

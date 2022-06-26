@@ -43,7 +43,7 @@ For scratch orgs we use the naming convention  *expYYYYMMDDa* with the date bein
 We need to set an environment variable to the alias that is used by the CLI to interact with the Analytics default scratch org. Edit the file in the top level Analytics folder, *envVarSettings.sh* again, editing the line
 
 ```
-export MYSCRATCHTCRM=exp20220122a (change as required)
+export MYSCRATCH=exp20220122a (change as required)
 ```
 
 
@@ -79,6 +79,7 @@ And once the package is insalled
 ./installDemo.sh
 ```
 
+Note that if you wish to run invocations using the Microscope Demo App itself you may need to make the Security Settings change as documented in the [Microscope Demo Package Installation](../installation/InstallationDemo.md) for the LWC components to render properly.
 
 
 ## Pushing the code and permissions
@@ -96,7 +97,7 @@ Then push the Tableau CRM artefacts to the scratch org:
 
 ```
 cd ..
-sfdx force:source:push -u $MYSCRATCHTCRM
+sfdx force:source:push -u $MYSCRATCH
 ```
 
 
@@ -105,21 +106,19 @@ sfdx force:source:push -u $MYSCRATCHTCRM
 ## Creating Demo data and Running the Analytics jobs
 
 
-Within the Analytics scripts folder you can run the *./massPopulate.sh* script a few times. This will run 17 invocations via that *populate.sh* script and perform 3 runs of *./randomize.sh* to spread out the times of some audit records for demoing analytics. This is the same process we use in [Developing Microscope](../app-maintenance/DevelopingMicroscope.md)
+Within the Analytics scripts folder you can run the *./massPopulate.sh* script a few times. This will run about 400 invocations with a smattering of errors, spread acorss a number of dates for demoing reports and analytics. This is the same process we use in [Developing Microscope](../app-maintenance/DevelopingMicroscope.md)
 
 
 Running import jobs and dataflows is the same as for the Analytics App post installation, as outlined in [Microscope Analytics Package Post Installation](../installation/InstallationAnalyticsPost.md)
 
-Note that if you wish to run the Microscope Demo App itself you may need to make the Security Settings change as documented in the [Microscope Demo Package Installation](../installation/InstallationDemo.md) for the LWC components to render properly.
 
 
 ## Checking all is ok
 
-Run all the Apex unit tests in VS Code.
 
-In the scratch org, go to the Apps “Service Framework Demo” and “Service Framework Dashboards” and run through the tabs.
+To check the packages installs are good, in the scratch org, go to the Apps “Service Framework Demo” and “Service Framework Dashboards” and run through the tabs.
 
-In Analytics Studio run the dashboards "Service Connections", "Service Forensics" and "Service Performance" after running the jobs (see "Jobs to run" below)
+In Analytics Studio run the dashboards "Service Connections", "Service Forensics", "Service Trends" and "Service Performance" after running the jobs (see section on running Analytics jobs above).
 
 
 # Troubleshooting
