@@ -11,7 +11,7 @@ There is also a package provided to help teams to learn the Microsope applicatio
 {% hint style="danger" %}
 **This should never be installed in a production org** but used in disposable scratch, developer edition and dev sandboxes where people can experiment with the app.
 
-For the full demo experience make sure you are using an org which includes Tableau CRM. This might be in a customer sandbox or you can sign up for Tableau CRM enabled org [here](https://trailhead.salesforce.com/en/promo/orgs/analytics-de) at time of writing.
+For the full demo experience make sure you are using an org which includes *CRM Analytics*. This might be in a customer sandbox or you can sign up for *CRM Analytics* enabled org [here](https://trailhead.salesforce.com/en/promo/orgs/analytics-de) at time of writing.
 {% endhint %}
 
 The package is called **Microscope Demo** and uses the namespace **mscopedemo**

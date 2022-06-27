@@ -29,10 +29,6 @@ git clone https://github.com/kevinhenryburke/frictionless.git -b $MYBRANCH .
 
 We close VS Code's window and Open instead at the subfolder addOns/Analytics
 
-At the top level of this folder is a file called *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages.
-
-
-
 ## Scratch org creation
 
 For Analytics app we do not use a namespace, the reason being that this app is intended to be a starting point for companies rather than a supported app. So we can use any Dev Hub for our development. 
@@ -40,20 +36,20 @@ For Analytics app we do not use a namespace, the reason being that this app is i
 For scratch orgs we use the naming convention  *expYYYYMMDDa* with the date being the expiry date of the org and "a" appended to give us an easy way to recognise that the scratch org is being used for Analyitcs. The *createScratch.sh* script (see below) defaults to 30 days. 
 
 
-We need to set an environment variable to the alias that is used by the CLI to interact with the Analytics default scratch org. Edit the file in the top level Analytics folder, *envVarSettings.sh* again, editing the line
+We need to set an environment variable to the alias that is used by the CLI to interact with the Analytics default scratch org. Following the procedures again that we used for setting up a scratch org for developing *Microscope*, edit the file in the top level Analytics folder, *myVarSettings.sh* again, editing the line
 
 ```
 export MYSCRATCH=exp20220122a (change as required)
 ```
 
-
-
-
-And then in a terminal window within VSCode again run to update our environment:
+And then, just as we did for creating a  in a terminal window within VSCode again run to update our environment:
 
 ```
+source myVarSettings.sh
 source envVarSettings.sh
 ```
+
+Note that as for developing the *Microscope* app, *envVarSettings.sh* is maintained by package creation scripts, you don't need to change it, just run the *source* command.
 
 Follow your normal DX process to authorize a DevHub. For Microscope Analytics app development we do not require a namespace so we can use any no-namespace Dev Hub.
 
@@ -90,10 +86,10 @@ Staying inside the *scripts* folder we next run
 ```
 ./permissions.sh
 ```
-This will add a permission set with API name __microscopeAnalyticsIntegration__ to the Tableau CRM 'Integration User'. 
+This will add a permission set with API name __microscopeAnalyticsIntegration__ to the *CRM Analytics* 'Integration User'. 
 
 
-Then push the Tableau CRM artefacts to the scratch org:
+Then push the *CRM Analytics* artefacts to the scratch org:
 
 ```
 cd ..
@@ -123,7 +119,7 @@ In Analytics Studio run the dashboards "Service Connections", "Service Forensics
 
 # Troubleshooting
 
-There are some parts of the demo that require a user name to run and share dashboards and Tableau CRM dashboards. These should be replaced when pushing to a scratch org with the username of the deploying user (https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm). However sometimes we need to update the username in the codebase, ideally prior to pushing the code. In VS Code search for all occurrences of _@example.com_ . Each of these will represent a user name. In the VS Code terminal run
+There are some parts of the demo that require a user name to run and share dashboards and *CRM Analytics* dashboards. These should be replaced when pushing to a scratch org with the username of the deploying user (https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm). However sometimes we need to update the username in the codebase, ideally prior to pushing the code. In VS Code search for all occurrences of _@example.com_ . Each of these will represent a user name. In the VS Code terminal run
 
 ```
 sfdx force:user:list

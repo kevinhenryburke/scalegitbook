@@ -6,7 +6,7 @@ There are 3 Packages each of which contains an App
 
 2. The __Microscope Demo App__. This is used for learning and playing with Microscope. It contains visual examples demonstrating key features on tuning the application. This is a demo and should never be installed in any org on the path to production.
 
-3. The __Microscope Analytics__ App. This contains analytics dashboards for Microscope for Performance, Connections and Forensics. This is a production app but is optional and can only be used if Tableau CRM licenses are available in the production org.
+3. The __Microscope Analytics__ App. This contains analytics dashboards for Microscope for Performance, Connections and Forensics. This is a production app but is optional and can only be used if *CRM Analytics* licenses are available in the production org.
 ### Dependencies: 
 
 1. The Microscope App is self-contained and has no dependencies

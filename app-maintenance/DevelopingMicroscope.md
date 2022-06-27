@@ -28,23 +28,34 @@ git clone https://github.com/kevinhenryburke/frictionless.git -b $MYBRANCH .
 
 Check that the top level folder in VS Code (the folder representing your location on disk) contains the file *sfdx-project.json* , if so we're should be all good
 
-Another file to call out in the top-level folder is *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages and we'll see it a couple of times in what follows.
-
 If in the bottom tool bar of VS Code you see "No Default Org Set" we are ready to proceed. If not close the VS Code folder and reopen it. VS Code should now recognize that we have an SFDX project but you will need to run the export MYBRANCH variable command again after re-opening.
+
+
+## Two files with variables
+
+In the top-level folder there are two files that hold environment variables:
+
+*myVarSettings.sh*. This file contains a single variable export which holds the name of the scratch org that the current user (i.e *you*) is using. This is a frequently changing value and is unique to one user so you don't need to check in changes you makd to this file - it does not hurt if you do, each developer whould be setting this value uniquely each time they create a scratch org anyway.
+
+Another file to call out in the top-level folder is *envVarSettings.sh*. This file contains a number of environment variables that allow us to build scratch orgs and packages and we'll see it a couple of times in what follows. Unlike *myVarSettings.sh* which is updated by the developer, this file is updated by scripts we use to create packages. It is useful for other developers as it will reference the latest versions of packages and should be checked in.
+
 
 ## Scratch org creation
 
 For scratch orgs we use the naming convention  *expYYYYMMDD* with the date being the expiry date of the org. The *createScratch.sh* script (see below) defaults to 30 days. 
 
-We need to set an environment variable to be the alias that is used by the CLI to interact with the default scratch org. Edit the file  *envVarSettings.sh* again, editing the line
+We need to set an environment variable to be the alias that is used by the CLI to interact with the default scratch org. Edit the file  *myVarSettings.sh* again, editing the line
 
 ```
 export MYSCRATCH=exp20220122 (change as required)
 ```
 
-And then in a terminal window within VSCode again run to update our environment:
+
+
+And then in a terminal window within VSCode again run these two commands on the two variables files to update our environment with the personal and common environment variable settings
 
 ```
+source myVarSettings.sh
 source envVarSettings.sh
 ```
 
@@ -85,7 +96,7 @@ In Analytics Studio run the dashboards "Service Connections", "Service Forensics
 
 ## Troubleshooting
 
-There are some parts of the demo that require a user name to run and share dashboards and Tableau CRM dashboards. These should be replaced when pushing to a scratch org with the username of the deploying user (https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm). However sometimes we need to update the username in the codebase, ideally prior to pushing the code. In VS Code search for all occurrences of _@example.com_ . Each of these will represent a user name. In the VS Code terminal run
+There are some parts of the demo that require a user name to run and share dashboards and *CRM Analytics* dashboards. These should be replaced when pushing to a scratch org with the username of the deploying user (https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm). However sometimes we need to update the username in the codebase, ideally prior to pushing the code. In VS Code search for all occurrences of _@example.com_ . Each of these will represent a user name. In the VS Code terminal run
 
 ```
 sfdx force:user:list

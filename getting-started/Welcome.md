@@ -67,7 +67,7 @@ An enterprise can gradually add new use cases as and when they see the value of 
 
 Please be aware that Microscope is aimed specifically at large, complex implementations. A lot of the recommendations are irrelevant and, in some cases, suboptimal for a Small or Medium implementation with no large growth aspirations as it in some cases inverts some of the recommendations of Clicks-Not-Code and requires ongoing developer-level support. 
 
-Microscope addresses the Salesforce Lightning Platform, so is applicable to custom developmments on the Salesforce Platform, Sales, Service and Experience Clouds for example. There is also a packaged Tableau CRM application for analyzing audited data. In does not address any other platforms within the Salesforce product suite.  
+Microscope addresses the Salesforce Lightning Platform, so is applicable to custom developmments on the Salesforce Platform, Sales, Service and Experience Clouds for example. There is also a packaged *CRM Analytics* application for analyzing audited data. In does not address any other platforms within the Salesforce product suite.  
 
 This document addresses build complexity but not data volumes and when we talk about a *Scaleable Architecture* we are addressing the flexibility of the design and the ability to respond to business change. We do consider API limits in our discussiones on some design decisions and tool choices. However performance considerations arising from large data volumes and the challenges of scaling high user volumes, concurrency, search, data retrieval, sharing and reporting, all of which are equally important topics, are not covered by Microscope.
 
