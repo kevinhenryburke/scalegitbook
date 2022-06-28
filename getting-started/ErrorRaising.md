@@ -24,7 +24,7 @@ The CMT Record has a few properties:
 
 - The fields *State*, *Message* the record name map to the Invocation Details fields *State*, *ErrorMessage* and *ErrorCode*.
 - Severity tells the Microscope framework how to act when a custom service replies back referencing the error code. The options are "Error" and "Warning" which terminate and allow processing to continue (with a warning) respectively.
-- Package Loaded references the name of the Logical Package which loaded the error code.
+- Package Loaded references the name of the Logical Package which loaded the error code. This should be the package from which the Error can be raised.
 - Error Category is free text, however we recommend that all Apex Service errors use the category in the example: "CustomServiceErrors"
 
 **Step 2: Raise the Error in your code**
