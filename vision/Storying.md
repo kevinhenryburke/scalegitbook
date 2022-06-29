@@ -26,8 +26,8 @@ It is a decision for your teams to make as to how to configure this in whatever 
 
 ## Invocation Sub-Story Details and Tasks
 
-
-An Invocation Sub-Story should contain subsets of the following information depending on the properties of the story. In addition for some of these items *tasks* or *work items* or *issues* should also be created and when this is relevant these are included in the description of each element. 
+We'll run through at a high-level the key items that need to be specified. 
+In addition, for some of these items *tasks* or *work items* or *issues* should also be created and when this is relevant these are included in the description of each element. 
 
 If the Issue Tracking system allows it then it would be very nice if this could be done via an automated process in the issue tracking software and the *tasks* added to the relevants teams backlogs. However these can be created manually per *Invocation Sub-Story*.
 
@@ -39,7 +39,9 @@ Some rules of thumb
 4. Environment changes should be assigned to the appropriate Environment Management team. 
 
 
-### All Invocation Sub-Stories
+### Specifying Invocation Properties
+
+An Invocation Sub-Story should outline the following information depending on the properties of the story. These items will help to determine which of the subsections for invocation-side and service-side the story will also need to outline.
 
 - Indicate if the connection is local or cross-package
 
@@ -63,12 +65,12 @@ If it is an upgrade then we need to indicate if this a change of signature from 
 
 
 
-### Invocation Side - Local Invocations Addtional Items
+#### Invocation Side - Local Invocations Addtional Items
 
 - The Explicit Implementation fields, *Explicit Implementation Class* and *Explicit Implementation Flow*, if populated, need to have a task for the Invocation Development Team to implement this.
 
 
-### Invocation Side - Cross-Package 
+#### Invocation Side - Cross-Package 
 
 - The Developer Stub field, *Stub Implementation Class*, if populated needs to have its functionality specified. A task needs to be created for the Invocation Development Team to implement this.
 
