@@ -96,6 +96,13 @@ cd ..
 sfdx force:source:push -u $MYSCRATCH
 ```
 
+And run in the core permissions for the demo app
+
+```
+cd scripts
+./corePermissions.sh
+```
+
 
 
 
