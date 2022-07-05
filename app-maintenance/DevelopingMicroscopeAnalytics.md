@@ -75,8 +75,8 @@ And once the package is insalled
 ./installDemo.sh
 ```
 
-Note that if you wish to run invocations using the Microscope Demo App itself you may need to make the Security Settings change as documented in the [Microscope Demo Package Installation](../installation/InstallationDemo.md) for the LWC components to render properly.
-
+Note that if you wish to run invocations using the Microscope Demo App itself you may need to make the Security Settings change as documented in the [Microscope Demo Package Installation](../installation/InstallationDemo.md) for the LWC components to render properly. Also you need to run through the steps for 
+[Microscope Demo Package Post Installation](../installation/InstallationDemoPost.md) to ensure that the correct permission sets and custom seetings are in place for the demo. 
 
 ## Pushing the code and permissions
 

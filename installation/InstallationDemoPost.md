@@ -7,6 +7,8 @@
 
 * If this is a new org then add some contacts, some of the demo components query the Contact object.
 
+* If a Custom Permission with thie name *Demo_Custom_Permission* exists in the org then delete it and recreate it in the next step. 
+
 * Create a custom permission called Demo_Custom_Permission and add it to the permission set called demoCustomPermissions. 
 
 * Open an execute anonymous session via the Developer Console and execute the script below (Post-install scripts are not allowed in unlocked packages so needs to be run manually).
