@@ -54,6 +54,7 @@
   * [Versions](use-cases/Versions.md)
   * [Pilots](TODO.md)
   * [Packaging - Developer Stubs](use-cases/DeveloperStubs.md)
+  * [Environment Management](use-cases/Environments.md)
   * [Events](use-cases/Events.md)
   * [Security](TODO.md)
   * [Chaining](TODO.md)
