@@ -6,7 +6,7 @@ There are several use cases where an invocation may need to be implemented diffe
 
 1.	Early Development: **Temporary Development Stub**. Before a developer has a *real* implementation to work against she can define a simple stub to use to make a quick start on building screens and processes.
 
-2. DX Development: **Absent Service Stub**. When developing a feature within a single DX (unlocked) package or scratch org the developers will not have the full org environment available to them. Some of the Services that the full implementation of the feature depends upon may not be present.
+2. DX Development: **Absent Service Stub Class**. When developing a feature within a single DX (unlocked) package or scratch org the developers will not have the full org environment available to them. Some of the Services that the full implementation of the feature depends upon may not be present.
 
 3.	Unit Testing: Stubs can be used in unit tests to provide consistent test execution from scratch org development through to production, even when there are absent services or artifacts in the lower environments. 
 
@@ -28,7 +28,7 @@ This last use case differs from the others in that handling environmental differ
 
 This pattern covers two of our use cases above, 
 
-We need to allow the developer the ability to choose how an invocation fired during a test might be run as, for example, an *Absent Service Stub* will run differently if it is run in a scratch or in a full code environment.
+We need to allow the developer the ability to choose how an invocation fired during a test might be run as, for example, an *Absent Service Stub Class* will run differently if it is run in a scratch or in a full code environment.
 
 ### How to use the Pattern
 
@@ -70,8 +70,8 @@ Togther these steps ensure that every run of the test will be executed the same 
 
 This pattern is based on Service Presence. *Microscope* checks to see if the Service references in an *Invocation CMT record* is present in the org via a *Service CMT* record name. 
 
-* If the Service is present then we run that *real* implementation and the *Absent Service Stub* is completely ignored
-* If it is not, *Microscope* will pick up the name of the Apex class stored in the field *Absent Service Stub* of the *Invocation CMT Record* and run this in place of the Service method referenced in the *Invocation CMT Record*. 
+* If the Service is present then we run that *real* implementation and the *Absent Service Stub Class* value is completely ignored
+* If it is not, *Microscope* will pick up the name of the Apex class stored in the field *Absent Service Stub Class* of the *Invocation CMT Record* and run this in place of the Service method referenced in the *Invocation CMT Record*. 
 
 Note that this pattern is never triggered by *Local Invocations*, it can only be triggered if a Service name is referenced in the *Invocation CMT record*.
 

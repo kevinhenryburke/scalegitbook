@@ -71,7 +71,7 @@ If it is an upgrade then we need to indicate if this a change of signature from 
 
 #### Invocation Side: Cross-Package 
 
-- The Developer Stub field, *Stub Implementation Class*, if populated needs to have its functionality specified. A task needs to be created for the Invocation Development Team to implement this.
+- The Developer Stub field, *Absent Service Stub Class*, if populated needs to have its functionality specified. A task needs to be created for the Invocation Development Team to implement this.
 
 
 ### Service Side: Cross-Package 

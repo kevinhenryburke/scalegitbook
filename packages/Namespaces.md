@@ -15,7 +15,7 @@ Configured processing classes must always have the same namespace as the package
 
 ### Invocation Side: these use the invocation package namespace
 
-* Invocation -> Stub Implementation Class
+* Invocation -> Absent Service Stub Class
 * Invocation -> Explicit Implementation Class
 * Invocation -> Explicit Implementation Flow
 * Invocation -> Input Audit Override Class
