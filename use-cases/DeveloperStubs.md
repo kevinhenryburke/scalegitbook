@@ -22,7 +22,7 @@ This last use case differs from the others in that handling environmental differ
 
 
 
-## Temporary Development Stub
+## Temporary Development Stub Pattern
 
 ![InvocationStub4](InvocationStub4.png)
 
@@ -32,7 +32,7 @@ We need to allow the developer the ability to choose how an invocation fired dur
 
 ### How to use the Pattern
 
-1. On your invocation's *Invocation* CMT Record populate the field *Scratch_Implementation_Setting__c* with a string value that will reference the name of a Custom Setting record in *mscope__Service_Environment_Setting__c*. This field value is a *permanent* setting that is available in all environments but which is only used if a Custom Setting record with the referenced name is present in the org.
+1. On your invocation's *Invocation* CMT Record populate the field *Temporary_Development_Stub_Setting__c* with a string value that will reference the name of a Custom Setting record in *mscope__Service_Environment_Setting__c*. This field value is a *permanent* setting that is available in all environments but which is only used if a Custom Setting record with the referenced name is present in the org.
 
 2. Create the Custom Setting record in *mscope__Service_Environment_Setting__c* with its name set as the value above and with the *String_Value__c* field set to the name of an Apex Class that you wish to run as your temporary stub. 
 
@@ -43,14 +43,14 @@ As noted above, if the Custom Settingrecord is not present in the org, no *Tempo
 ### Early Stage Development Scenario
 
 The developer does not have an implementation of an invocation available to play with. 
-* The developer/architect creates the *Invocation CMT* record for the invocation  with the *Scratch_Implementation_Setting__c* set as the name of a (to-be) custom setting.
+* The developer/architect creates the *Invocation CMT* record for the invocation  with the *Temporary_Development_Stub_Setting__c* set as the name of a (to-be) custom setting.
 * The developer creates the Custom Setting Record manually in the org that references a temporary class, neither of which are checked into the code repository, at least not a permanent part of the repo (checking into a feature branch and deleting before merge is ok).
 
 ### Unit Test Scenario
 
 The developer wants a consistent execution of an invocation across all environments even when the *real* invocation might be different due to environmental differences.
 
-* The developer/architect creates the *Invocation CMT* record for the invocation  with the *Scratch_Implementation_Setting__c* set as the name of a (to-be) custom setting.
+* The developer/architect creates the *Invocation CMT* record for the invocation  with the *Temporary_Development_Stub_Setting__c* set as the name of a (to-be) custom setting.
 * The developer creates the Custom Setting Record in the unit test setup code that references a implementing class to use in tests. For example
 
 ```
@@ -64,15 +64,16 @@ insert scratchStub;
 
 Togther these steps ensure that every run of the test will be executed the same wherever it is run.
 
-## Absent Service Stub
+## Absent Service Stub Pattern
 
 ![InvocationStub3](InvocationStub3.png)
 
-This pattern is based on Service Presence. *Microscope* checks to see if the Service references in an Invocation CMT record is present in the org via a *Service CMT* record name. If the Service is present then we run that *real* implementation but if it is not, *Microscope* will pick up the name of an Apex class to run in its place if one stored in the Invocation CMT Record. 
+This pattern is based on Service Presence. *Microscope* checks to see if the Service references in an *Invocation CMT record* is present in the org via a *Service CMT* record name. 
 
+* If the Service is present then we run that *real* implementation and the *Absent Service Stub* is completely ignored
+* If it is not, *Microscope* will pick up the name of the Apex class stored in the field *Absent Service Stub* of the *Invocation CMT Record* and run this in place of the Service method referenced in the *Invocation CMT Record*. 
 
-If the Service is present then the *Absent Service Stub* is completely ignored, so if there's a bad configuration of the Service Method or Versions *Microscope* reports this as an error.
-
+Note that this pattern is never triggered by *Local Invocations*, it can only be triggered if a Service name is referenced in the *Invocation CMT record*.
 
 
 
