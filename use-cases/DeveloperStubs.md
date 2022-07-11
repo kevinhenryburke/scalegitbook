@@ -24,11 +24,11 @@ This last use case differs from the others in that handling environmental differ
 
 The following table summarizes the patterns and who maintains them.
 
-| Use Case | Pattern | Maintained By |
+| **Use Case** | **Pattern** | **Maintained By** |
 | --- | ----------- | --- |
-| Early Development | Temporary Development Stub | Developers add Custom Setting |
+| Early Development | Temporary Development Stub | Developers add Custom Setting in org|
 | DX Development | Absent Service Stub Class | Automatic triggering |
-| Unit Testing | Temporary Development Stub |Developers add Custom Setting |
+| Unit Testing | Temporary Development Stub |Developers add Custom Setting in test setup |
 | Test Environment Differences | Absent Connection Stub |Environment Manager maintains Custom Settings |
 
 
