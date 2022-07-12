@@ -14,22 +14,18 @@ There are several use cases where an invocation may need to be implemented diffe
 4.	Test Path to Production: **Absent Connection Stub**. Used to stub non-existing artefacts in test environments, especially integrations. These can be  implemented as standalone Apex classes. Alternatively we could use an Apex stub to connect to an online mocking service like *stoplight.io* or to an integration platform like *Mulesoft*. 
 
 
-
-
-{% hint style="info" %}
-This last use case differs from the others in that handling environmental differences is the responsibility of an environments team rather than a development team. We cover therefore cover this pattern when we discuss [Environment Management](./Environments.md)
-{% endhint %}
-
 ### Pattern Maintenance Summary
 
-The following table summarizes the patterns and who maintains them.
+Before we start to look at the stub patterns, a quick word on who maintains them across environments in each use case. We note that the last use case differs from the others in that handling environmental differences is the responsibility of an environments team rather than a development team. We cover therefore cover this pattern when we discuss [Environment Management](./Environments.md)
 
-| **Use Case** | **Pattern** | **Maintained By** |
-| --- | ----------- | --- |
-| Early Development | Temporary Development Stub | Developers add Custom Setting in org|
-| DX Development | Absent Service Stub Class | Automatic triggering |
-| Unit Testing | Temporary Development Stub |Developers add Custom Setting in test setup |
-| Test Environment Differences | Absent Connection Stub |Environment Manager maintains Custom Settings |
+The following table summarizes pattern maintenance.
+
+| **Use Case** | **Pattern** | **Maintained By** | **Defined in Story** |
+| --- | ----------- | --- |--- |
+| Early Development | Temporary Development Stub | Developers add Custom Setting in org|No |
+| DX Development | Absent Service Stub Class | Automatic triggering | Yes |
+| Unit Testing | Temporary Development Stub |Developers add Custom Setting in test setup |No |
+| Test Environment Differences | Absent Connection Stub |Environment Manager maintains Custom Settings |Yes |
 
 
 
