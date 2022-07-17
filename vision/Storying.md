@@ -88,9 +88,11 @@ If it is an upgrade then we need to indicate if this a change of signature from 
 
 ###  Environment management
 
-- Service Side: If this is not cross-package connection then we may need to have requirements about environment configuration and stubs on the path to production. A list of Custom Settings per environment is required, as is the definition of an Environment Stub methods required. 
-    
-    A task for develop and Environment Stub methods. These should be assigned to the development team for the Invocation or Service Packages, depending on whether the Connection is local or not.
+- Service Side: If this requiremnt connects to an external system that may differ across environments we need requirements about environment configuration and stubs on the path to production. A list of Custom Settings per environment is required, as is the definition of an Environment Stub methods required. 
+
+    If environmental diffeences are required the connection should not be local and should be build using the Service model. A task needs to be added to create any new Service CMT that is required and assigned to the Architect for the Service team.
+
+    A task for develop any Environment Stub methods. These should be assigned to the development team for the Invocation or Service Packages, depending on whether the Connection is local or not.
 
     Creation of any additional parameters (Service Method Static) that is required per environment, we should have one task per environment.
 
