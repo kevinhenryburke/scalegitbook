@@ -100,6 +100,7 @@
 ## Using the Application
 
 * The Microscope Process
+  * [Metadata and Settings](vision/CMTCustomSettings.md)
   * [Storying](vision/Storying.md)
 
 
