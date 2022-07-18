@@ -5,7 +5,7 @@ Environmental differences, caused by differnet integrations, data availability o
 Visibility and transparency are key to everything in *Microscope* and in our approach we provide a clear view of these variations: where they occur, what values any differences have been assigned in a particular environment and a clear story process delineating the roles and responsibilities for each team in the process. Any user has a clear list of services that are changed per environment.
 
 
-### Remebering A Golden Rule - Custom Metadata vs Custom Settings
+### Remembering A Golden Rule - Custom Metadata vs Custom Settings
 
 Our discussion on [Metadata and Settings](../vision/CMTCustomSettings.md) we introduced some golden rules and one in particular: Custom Metadata Type records are the same in all test environments and Custom Settings are only used when environmental differences occur. It is worth refreshing your knowledge of these principles as it will be very relevant here.
 
@@ -53,10 +53,14 @@ To use this functionality:
 
 When this is called into action, the Production Environment Manager creates a **Service Runtime** record, referencing the Service and setting the field *Status_Override__c* to **Down**.
 
+Note that there is one major difference between Absent Connection Stubs and Down Stubs in that the latter signifies an error scenario in *Microscope*. Invokers can check if a **SERVICE_IS_DOWN** has been received using the techniques we saw in [Error Handling](../getting-started/ErrorHandling.md).
+
 {% hint style="tip" %}
 Pro-tip: If you want to have some configurable text in a Down message, then reference a custom setting in the Down Method. The envionment mananger can then keep users updated by changing that text custom setting. 
 {% endhint %}
 
+
+STATUS SERVICE DOWN - INVOKERS SHOULD CHECK FOR THIS IF IMPORTANT....
 
 ## Absent Connections in Unit Tests
 
