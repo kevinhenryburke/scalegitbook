@@ -9,7 +9,7 @@ There are several use cases where an invocation may need to be implemented diffe
 
 2. DX Development: **Absent Service Stub Class**. When developing a feature within a single DX (unlocked) package or scratch org the developers will not have the full org environment available to them. Some of the Services that the full implementation of the feature depends upon may not be present.
 
-3.	Unit Testing: **Temporary Development Stub**. Stubs can be used in unit tests to provide consistent test execution from scratch org development through to production, even when there are absent services or artifacts in the lower environments. 
+3.	Unit Testing: **Absent Service Stub Class** and **Temporary Development Stub**. If the Service is not present in the development environment the *Absent Service Stub* pattern will be applied to unit tests too. *Temporary Development Stubs* can also be used in unit tests(which will take priority over *Absent Service Stubs*) to provide consistent test execution from scratch org development through to production. In reality a mixture of both patterns might be used in a single test, for example with a *Temporary Development Stub* used to test a feature of an invocation being explictily tested but with *Absent Service Stub Classes* being used further down the stack. 
 
 4.	Test Path to Production: **Absent Connection Stub**. Used to stub non-existing artefacts in test environments, especially integrations. These can be  implemented as standalone Apex classes. Alternatively we could use an Apex stub to connect to an online mocking service like *stoplight.io* or to an integration platform like *Mulesoft*. 
 
@@ -75,7 +75,9 @@ Together these steps ensure that every run of the test will be executed the same
 {% hint style="info" %}
 Some notes on this use case
 
-* The implementing class in unit test scenarios should be decorated as *@IsTest* unless it is being re-used as part of the Apex runtime in some environment. The class will of course need to be checked in to the repository as it forms part of the test suite. This implementing class may also be an inner class of the test class holding the unit test, these are decisions for the developer to take on a case by case basis.
+For any invocation inside a unit test, a configured *Absent Service Stubs* will run by default if a Service is not present in the org. If the Service is present then the service implementation is run, otherwise a defined *Absent Service Stub* will run (if the developer has not defined this stub they will find out soon enough in the developer space as the unit test will fail unless a *Temporary Development Stub* is inserted in the test setup).
+
+* An implementing class used only in unit test scenarios should be decorated as *@IsTest*. Any such class will of course need to be checked in to the repository as it forms part of the test suite. This implementing class may also be an inner class of the test class holding the unit test, these are decisions for the developer to take on a case by case basis.
 
 * We note that in a more complex test it is possible that we may wish to stub invocations that are not directly called by the test but are potentially some way down the call stack. Having convenience setup methods for heavily used temporary development stubs for invocations that developers can reuse in their test methods might be beneficial. 
 {% endhint %}

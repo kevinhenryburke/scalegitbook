@@ -32,7 +32,7 @@ If the Issue Tracking system allows it then it would be very nice if this could 
 
 Some rules of thumb for task assignments:
 
-1. Every task should be assigned to the team owning the package where the task is implemented 
+1. Every task should be assigned to the team owning the package where the task is implemented. A **golden rule** is that any work on developing the *Service-side* of a requirement should be undertaken by the team that owns the Service package and that work in the *Invocation-side* is undertaken by the Invocation's Package team. 
 2. Metadata changes should be assigned to the Architects responsible for the packages. The architects should also be responsible for creating the folder structures that hold the invocation and service metadata and implementing classes to ensure consistency across the developments.
 3. Class and flow implementations and stubs should be assigned to the Development team for the appropriate package. 
 4. Environment changes should be assigned to the appropriate Environment Management team. 

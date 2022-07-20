@@ -10,18 +10,21 @@ principles emerge. We subdivide these principles into groups:
     the context of the business
 
 2.  There must be a means to segment the implementation so developed
-    functionality maps to a section of the business process within a
-    business area.
+functionality maps to a section of the business process within a
+business area.
 
-3.  All data must have clear business and technical stewardship. Where
-    data is stored in more than one system a System of Record needs to
-    be identified for each relevant object.
+3. Each functional area should be aligned to an architect, analysis, development and test team in potentialy a many-to-one relationship. Any functionality that crosses between different functional areas should allow each functional area to be developed by the aligned team independently with a contract between the two defined by an overarching architecture function.  
 
-4.  The parts of the org where the businesses intersect must be
-    protected
 
-5.  Apart from changes to common functions the business areas should
-    have autonomy over their processes and delivery schedule.
+4.  All data must have clear business and technical stewardship. Where
+data is stored in more than one system a System of Record needs to
+be identified for each relevant object.
+
+5.  The parts of the org where the businesses intersect must be
+protected
+
+6.  Apart from changes to common functions the business areas should
+have autonomy over their processes and delivery schedule.
 
 ### Change Principles
 
@@ -57,10 +60,11 @@ principles emerge. We subdivide these principles into groups:
 8.  Regression testing the scope of a change should only require
     regression testing the enclosing business area.
 
-9.  We should try to place ourselves in the best position for
-    unforeseeable major restructuring (mergers, acquisitions, splits)
-    that might occur in the future, in particular to give us as many Org
-    Strategy options as possible (multi-org / single org).
+9.  An enterprise should try to place itself in the best position for
+unforeseeable major restructuring (mergers, acquisitions, splits)
+that might occur in the future, in particular to give us as many Org
+Strategy options as possible (multi-org / single org).
+
 
 ### Build Principles
 
@@ -79,17 +83,18 @@ principles emerge. We subdivide these principles into groups:
     mechanisms. 
 
 4.  In the vast majority of cases functionality should be accessible via
-    the same mechanism for Engagement Layers, Integrations and to other
-    services and the directory of exposed functions be readable from the
-    build itself. 
+the same mechanism for Engagement Layers, Integrations and to other
+services and the directory of exposed functions be readable from the
+build itself. 
 
 5.  Implementing within the chosen framework should not take
-    significantly longer than any point solution that breaks the rules.
-    If this is not the case then a developer under time pressure will
-    inevitably break the rules.
+significantly longer than any point solution that breaks the rules.
+If this is not the case then a developer under time pressure will
+inevitably break the rules.
 
-6.  Code and artefacts that are no longer used should be trivial to
-    remove from the build.
+6. Code and artefacts that are no longer used should be trivial to
+remove from the build.
+
 
 ### Adoption Principles
 

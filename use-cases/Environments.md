@@ -1,6 +1,6 @@
 # Environment Management - Handling Environmental Differenes
 
-Environmental differences, caused by differnet integrations, data availability or a variety of other reasons, is an unavoidable fact of Enterprise development. Very often in large-scale implementations of Salesforce these differences are handled by opaque script or managed by code switches that are not visible or obvious to anyone.
+Environmental differences, caused by different integrations, data availability or a variety of other reasons, is an unavoidable fact of Enterprise development. Very often in large-scale implementations of Salesforce these differences are handled by opaque script or managed by code switches that are not visible or obvious to anyone.
 
 Visibility and transparency are key to everything in *Microscope* and in our approach we provide a clear view of these variations: where they occur, what values any differences have been assigned in a particular environment and a clear story process delineating the roles and responsibilities for each team in the process. Any user has a clear list of services that are changed per environment.
 
@@ -18,7 +18,7 @@ Whenever such a new connection is identified it must have its own unique **Servi
 
 Every method associated to this service is considered to be stubbable. For each related *Service Method* record we populate the field *Stub_Service_Method__c* with the name of a method to run when the Service's *Stubbable__c* is checked. This method will need to implement the input and output definitions specified by the *Service Method* as it will need to run in its place.
 
-This completes the *static* part of our setup but we also need a mechanism to tell *Microscope* which methods, the real or the stubs, to run for the Service in each environment. In keeping with our golden rule, this is impleented in a Custom Setting which is called **Service Runtime**. This setting has a reference to the Service and also a field called *Status_Override__c*. This can hold one of three values
+This completes the *static* part of our setup but we also need a mechanism to tell *Microscope* which methods, the real or the stubs, to run for the Service in each environment. In keeping with our golden rule, this is impleented in a Custom Setting which is called **Service Runtime**. This setting has a reference to the Service and also a field called *Status_Override__c* which can hold one of three values:
 * **Active** - this is only used in unit tests, it's not required in the runtime environment.
 * **Stubbed** - Stub Methods are to be used for each invocation of this Service
 * **Down** - the Service is *Down*, a production incident, and *Down* Service Methods will be used as alternative processing.
@@ -39,6 +39,14 @@ Limited data in an org - if users are developing in smaller orgs which may be la
 
 {% endhint %}
 
+### Technical Nuances
+
+* The *Service Runtime* custom setting is only checked if one to the *Stubbable__c* or *Downable__c* fields (the Down service equivalent, we'll see this soon) is checked. 
+* If a service is "downable" then *Microscope* checks the *Service Runtime* for a Down status on every call. If the status has changed then we don't reuse the *Microscope* cached Invocation Details values which may now be invalid. If service is not downable , there is no need to do the preliminary check
+* For Downable services there is a validation rule that all methods provide a down method
+For stubbable if set then have a validation that all methods provide a stub method
+* The Service Stub and Down eethod implementations should live in the Service Methods folder, in the subfolder for the method they relate to.
+
 ## Downable Connections in Production
 
 We also want a way in produciton to mark a service as **Down** for appropriate handling of incidents and scheduled downtime. This use case is very often forgotten in frameworks and custom developments, with failing connections left to make countless futile calls to services that are not available to them and then reporting back to end users with either generic messages or worse still, letting users wait for jobs to timeout or flashing technical exception information back users, or indeed, customers.
@@ -58,9 +66,6 @@ Note that there is one major difference between Absent Connection Stubs and Down
 {% hint style="tip" %}
 Pro-tip: If you want to have some configurable text in a Down message, then reference a custom setting in the Down Method. The envionment mananger can then keep users updated by changing that text custom setting. 
 {% endhint %}
-
-
-STATUS SERVICE DOWN - INVOKERS SHOULD CHECK FOR THIS IF IMPORTANT....
 
 ## Absent Connections in Unit Tests
 
@@ -100,102 +105,13 @@ Down should run same in tests as production - down should never point to an exte
 
 ### From My Issues
 
-### 224
 
+There is a good point in this
 
+Service Presence and tests for development stubs
 
-The custom setting is referenced whenever a Service CMT states that a service is Stubbable" or Downable. Services not marked with either of these attributes do not check the custom setting.
-
-Invocation side
-
-If a service is "downable" then create a pre-check on status from the custom setting before calling.
-If status has changed then don't use the cache value but recompute service validations
-If service is not downable , there is no need to do the preliminary check
-
-Service side
-
-If a service is "stubbable" then we delegate service to the stub if the custom setting says that the service is stubbed in this environment
-
-Validations
-
-For downable a validation rule that all methods provide a down method
-For stubbable if set then have a validation that all methods provide a stub method
-
-### 117
-
-Problems: who writes stubs / too many custom stubs written per environment and provided at the per invocation level, no option to stub an implementation across the board.
-
-service is down is set at top level (a downable service)
-service should also be set as stubable (a stubbable service)
-
-per environment: have a list of services in a LCS that are stubbed in a per environment script (don't change the metadata).
-** New artifact **
-
-for an implementation: have a configured implementation for when service down and a default method if left empty (which acts like my general down)
-
-Also have a configured value when a service is stubbed at the service level. This stub is written by the service provider as part of their contract when writing a stubbable service (they might provide more than one). Not always required, perhaps we have a "service stubbable" flag at the service level.
-All other stubs written by the invoking team.
-
-The down and stubbable options may not change at the same rate as the service. These need to live in their own part of the code base. If method specific then need to live in the methods folders but not necessarily the per-implementation part
-
-any other overrides are provided by an OCS / SCS - decide later?
-
-Documentation: who owns stubs - process part, team responsibilities. Clearer now who writes and owns which stubs I hope.
-
-Documentation at a high level:
-THERE IS A GOLDEN RULE
-EVERYTHING THAT IS REFERENCED IN THE SERVICE SIDE IS CREATED BY THE SERVICE SIDE
-EVERYTHING REFERENCED IN INVOCATION METADATA / SETTINGS IS CREATED BY THE INVOCATION TEAM
-
-SERVICE METHOD IS THE CONTRACT WITH THE INVOCATION
-SERVICE IMPLEMENTATION MAY BE CONSIDERED TO BE PRIVATE TO THE INVOCATION
-
-### 309
-
-Invocation and Stub Logic
-
-Invocation record has one of the following filled
-
-Service Name
-Implementing Class
-(In time) Implementing Flow
-Stub Class
-Stub CS exist and says use Stub
-
-try to use stub, if not stub class then fail
-Service Populated and Service not exist
-
-try to use stub, if not stub class then fail
-Service Populated and Service exists
-
-Check for overrides
-if no override, run service
-Implementing Class populated
-
-Check for overrides
-if no override, run implementing class
-Else fail
-
-In dev/test if we call a service in a test method should we always use the stub???? Does the Stub implementation double as what gets called in a unit test - surely not always?
-Risk is we run different in different environments but do we want that?
-
-This (below) is important
-
-Perhaps solution for tests is this:
-Build up a hierarchical of dependencies of packages
-If an invocation crosses from a package to a non-dependent package then it uses the stub
-Might want to build up a cache of the hierarchy of structures?
-
-So in non-test - check if service exists, if so use it.
-
-For tests, check if service exists, if it is and it is associated to a target package and if that target package is a dependent of the source invocation package then call it, otherwise call the invocation stub.
-For this reason every invocation to a non-dependent package must come with a stub if it is to be called in a unit test. However if a dev does not do this they will find out in the developer space as the unit test will fail there due to a missing implementation.
-
-This is the sort of dependency I've been trying to break though .....
-
-Implementing:
-
-Think about variants (these are in different packages potentially, how is that going to work)
+If set up as a Service Invocation
+If Serivce not present then run a Absent Service Stub automatically in Unit Tests?
 
 ## Different Connections in Environments (different page?)
 
