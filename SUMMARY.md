@@ -53,7 +53,10 @@
   * [Use Cases in Demo App](use-cases/UseCasesDemo.md)
   * [Versions](use-cases/Versions.md)
   * [Pilots](TODO.md)
-  * [Packaging - Developer Stubs](use-cases/DeveloperStubs.md)
+  * Developing in Partial Environments  
+    * [Developer Stubs Overview](use-cases/DeveloperStubs.md)
+    * [Temporary Developer Stubs](use-cases/TemporaryDeveloperStubs.md)
+    * [Absent Service Stubs](use-cases/AbsentServiceStubs.md)    
   * Environment Management
     * [Environment Management](use-cases/Environments.md)
     * [Absent Connections](use-cases/AbsentConnections.md)    
