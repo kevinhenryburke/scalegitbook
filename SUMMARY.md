@@ -54,8 +54,11 @@
   * [Versions](use-cases/Versions.md)
   * [Pilots](TODO.md)
   * [Packaging - Developer Stubs](use-cases/DeveloperStubs.md)
-  * Blah
+  * Environment Management
     * [Environment Management](use-cases/Environments.md)
+    * [Absent Connections](use-cases/AbsentConnections.md)    
+    * [Downable Connections](use-cases/DownableConnections.md)    
+    * [Environment Specific Settings](use-cases/EnvironmentSpecificSettings.md)    
   * [Events](use-cases/Events.md)
   * [Security](TODO.md)
   * [Chaining](TODO.md)
