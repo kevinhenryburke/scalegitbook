@@ -1,6 +1,5 @@
-# Metadata 
 
-## Golden Rules - Custom Metadata vs Custom Settings
+## A Golden Rule - Custom Metadata vs Custom Settings
 
 *Microscope* has a golden rule: **Custom Metadata Type records are the same in all test environments and Custom Settings are only used when environmental differences occur**. These differences might be either because different static values are required across environments or because a temporary setting is needed to meet a short-term production need.
 
