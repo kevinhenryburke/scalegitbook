@@ -33,6 +33,12 @@
 
 ## Delivery
 
+* The Microscope Process
+  * [Metadata and Settings](process/CMTCustomSettings.md)
+  * [Storying](process/Storying.md)
+  * [Stub and Environment Setting Maintenance](process/StubEnvironmentMaintenance.md)
+
+
 <!-- Add in some of the Slides here for delivery -->
 * Actors and Role
   * Business Sponsor
@@ -105,10 +111,6 @@
 
 
 ## Using the Application
-
-* The Microscope Process
-  * [Metadata and Settings](vision/CMTCustomSettings.md)
-  * [Storying](vision/Storying.md)
 
 
 * Creating a Simple Service

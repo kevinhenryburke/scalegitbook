@@ -7,6 +7,6 @@ Visibility and transparency are key to everything in *Microscope* and in our app
 
 ### Remembering A Golden Rule - Custom Metadata vs Custom Settings
 
-Our discussion on [Metadata and Settings](../vision/CMTCustomSettings.md) we introduced some golden rules and one in particular: Custom Metadata Type records are the same in all test environments and Custom Settings are only used when environmental differences occur. It is worth refreshing your knowledge of these principles as it will be very relevant here.
+Our discussion on [Metadata and Settings](../process/CMTCustomSettings.md) we introduced some golden rules and one in particular: Custom Metadata Type records are the same in all test environments and Custom Settings are only used when environmental differences occur. It is worth refreshing your knowledge of these principles as it will be very relevant here.
 
 
